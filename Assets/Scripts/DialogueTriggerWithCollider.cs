@@ -8,9 +8,11 @@ public class ShowDialogueCollider : MonoBehaviour
     
 
     void OnTriggerEnter2D(Collider2D collider) {
-        if (dialogueTrigger != null){
-            dialogueTrigger.TriggerDialogue(); 
+        if (collider.gameObject.tag == "Player"){
+            if (dialogueTrigger != null){
+                dialogueTrigger.TriggerDialogue(); 
+            }
+            GetComponent<Collider2D>().enabled = false; 
         }
-        GetComponent<Collider2D>().enabled = false; 
     }
 }

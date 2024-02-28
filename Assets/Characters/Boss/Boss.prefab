@@ -267,6 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60885e2862262e6479c3d72f3daad75c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
   damage: 1
   knockbackForce: 50
   moveSpeed: 500
