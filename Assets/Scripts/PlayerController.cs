@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, ICharacter
 {
     bool IsMoving { 
         set {
@@ -37,11 +38,14 @@ public class PlayerController : MonoBehaviour
     Vector2 moveInput = Vector2.zero;
 
     bool isMoving = false;
-    bool canMove = true;
+    bool canMove;
 
+    void Awake(){
+        DialogueTriggerWithCollider.OnCharacterFreeze += OnFreeze;
+    }
 
     void Start(){
-        SceneContext.OnPlayerFreeze += handleOnPlayerFreeze;
+        canMove = true; 
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -51,8 +55,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate() {
         
-        if(canMove == true && moveInput != Vector2.zero) {
-
+        if (canMove && moveInput != Vector2.zero) {
             // Move animation and add velocity
             // Accelerate the player while run direction is pressed (limited by rigidbody linear drag)
             rb.AddForce(moveInput * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
@@ -65,7 +68,6 @@ public class PlayerController : MonoBehaviour
                 spriteRenderer.flipX = true;
                 gameObject.BroadcastMessage("IsFacingRight", false);
             }
-
             IsMoving = true;
 
         } else {
@@ -73,12 +75,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void handleOnPlayerFreeze(bool freeze){
-        if (freeze){
+    public void OnFreeze(bool isFrozen){
+        if (isFrozen){
             LockMovement(); 
+            canAttack = false; 
         }
         else {
             UnlockMovement(); 
+            canAttack = true; 
         }
     }
 

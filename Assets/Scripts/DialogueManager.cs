@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -13,6 +14,20 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences; 
     public static event Action<bool> OnDialogueComplete; 
+    public static DialogueManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -27,12 +42,13 @@ public class DialogueManager : MonoBehaviour
         if (sentences == null){
             sentences = new Queue<string>(); 
         }
-        sentences.Clear(); 
+        else {
+            sentences.Clear(); 
+        }
 
         foreach (string sentence in dialogue.sentences){
             sentences.Enqueue(sentence); 
         }
-
         DisplayNextSentence(); 
     }
 

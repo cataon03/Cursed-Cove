@@ -9,10 +9,11 @@ public class SceneContext : MonoBehaviour
 {
     [SerializeField] DialogueTrigger dialogueTrigger; 
     public static event Action<bool> OnPlayerFreeze; 
-    public bool entities_frozen; 
 
-    void Start(){
+    void Awake() {
         DialogueManager.OnDialogueComplete += handleOnDialogueComplete;
+    }
+    void Start(){
         OnPlayerFreeze?.Invoke(true); 
         dialogueTrigger.TriggerDialogue();  
     }
@@ -23,6 +24,7 @@ public class SceneContext : MonoBehaviour
 
     void handleOnDialogueComplete(bool isDialogueComplete){
         if (isDialogueComplete){
+            
             OnPlayerFreeze?.Invoke(false);
         }
     }

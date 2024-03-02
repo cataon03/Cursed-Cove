@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skeleton : MonoBehaviour
+public class Skeleton : MonoBehaviour, ICharacter
 {
     bool IsMoving { 
         set {
@@ -25,16 +25,26 @@ public class Skeleton : MonoBehaviour
     DamageableCharacter damagableCharacter;
     bool isMoving = false;
 
+    void Awake(){
+        DialogueTriggerWithCollider.OnCharacterFreeze += OnFreeze;
+    }
 
     void Start(){
-        SceneContext.OnPlayerFreeze += handleOnPlayerFreeze;
         canMove = true; 
         lastPosition = transform.position; 
         rb = GetComponent<Rigidbody2D>();
         damagableCharacter = GetComponent<DamageableCharacter>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
+    }
+
+    public void OnFreeze(bool isFrozen){
+        if (isFrozen){
+            LockMovement(); 
+        }
+        else {
+            UnlockMovement(); 
+        }
     }
 
     void FixedUpdate() {
@@ -76,15 +86,6 @@ public class Skeleton : MonoBehaviour
 
             // After making sure the collider has a script that implements IDamagable, we can run the OnHit implementation and pass our Vector2 force
             damageable.OnHit(damage, knockback);
-        }
-    }
-
-    public void handleOnPlayerFreeze(bool frozen){
-        if (frozen){
-            LockMovement(); 
-        }
-        else {
-            UnlockMovement(); 
         }
     }
 
