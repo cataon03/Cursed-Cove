@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding; 
+using Pathfinding;
+using System;
 
-public class BossController : MonoBehaviour
+public class BossController : MonoBehaviour, ICharacter
 {
     bool IsMoving { 
         set {
@@ -20,6 +21,8 @@ public class BossController : MonoBehaviour
     Vector3 currentPosition; 
     Vector3 lastPosition; 
     public DetectionZone detectionZone;
+    public string attackAnimName = "bossAttack";
+    public bool canAttack; 
     Rigidbody2D rb;
     Vector2 moveInput = Vector2.zero;
     DamageableCharacter damagableCharacter;
@@ -34,6 +37,9 @@ public class BossController : MonoBehaviour
     bool reachedEndOfPath = false; 
     Seeker seeker; 
 
+    void Awake(){
+        DialogueTriggerWithCollider.OnCharacterFreeze += OnFreeze;
+    }
 
     void Start(){
         SceneContext.OnPlayerFreeze += handleOnPlayerFreeze;
@@ -54,6 +60,14 @@ public class BossController : MonoBehaviour
         }
     }
 
+    public void OnFreeze(bool isFrozen){
+        if (isFrozen){
+            LockMovement(); 
+        }
+        else {
+            UnlockMovement(); 
+        }
+    }
     void OnPathComplete(Path p){
         if (!p.error){
             path = p; 
@@ -61,7 +75,15 @@ public class BossController : MonoBehaviour
         } 
     }
 
-    void FixedUpdate() {
+
+    
+    void FixedUpdate(){
+        if (canAttack && detectionZone.detectedObjs.Count> 0){
+            Debug.Log("player within attacking range"); 
+           animator.SetTrigger(attackAnimName);
+        }
+    }
+    void Update() {
 
         if (canMove){
             
@@ -78,7 +100,12 @@ public class BossController : MonoBehaviour
 
             Vector2 direction = ((Vector2) path.vectorPath[currentWaypoint] - rb.position).normalized; 
             Vector2 force = direction * speed * Time.deltaTime; 
-
+            if (force.x <= 0.01f){
+                spriteRenderer.flipX = true;
+            }
+            else {
+                spriteRenderer.flipX = false;
+            }
             rb.AddForce(force); 
 
             float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
@@ -86,13 +113,7 @@ public class BossController : MonoBehaviour
             if (distance < nextWaypointDistance){
                 currentWaypoint++; 
             }
-            if (force.x <= 0.01f){
-                bossGFX.localScale = new Vector3(-1f, 1f, 1f);
-            }
-            else if (force.x >= -0.01f){
-                bossGFX.localScale = new Vector3(1f, 1f, 1f);
-            }
-            Debug.Log("IsMoving"); 
+           
             IsMoving = true;
         }
         else 
@@ -100,6 +121,15 @@ public class BossController : MonoBehaviour
             isMoving = false; 
         }
         lastPosition = transform.position; 
+
+        // check if boss can attack 
+
+    }
+    
+    void attack() {
+        if (canAttack) {
+            animator.SetTrigger(attackAnimName);
+        }
     }
 
     /// Deal damage and knockback to IDamageable 
