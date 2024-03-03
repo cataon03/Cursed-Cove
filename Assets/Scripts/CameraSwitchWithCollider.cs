@@ -8,7 +8,7 @@ public class CameraSwitcherCollider : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider) {
         if (cameraSwitcher != null){
-            cameraSwitcher.SwitchCameras(); 
+            //cameraSwitcher.SwitchCameras(); 
         }
         else {
             Debug.Log("No CameraSwitcher object for the CameraSwitcherCollider"); 
