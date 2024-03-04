@@ -29,14 +29,12 @@ public class AttackZone : MonoBehaviour
         }
     }
 
-
-
     void OnTriggerEnter2D(Collider2D collider) {
         if(collider.gameObject.tag == tagTarget && isTriggered == false) {
             isTriggered = true; 
             reloadTime += RELOAD_TIME; 
             gameObject.GetComponent<CircleCollider2D>().enabled = false; 
-            Debug.Log("setting attack"); 
+
             IDamageable damagableObject = collider.GetComponent<IDamageable>();
 
             if(damagableObject != null) {

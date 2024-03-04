@@ -28,7 +28,6 @@ public class CameraManager : MonoBehaviour
 
     void Update(){
         if (checkAndReset && cinemachineBrain.ActiveVirtualCamera != null){
-            Debug.Log("available"); 
             lastCam.enabled = false; 
             currentCam.enabled = true;
             checkAndReset = false; 
@@ -36,12 +35,6 @@ public class CameraManager : MonoBehaviour
     }
 
     public void SwitchToCamera(CinemachineVirtualCamera secondaryCamera){
-        if (cinemachineBrain == null){
-            Debug.Log("Brain null"); 
-        }
-        if (cinemachineBrain.ActiveVirtualCamera == null){
-            Debug.Log("It's fucking"); 
-        }
         checkAndReset = true; 
         currentCam = secondaryCamera; 
         lastCam = secondaryCamera; 
