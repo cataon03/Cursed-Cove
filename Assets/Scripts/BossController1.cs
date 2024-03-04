@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Pathfinding;
@@ -13,8 +14,10 @@ public class BossController1 : MonoBehaviour, ICharacter
     }
 
    // public AIPath aIPath; 
+   public float minDistanceToPlayer = 2.6f; 
     public bool canMove; 
     Animator animator;
+    bool isFlippedX = false; 
     SpriteRenderer spriteRenderer;
     public float damage = 1;
     public float knockbackForce = 20f;
@@ -28,7 +31,7 @@ public class BossController1 : MonoBehaviour, ICharacter
     bool reachedEndOfPath = false; 
     Seeker seeker; 
 
-    public DetectionZone detectionZone;
+    public AttackZone attackZone;
     Rigidbody2D rb;
     Vector2 moveInput = Vector2.zero;
     DamageableCharacter damagableCharacter;
@@ -40,6 +43,7 @@ public class BossController1 : MonoBehaviour, ICharacter
 
     void Start(){
         canMove = true; 
+        isMoving = false;
         lastPosition = transform.position; 
         rb = GetComponent<Rigidbody2D>();
         damagableCharacter = GetComponent<DamageableCharacter>();
@@ -64,16 +68,30 @@ public class BossController1 : MonoBehaviour, ICharacter
 
     public void OnFreeze(bool isFrozen){
         if (isFrozen){
+            Debug.Log("received freeze"); 
             LockMovement(); 
         }
         else {
+            Debug.Log("received freeze"); 
             UnlockMovement(); 
         }
+    }
+    void Update(){
+        
     }
 
     void FixedUpdate() {
 
         if (canMove) {
+            float distanceToPlayer = Vector2.Distance(rb.position, target.position);
+            if (distanceToPlayer <= minDistanceToPlayer) {
+                // The boss is close to the player and not moving significantly
+                IsMoving = false; 
+            }
+            else {
+                IsMoving = true; 
+            }
+
             if (path == null){
                 return; 
             }
@@ -87,25 +105,30 @@ public class BossController1 : MonoBehaviour, ICharacter
 
             Vector2 direction = ((Vector2) path.vectorPath[currentWaypoint] - rb.position).normalized; 
             Vector2 force = direction * speed * Time.deltaTime; 
-            if (force.x <= 0.01f){
-                spriteRenderer.flipX = true;
-            }
-            else {
-                spriteRenderer.flipX = false;
-            }
+            
+           float directionToTarget = target.position.x - rb.position.x;
+
+        // Flip the sprite based on the direction to the target
+        if (directionToTarget > 0) {
+            spriteRenderer.flipX = false; // Assuming the sprite faces right by default
+        } else if (directionToTarget < 0) {
+            spriteRenderer.flipX = true;
+        }
             rb.AddForce(force); 
 
             float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-
             if (distance < nextWaypointDistance){
                 currentWaypoint++; 
             }
+            if (attackZone.detectedObjs.Count > 0){
+                Debug.Log("attack!"); 
+                animator.SetTrigger("attack");
+            }
             
-            IsMoving = true;
-
         } 
         else {
             IsMoving = false;
+           
         }
        lastPosition = transform.position; 
     }
@@ -129,10 +152,12 @@ public class BossController1 : MonoBehaviour, ICharacter
     }
 
     public void LockMovement() {
+        Debug.Log("Position locked");
         canMove = false;
     }
 
     public void UnlockMovement() {
+        Debug.Log("Position unlocked"); 
         canMove = true;
     }
 }
