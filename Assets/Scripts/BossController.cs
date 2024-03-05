@@ -17,7 +17,6 @@ public class BossController : MonoBehaviour, ICharacter
    public float minDistanceToPlayer = 2.6f; 
     public bool canMove; 
     Animator animator;
-    bool isFlippedX = false; 
     SpriteRenderer spriteRenderer;
     public float damage = 1;
     public float knockbackForce = 20f;
