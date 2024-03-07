@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class Chest : MonoBehaviour
 {
+    public Dialogue dialogue; 
     public GameObject insideChest; 
     public Item item; 
     public Prompt prompt; 
+    public Item key; 
     private bool isPlayerInRange; 
     public GameObject inventoryItemPrefab;
     public InventorySlot slot; 
@@ -50,7 +53,13 @@ public class Chest : MonoBehaviour
     }
 
     void HandleYesClick(){
-        OpenChest();  
+        if (InventoryManager.instance.HasItem(key)){
+            OpenChest();  
+        }
+        else { 
+            PromptManager.instance.ClosePrompt(); 
+            DialogueManager.instance.StartDialogue(dialogue); 
+        }
     }
 
     void HandleNoClick(){
