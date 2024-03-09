@@ -141,6 +141,8 @@ public class DialogueManager : MonoBehaviour
         rightButton.enabled = true;  
         leftButtonText.enabled = true; 
         rightButtonText.enabled = true;  
+        continueButton.enabled = false; 
+        continueButtonText.enabled = false; 
         middleText.text = ""; 
         /*
         leftButtonText.text = prompt.leftButtonText; 
@@ -189,9 +191,11 @@ public class DialogueManager : MonoBehaviour
     public void HandleRightButtonClick(){
         Debug.Log("pressing right button"); 
         OnRightButtonPress?.Invoke(); 
+        EndDialogueItem(); 
     }
     public void HandleLeftButtonClick(){
         Debug.Log("pressingLeftButton"); 
         OnLeftButtonPress?.Invoke(); 
+        EndDialogueItem(); 
     }
 }

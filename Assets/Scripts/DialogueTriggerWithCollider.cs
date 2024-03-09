@@ -25,7 +25,7 @@ public class DialogueTriggerWithCollider : MonoBehaviour
                 cameraSwitcher.switchToCamera2(); 
             }
         }
-        gameObject.GetComponent<Collider2D>().enabled = false; 
+        //gameObject.GetComponent<Collider2D>().enabled = false; 
     }
 
     void handleOnDialogueComplete(bool isDialogueComplete){

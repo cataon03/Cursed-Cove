@@ -50,19 +50,37 @@ public class InventoryManager : MonoBehaviour
         selectedSlot = newValue;
     }
 
-    public bool HasItem(Item item) {
+    public void RemoveItem(Item item) {
+        int itemIndex = findItemIndex(item); 
+        if (itemIndex != -1){
+            InventorySlot slot = inventorySlots[itemIndex];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+            
+            if (itemInSlot != null) {
+                Destroy(itemInSlot.gameObject);
+            }
+        }
+    }
 
-        // Check if any slot has the same item with count lower than max
+    public bool HasItem(Item item) {
+        if (findItemIndex(item) != -1){
+            return true; 
+        } 
+        return false; 
+    }
+
+    // Returns the slot index that the item is in, otherwise returns -1 
+    public int findItemIndex(Item item) {
         for (int i = 0; i < inventorySlots.Length; i++) {
             InventorySlot slot = inventorySlots[i];
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             
             if (itemInSlot != null &&
                 itemInSlot.item == item) {
-                return true;
+                return i; 
             }
         }
-        return false; 
+        return -1; 
     }
 
     public bool AddItem(Item item) {
