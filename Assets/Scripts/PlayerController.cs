@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour, ICharacter
 
     void Awake(){
         DialogueTriggerWithCollider.OnCharacterFreeze += OnFreeze;
+        DialogueManager.OnPlayerAttackDisabled += onAttackDisabled; 
     }
 
     void Start(){
@@ -85,6 +86,16 @@ public class PlayerController : MonoBehaviour, ICharacter
             canAttack = true; 
         }
     }
+
+    public void onAttackDisabled(bool isAttackDisabled){
+        if (isAttackDisabled){
+            canAttack = false; 
+        }
+        else {
+            canAttack = true; 
+        }
+    }
+
 
     // Get input values for player movement
     void OnMove(InputValue value) {

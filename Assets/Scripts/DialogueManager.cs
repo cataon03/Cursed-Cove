@@ -27,6 +27,10 @@ public class DialogueManager : MonoBehaviour
 
     public static event Action<bool> OnDialogueComplete; 
     public static DialogueManager instance;
+    public static event Action OnRightButtonPress;
+    public static event Action OnLeftButtonPress;
+    public static event Action<bool> OnPlayerAttackDisabled; 
+    DialogueItem lastItem; 
 
     private void Awake()
     {
@@ -44,12 +48,17 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    
+        //rightButton.onClick.AddListener(HandleRightButtonClick);
+        //leftButton.onClick.AddListener(HandleLeftButtonClick); 
     }
 
     public void StartDialogueItem(DialogueItem item){
+        Debug.Log("starting dialogue"); 
+        OnPlayerAttackDisabled?.Invoke(true); 
+
         animator.SetBool("isOpen", true); 
         //StopAllCoroutines(); 
+        lastItem = item;
         
         if ((item as Dialogue) != null){
             StartDialogue((Dialogue) item); 
@@ -63,6 +72,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue){
         nameText.enabled = true; 
         middleText.enabled = true;
+        middleText.text = ""; 
         continueButton.enabled = true; 
         continueButtonText.enabled = true; 
 
@@ -75,6 +85,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         foreach (string sentence in dialogue.sentences){
+            Debug.Log("enqueue " + sentence); 
             sentences.Enqueue(sentence); 
         }
         DisplayNextSentence(); 
@@ -88,11 +99,18 @@ public class DialogueManager : MonoBehaviour
 
 
     public void DisplayNextSentence(){
-        if (sentences.Count == 0){
-            EndDialgoue(); 
-            return; 
+        string sentence = ""; 
+        if ((lastItem as Dialogue) != null){
+            if (sentences.Count == 0){
+                EndDialgoue(); 
+                return; 
+            }
+            sentence = sentences.Dequeue();
         }
-        string sentence = sentences.Dequeue();
+        else {
+            sentence = ((Prompt) lastItem).promptText; 
+        }
+       // string sentence = sentences.Dequeue();
         StopAllCoroutines(); 
         StartCoroutine(TypeSentence(sentence)); 
     }
@@ -105,13 +123,12 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-
     public void EndDialgoue(){
         nameText.enabled = false; 
         middleText.enabled = false;
         continueButton.enabled = false; 
         continueButtonText.enabled = false; 
-
+        middleText.text = ""; 
         Debug.Log("End dialogue."); 
         animator.SetBool("isOpen", false); 
         OnDialogueComplete?.Invoke(true); 
@@ -124,12 +141,16 @@ public class DialogueManager : MonoBehaviour
         rightButton.enabled = true;  
         leftButtonText.enabled = true; 
         rightButtonText.enabled = true;  
-
+        middleText.text = ""; 
+        /*
         leftButtonText.text = prompt.leftButtonText; 
         rightButtonText.text = prompt.rightButtonText; 
         middleText.text = prompt.promptText; 
-        //StopAllCoroutines(); 
-        //StartCoroutine(TypeSentence(prompt.promptText)); 
+        */
+        StopAllCoroutines(); 
+        rightButtonText.text = prompt.rightButtonText; 
+        middleText.text = prompt.promptText; 
+        StartCoroutine(TypeSentence(prompt.promptText)); 
 
     }
 
@@ -150,5 +171,27 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("End prompt."); 
         animator.SetBool("isOpen", false); 
         OnDialogueComplete?.Invoke(true); 
+    }
+
+    public void EndDialogueItem(){
+        OnPlayerAttackDisabled?.Invoke(false); 
+
+        if ((lastItem as Dialogue) != null){
+            EndDialgoue(); 
+        }   
+        else {
+            EndPrompt(); 
+        }
+
+    }
+    
+
+    public void HandleRightButtonClick(){
+        Debug.Log("pressing right button"); 
+        OnRightButtonPress?.Invoke(); 
+    }
+    public void HandleLeftButtonClick(){
+        Debug.Log("pressingLeftButton"); 
+        OnLeftButtonPress?.Invoke(); 
     }
 }

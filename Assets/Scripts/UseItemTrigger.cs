@@ -9,6 +9,7 @@ public class UseItem : MonoBehaviour
     public CameraSwitcher cameraSwitcher; 
     [SerializeField] public bool withCameraPan; 
     public static event Action<bool> OnCharacterFreeze; 
+    public static event Action<bool> OnBossEnabled; 
     
     void Awake(){
         DialogueManager.OnDialogueComplete += handleOnDialogueComplete;
@@ -17,7 +18,7 @@ public class UseItem : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider) {
         if (collider.gameObject.tag == "Player"){
             if (useItemPrompt != null){ 
-                PromptManager.instance.OpenPrompt(useItemPrompt); 
+                DialogueManager.instance.StartDialogueItem(useItemPrompt); 
             }
             if (withCameraPan){
                 cameraSwitcher.switchToCamera2(); 

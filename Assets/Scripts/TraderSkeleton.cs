@@ -44,9 +44,9 @@ public class TraderSkeleton : MonoBehaviour
         // If player is within trading distance
             tradeZone.GetComponent<Collider2D>().enabled = false; 
             Debug.Log("entering trigger 2d"); 
-            PromptManager.instance.OpenPrompt(talkToTraderPrompt); 
-            yesButton = PromptManager.instance.getRightButton();
-            noButton = PromptManager.instance.getLeftButton(); 
+            DialogueManager.instance.StartDialogueItem(talkToTraderPrompt); 
+            yesButton = DialogueManager.instance.getRightButton();
+            noButton = DialogueManager.instance.getLeftButton(); 
 
             yesButton.onClick.AddListener(HandleYesClick);
             noButton.onClick.AddListener(HandleNoClick); 
@@ -56,16 +56,16 @@ public class TraderSkeleton : MonoBehaviour
     void HandleYesClick(){
         // Player wants to talk to trader
         if (currentChoice == 0){
-            PromptManager.instance.ClosePrompt(); 
+            DialogueManager.instance.EndPrompt(); 
             currentChoice++; 
-            DialogueManager.instance.StartDialogue(tradeDialogue); 
-            PromptManager.instance.OpenPrompt(acceptTradePrompt);
+            DialogueManager.instance.StartDialogueItem(tradeDialogue); 
+            DialogueManager.instance.StartDialogueItem(acceptTradePrompt);
             //Debug.Log(acceptTradePrompt.promptText);
         }
         // Player wants to accept the trade 
         else if (currentChoice == 1){
             Debug.Log("accepted the trade"); 
-            PromptManager.instance.ClosePrompt(); 
+            DialogueManager.instance.EndDialgoue(); 
         }
         
     }
@@ -73,11 +73,11 @@ public class TraderSkeleton : MonoBehaviour
     void HandleNoClick(){ 
         // Player does not want to talk to trader
         if (currentChoice == 0){
-            PromptManager.instance.ClosePrompt(); 
+            DialogueManager.instance.EndPrompt(); 
         }
         // Player does not want to accept the trade 
         else if (currentChoice == 1){
-            PromptManager.instance.ClosePrompt(); 
+            DialogueManager.instance.EndPrompt(); 
         }
     }
 }

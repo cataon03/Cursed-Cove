@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Pathfinding.Util;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 
 public class Chest : MonoBehaviour
 {
-    public Dialogue dialogue; 
+    public Dialogue needKeyDialogue; 
     public GameObject insideChest; 
     public Item item; 
     public Prompt prompt; 
@@ -22,12 +23,23 @@ public class Chest : MonoBehaviour
     Button yesButton; 
     Button noButton; 
     SpriteRenderer spriteRenderer; 
-
+    
     void Start(){
-        yesButton = null; 
-        noButton = null; 
+        //yesButton = null; 
+       // noButton = null;
+
         spriteRenderer = GetComponent<SpriteRenderer>(); 
         hasPopulatedItem = false; 
+    }
+
+    public void startListeningToPrompt(){
+        DialogueManager.OnLeftButtonPress += handleOnLeftButtonPress;
+        DialogueManager.OnRightButtonPress += handleOnRightButtonPress;
+    }
+
+    public void stopListeningToPrompt(){
+        DialogueManager.OnLeftButtonPress -= handleOnLeftButtonPress;
+        DialogueManager.OnRightButtonPress -= handleOnRightButtonPress;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -35,14 +47,15 @@ public class Chest : MonoBehaviour
         // Check if the collider belongs to the player
         if (other.CompareTag("Player")) 
         {
+            startListeningToPrompt(); 
             //Debug.Log("in range to open"); 
             DialogueManager.instance.StartDialogueItem(prompt); 
             //DialogueManager.instance.Start(prompt); 
-            yesButton = DialogueManager.instance.getRightButton();
-            noButton = DialogueManager.instance.getLeftButton(); 
+           // yesButton = DialogueManager.instance.getRightButton();
+          //  noButton = DialogueManager.instance.getLeftButton(); 
 
-            yesButton.onClick.AddListener(HandleYesClick);
-            noButton.onClick.AddListener(HandleNoClick); 
+            //yesButton.onClick.AddListener(HandleYesClick);
+           // noButton.onClick.AddListener(HandleNoClick); 
             isPlayerInRange = true;
         }
     }
@@ -53,6 +66,7 @@ public class Chest : MonoBehaviour
         inventoryItem.InitialiseItem(item);
     }
 
+/*
     void HandleYesClick(){
         if (InventoryManager.instance.HasItem(key)){
             OpenChest();  
@@ -68,14 +82,34 @@ public class Chest : MonoBehaviour
         //Debug.Log("No"); 
         DialogueManager.instance.EndPrompt(); 
     }
-
+*/
     void OnTriggerExit2D(Collider2D other)
     {
         // Check if the collider belongs to the player
         if (other.CompareTag("Player"))
         {
+            stopListeningToPrompt(); 
             isPlayerInRange = false;
-            DialogueManager.instance.EndDialgoue(); // Hide the open prompt
+            DialogueManager.instance.EndDialogueItem(); // Hide the open prompt
+        }
+    }
+
+    public void handleOnLeftButtonPress(){
+        stopListeningToPrompt(); 
+        DialogueManager.instance.EndDialogueItem(); 
+    }
+
+    public void handleOnRightButtonPress(){
+        stopListeningToPrompt(); 
+        Debug.Log("handling right button press in chest"); 
+        if (InventoryManager.instance.HasItem(key)){
+            Debug.Log("1"); 
+            OpenChest();  
+        }
+        else {
+            Debug.Log("2"); 
+            DialogueManager.instance.EndDialogueItem(); 
+            DialogueManager.instance.StartDialogueItem(needKeyDialogue); 
         }
     }
 
