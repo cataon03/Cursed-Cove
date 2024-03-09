@@ -36,9 +36,10 @@ public class Chest : MonoBehaviour
         if (other.CompareTag("Player")) 
         {
             //Debug.Log("in range to open"); 
-            PromptManager.instance.OpenPrompt(prompt); 
-            yesButton = PromptManager.instance.getRightButton();
-            noButton = PromptManager.instance.getLeftButton(); 
+            DialogueManager.instance.StartDialogueItem(prompt); 
+            //DialogueManager.instance.Start(prompt); 
+            yesButton = DialogueManager.instance.getRightButton();
+            noButton = DialogueManager.instance.getLeftButton(); 
 
             yesButton.onClick.AddListener(HandleYesClick);
             noButton.onClick.AddListener(HandleNoClick); 
@@ -57,14 +58,15 @@ public class Chest : MonoBehaviour
             OpenChest();  
         }
         else { 
-            PromptManager.instance.ClosePrompt(); 
-            DialogueManager.instance.StartDialogue(dialogue); 
+            //PromptManager.instance.ClosePrompt(); 
+            DialogueManager.instance.EndPrompt(); 
+            DialogueManager.instance.StartDialogueItem(dialogue); 
         }
     }
 
     void HandleNoClick(){
         //Debug.Log("No"); 
-        PromptManager.instance.ClosePrompt(); 
+        DialogueManager.instance.EndPrompt(); 
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -73,7 +75,7 @@ public class Chest : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = false;
-            PromptManager.instance.ClosePrompt(); // Hide the open prompt
+            DialogueManager.instance.EndDialgoue(); // Hide the open prompt
         }
     }
 
@@ -82,7 +84,7 @@ public class Chest : MonoBehaviour
     {
         // Logic to open the chest
         Debug.Log("Chest opened!");
-        PromptManager.instance.ClosePrompt(); 
+        //.instance.ClosePrompt(); 
         spriteRenderer.sprite = openChest; 
         insideChest.SetActive(true); 
         if (!hasPopulatedItem){

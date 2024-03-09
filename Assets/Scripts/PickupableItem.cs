@@ -8,14 +8,16 @@ public class PickupableItem : MonoBehaviour
     [SerializeField] Item item; 
 
     void OnTriggerEnter2D(Collider2D collider) {
-        if (item != null){
-            InventoryManager.instance.SetInventoryItemPrefab(itemPrefab); 
-            InventoryManager.instance.AddItem(item); 
+        if (collider.gameObject.tag == "Player"){
+            if (item != null){
+                InventoryManager.instance.SetInventoryItemPrefab(itemPrefab); 
+                InventoryManager.instance.AddItem(item); 
+            }
+            else {
+                Debug.Log("No item found."); 
+            }
+            Destroy(gameObject); 
         }
-        else {
-            Debug.Log("No item found."); 
-        }
-        Destroy(gameObject); 
     }
 
 }

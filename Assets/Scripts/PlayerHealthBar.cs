@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerHealthBar : MonoBehaviour
 {
-    public static int MAX_HEALTH; 
+    public static int MAX_HEALTH = 5; 
 
     public static PlayerHealthBar Instance; 
 

@@ -5,14 +5,26 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 
 public class DialogueManager : MonoBehaviour
 {
+    // Dialogue UI 
     public TextMeshProUGUI nameText;
-    public TextMeshProUGUI dialogueText; 
+    public TextMeshProUGUI middleText;  
+    public Button continueButton; 
+    public TextMeshProUGUI continueButtonText;  
+
+    // Prompt UI
+    public TextMeshProUGUI rightButtonText; 
+    public TextMeshProUGUI leftButtonText; 
+    public Button leftButton; 
+    public Button rightButton;
+
     public Animator animator; 
 
     private Queue<string> sentences; 
+
     public static event Action<bool> OnDialogueComplete; 
     public static DialogueManager instance;
 
@@ -32,13 +44,29 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sentences = new Queue<string>(); 
+    
+    }
+
+    public void StartDialogueItem(DialogueItem item){
+        animator.SetBool("isOpen", true); 
+        //StopAllCoroutines(); 
+        
+        if ((item as Dialogue) != null){
+            StartDialogue((Dialogue) item); 
+        }   
+        else {
+            StartPrompt((Prompt) item); 
+        }
+
     }
 
     public void StartDialogue(Dialogue dialogue){
-        animator.SetBool("isOpen", true); 
-        nameText.text = dialogue.name; 
-        
+        nameText.enabled = true; 
+        middleText.enabled = true;
+        continueButton.enabled = true; 
+        continueButtonText.enabled = true; 
+
+        nameText.text = dialogue.name;
         if (sentences == null){
             sentences = new Queue<string>(); 
         }
@@ -50,7 +78,14 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence); 
         }
         DisplayNextSentence(); 
+
+        /*
+        foreach (string sentence in dialogue.sentences){
+            sentences.Enqueue(sentence); 
+        }
+        DisplayNextSentence(); */
     }
+
 
     public void DisplayNextSentence(){
         if (sentences.Count == 0){
@@ -63,15 +98,56 @@ public class DialogueManager : MonoBehaviour
     }
 
     IEnumerator TypeSentence(string sentence){
-        dialogueText.text = ""; 
+        middleText.text = ""; 
         foreach(char  letter in sentence.ToCharArray()){
-            dialogueText.text += letter; 
+            middleText.text += letter; 
             yield return new WaitForSeconds(0.05F); 
         }
     }
 
-    void EndDialgoue(){
-        Debug.Log("End conversation"); 
+
+    public void EndDialgoue(){
+        nameText.enabled = false; 
+        middleText.enabled = false;
+        continueButton.enabled = false; 
+        continueButtonText.enabled = false; 
+
+        Debug.Log("End dialogue."); 
+        animator.SetBool("isOpen", false); 
+        OnDialogueComplete?.Invoke(true); 
+    }
+
+    public void StartPrompt(Prompt prompt){
+        Debug.Log("starting prompt");
+        middleText.enabled = true;  
+        leftButton.enabled = true; 
+        rightButton.enabled = true;  
+        leftButtonText.enabled = true; 
+        rightButtonText.enabled = true;  
+
+        leftButtonText.text = prompt.leftButtonText; 
+        rightButtonText.text = prompt.rightButtonText; 
+        middleText.text = prompt.promptText; 
+        //StopAllCoroutines(); 
+        //StartCoroutine(TypeSentence(prompt.promptText)); 
+
+    }
+
+    public Button getRightButton(){
+        return rightButton; 
+    }
+
+    public Button getLeftButton(){
+        return leftButton; 
+    }
+
+    public void EndPrompt(){
+        leftButton.enabled = false; 
+        rightButton.enabled = false; 
+        leftButtonText.enabled = false; 
+        rightButtonText.enabled = false; 
+
+        Debug.Log("End prompt."); 
         animator.SetBool("isOpen", false); 
         OnDialogueComplete?.Invoke(true); 
     }

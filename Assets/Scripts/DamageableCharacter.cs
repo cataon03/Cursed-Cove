@@ -6,6 +6,8 @@ using UnityEngine;
 public class DamageableCharacter : MonoBehaviour, IDamageable
 {
     public static event Action<float> OnPlayerHit; 
+    public bool hasItemDrops; 
+    public GameObject itemDrops;
     public GameObject healthText;
     public bool disableSimulation = false;
 
@@ -74,7 +76,12 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     public bool _targetable = true;
 
     public bool _invincible = false;
-
+    private void OnDestroy()
+    {
+        if (hasItemDrops){
+            Instantiate(itemDrops, transform.position, Quaternion.identity);
+        }
+    }
     public void Start(){
         animator = GetComponent<Animator>();
 
@@ -136,7 +143,9 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     public void OnObjectDestroyed()
     {
         Destroy(gameObject);
+        OnDestroy();
     }
+
 
     public void FixedUpdate() {
         if(Invincible) {
