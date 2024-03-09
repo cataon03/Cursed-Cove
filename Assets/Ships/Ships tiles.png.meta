@@ -1,0 +1,5693 @@
+fileFormatVersion: 2
+guid: 0a0b4d3da789342838e8388979370acd
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ships tiles_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 513
+        width: 30
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 404a26a94dcb749009145577f38bb250
+      internalID: -756636657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 513
+        width: 30
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cbb70056955c451f965576e38d92d30
+      internalID: -1802112520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_2
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 513
+        width: 30
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c8bc597d5604299b765b89a046007b
+      internalID: 99003149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_3
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 513
+        width: 30
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f85b6c65b62b422487962c0c12b8704
+      internalID: 607410199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_4
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 513
+        width: 30
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07dd87587f62840828598028e4f43873
+      internalID: -105307381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_5
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 494
+        width: 44
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26fc6b9f0b5014d54a5f4d6e43b310b4
+      internalID: -1909918438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_6
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 494
+        width: 44
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 515c5ca3a0dcf44a0be96975fb5a0f86
+      internalID: -648865508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_7
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 494
+        width: 44
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b7b1250c6dc451f86bb1475bf358db
+      internalID: -1838341299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_8
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 494
+        width: 44
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f288d538f98f4842a8009470ce31659
+      internalID: -1933096015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_9
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 494
+        width: 44
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d20bdc0551494380a02b96846a3d2b3
+      internalID: 227059389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_10
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 416
+        width: 46
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d295fe4e9bb024e5193009b45291ccbc
+      internalID: 473940232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_11
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 416
+        width: 46
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20d686be3ebfb4059a3e70030d67b90f
+      internalID: -385410612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_12
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 416
+        width: 46
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6656b4f957f245d18e35b1a2ec40523
+      internalID: 971592053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_13
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 416
+        width: 46
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c5e062929d164c53974c6b25bc99bf1
+      internalID: 240623960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_14
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 416
+        width: 46
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f43d02ed3774447fa1fe99b358838be
+      internalID: -1589863429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 481
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e6179884808144beade78b47a4679a9
+      internalID: 113698002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_16
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 481
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f926f7f69f9849c0b0ccf05033d8caa
+      internalID: 917652101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_17
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 481
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eabeda024951d4716954d5921e5222eb
+      internalID: -791312451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_18
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 481
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5825867504c140debf5b6f948a7b6dc
+      internalID: -1029240690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_19
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 481
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a4c8e0cde2941c48857d6fc2f267f7
+      internalID: -741477080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_20
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 465
+        width: 44
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e608a28561fa4979ace6004c87bc704
+      internalID: -1625709137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_21
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 465
+        width: 44
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4e9c9a1459a9442a806f9592069fdb7
+      internalID: 1524680946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_22
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 465
+        width: 44
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e4f8ca61ffd044329dc4f9e12719c90
+      internalID: -2073263313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_23
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 465
+        width: 44
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e8289861e4448fdaf4d5c592870192
+      internalID: 1244346543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_24
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 465
+        width: 44
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3d40ca3c45634b9a9ddb3f3fcc11b5d
+      internalID: 1817937239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_25
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 416
+        width: 30
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046e6702590f149e7a7b92f554cb983c
+      internalID: -1957871301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_26
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 416
+        width: 30
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11bdc53e60e244ec2a23e8f531024d11
+      internalID: 809895690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_27
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 449
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 583044b44f3ec4cf7a8328e80549c556
+      internalID: 1154010190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_28
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 352
+        width: 44
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21583fb54ab57413f9a99ba493dbfc7c
+      internalID: 76278508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_29
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 352
+        width: 44
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd5fdc7bb7aa42f7ac38c02326b001a
+      internalID: -440262031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_30
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 414
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d15eb7625218f47b9a097887acb5b8f7
+      internalID: -1458855797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_31
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 432
+        width: 44
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0682e1a84684348eeb25f38d893c40cd
+      internalID: 126822938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_32
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 432
+        width: 44
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d577cc45b66404ec294a4bf38e985dbf
+      internalID: -643301200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_33
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 417
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4a8a613d91c44a2d9beae0f6d19d58d
+      internalID: 166790557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_34
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 385
+        width: 44
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07e684ec37b424548a470da6db5652f7
+      internalID: -806035778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_35
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 360
+        width: 46
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a7951d2147148f09fccd78d3edd3f8
+      internalID: 1515105164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_36
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 360
+        width: 46
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9140b3e76a4224ab39b40368ab6e2db3
+      internalID: 1316988350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_37
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 360
+        width: 46
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47fa24e46ecb94df88de951218dacccd
+      internalID: -19453973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_38
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 360
+        width: 46
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 094fb271554a9406fa635f9bffebd6f9
+      internalID: 646000745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_39
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 360
+        width: 46
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 377014043ec1e4191abacfbff967337f
+      internalID: 1334335454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_40
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 352
+        width: 44
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3efd923df21d54d4ba96d01653084f2e
+      internalID: -273966606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_41
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 296
+        width: 46
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e38dd3067a0e473caa3afd0ad090c1d
+      internalID: 578139396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_42
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 296
+        width: 46
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a29b2f0e1198841f986ebca80ad3bbe2
+      internalID: 1211434150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_43
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 296
+        width: 46
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e657f6e488caf4e1787119e23f770810
+      internalID: 1610178686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_44
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 296
+        width: 46
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63bf63443d16347c8ab31316a8812a42
+      internalID: 1785258023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_45
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 296
+        width: 46
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61c1cffbf82784f50853b4b6de8d36c8
+      internalID: -1899426348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_46
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 339
+        width: 20
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9716936e6f75e468baa32edc44bb412f
+      internalID: -1188111576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_47
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 337
+        width: 20
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87c3a7fc59ed74d90b302dc0f366151c
+      internalID: -1202199046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_48
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 339
+        width: 20
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49655be1a81c9496082ab5966104c518
+      internalID: -475775832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_49
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 337
+        width: 20
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69aa3b918119444b6a9083008520dc9b
+      internalID: -854745584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_50
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 339
+        width: 20
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b7ec34e3629945078de1b19378635a1
+      internalID: -293511979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_51
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 337
+        width: 20
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86bbb40f063af493fbc134712da114f5
+      internalID: -1676060135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_52
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 339
+        width: 20
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb8165df0f5ea4a9caa95d951082082b
+      internalID: -615709746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_53
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 337
+        width: 20
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 398931fd911bd44c6ac1a7cbb13c892b
+      internalID: -507506453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_54
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 339
+        width: 20
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fed3fa95155e643019778c4a760c8a92
+      internalID: 804046328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_55
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 337
+        width: 20
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d09456360fd184b178a4c0a3ab1c42ce
+      internalID: 87656608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_56
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 339
+        width: 20
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 770403525ed6840e7bbac3af7d2e5cbd
+      internalID: -191962630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_57
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 337
+        width: 20
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d07799a7ae7449ac8b4278e0d560e04
+      internalID: -389897679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_58
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 321
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0512a4208f8fe4f948b432a8875fa8a5
+      internalID: 1564020132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_59
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 321
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a989d38542f9642a592a6584fc8d9069
+      internalID: -1039436640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_60
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 320
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 152c642646f164870a2b2ecad88dfc48
+      internalID: 221994700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_61
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 320
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc463d1cfcf0342b9b1dde01e0167c2c
+      internalID: -941025489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_62
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 321
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b268ad9334c224a0a8f1cc55ed110e32
+      internalID: -1421282016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_63
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 321
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5be0d367b3042feb9d9d6f788ebee2
+      internalID: 102819011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_64
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 320
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e644914659fa647c28b013912a9d7690
+      internalID: 1137959619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_65
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 320
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af90c407c1c884d41977760844da76fc
+      internalID: -2012409505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_66
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 321
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3616ca40b7f24a338dbaa23ab136017
+      internalID: 1351269699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_67
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 321
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6f2e1acb379a45a1888c0c2e88e1d20
+      internalID: -1296271012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_68
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 320
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f88e4f5dc74eb42f89483b161d4db711
+      internalID: 1081905918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_69
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 320
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4812019851640417189c9d79ae9daa80
+      internalID: -2135769898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_70
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 321
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb61c6e4e28a4c9e80d71d155f0e2b8
+      internalID: -1651701774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_71
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 321
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a6deba06fb01494da32bf8f27f1df4c
+      internalID: -207636272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_72
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 320
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0b89a55ee0244518a9bb20c1cf57bf4
+      internalID: -519679040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_73
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 320
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f069af32511434b898a2c54ac0d850a7
+      internalID: 1425226087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_74
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 321
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c022a7f2febea4572a81705214ad1f3f
+      internalID: 1078490800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_75
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 321
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d302edeb4a44c46098df9dfadfad1b3e
+      internalID: 1751268141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_76
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 320
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 021caf0ef67a84517a54c175113c0779
+      internalID: -1723668923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_77
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 320
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edf1b868a526246d7a9863b8a0e19736
+      internalID: 1182028229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_78
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 321
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a689041f2dd594db98e8aff80bf940ae
+      internalID: -1893225195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_79
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 321
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fb905485f8ac4926ac190c10eff978b
+      internalID: 1085232524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_80
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 320
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64100103d0a4c45d78f9daaaeae39b54
+      internalID: -721784946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_81
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 320
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be3689a21faf44cba524d7f243202e6
+      internalID: 1027100734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_82
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 302
+        width: 28
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fed45bee6942481aa4c5ebff10cc333
+      internalID: 539022969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_83
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 299
+        width: 28
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5effe964fa1d4b8ba9c5a3cd03b3b91
+      internalID: 465872215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_84
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 302
+        width: 28
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61308419477294f1eb660f6b792325b8
+      internalID: 1761784763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_85
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 299
+        width: 28
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42dff0e19f0444c73b0d76d93b81db1a
+      internalID: 767518337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_86
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 302
+        width: 28
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7932341a96b9495485f026fabd308d3
+      internalID: -745603033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_87
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 299
+        width: 28
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 421f9528bc6ae4b73ad7ae8432ef5560
+      internalID: -1935182381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_88
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 302
+        width: 28
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbdac85ee439241a99c8cd2b97bde521
+      internalID: -1884832787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_89
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 299
+        width: 28
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5c0aa47740f40adbfe2a63131ecd42
+      internalID: -81158402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_90
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 302
+        width: 28
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d36beabaadca431fb7b33b5a343ef94
+      internalID: 1541916724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_91
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 299
+        width: 28
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 691a130fe3407496aa71ea125fdcd93c
+      internalID: 784170487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_92
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 302
+        width: 28
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d71b92ed37a548c08de18cd19867973
+      internalID: -1200752035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_93
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 299
+        width: 28
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59bd438150c0746899fe25c9b91ef6f2
+      internalID: -1859090206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_94
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 160
+        width: 46
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d26d54a46fa146c6b308a3194ed3982
+      internalID: 1180605321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_95
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 160
+        width: 46
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aaa036f771b9466988b3234351db27c
+      internalID: 1581112310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_96
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 288
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82a66fa1d78d946ca814c4f2fb37b9df
+      internalID: 794874496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_97
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 288
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57fe0c9fac32f4ec1bdc427070123332
+      internalID: 706371825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_98
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 288
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b111d7d8024b64e5a80b741e3877e546
+      internalID: 2135037094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_99
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 267
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc9edc48abf57480fb8d2a2cd33df9be
+      internalID: 915041099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_100
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 267
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f22056a7112c148628d4ca38212f5eab
+      internalID: 41204282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_101
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 265
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40e78cf1b19fc45e5925c549ffe3e965
+      internalID: -2094400767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_102
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 263
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d68a80cc1fe004e3884e6e31f6bbf8b7
+      internalID: -1895810881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_103
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 267
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b4227325c0634c259386459784880e1
+      internalID: -364732293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_104
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 267
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7726d99aa65d240899647b417f47f540
+      internalID: -377609197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_105
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 265
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b929063512794836b0839093daec211
+      internalID: -1394476049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_106
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 263
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec7f9a8f251c8469a9971df1d1c4eb28
+      internalID: -1639192597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_107
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 267
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6d23f731cc1452e83550aa587deeff
+      internalID: 161751541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_108
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 267
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bedbf3f327c9d49659d6cb889a641b6f
+      internalID: -22948395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_109
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 265
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9aa969066ba34288a3b5e3f3cd6d981
+      internalID: -344552597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_110
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 263
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace4b3e1fbb894df4aede2521113b7fe
+      internalID: 1277858632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_111
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 267
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed871bea34700430eab92c10f842f144
+      internalID: -790133332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_112
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 267
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf127f1be54c8416bb25023d6a9b4a8e
+      internalID: 1624395451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_113
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 265
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6355fe9a0c4e54ff5a0fde3db9465a97
+      internalID: 986571260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_114
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 263
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13af4eca337a047e3be064ce52233f78
+      internalID: -1549060444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_115
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 267
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4ba0cf10a9ad4198a795c2209f03039
+      internalID: 636405764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_116
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 267
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 772d4ac2f1c504eb3bb5c8857b4a392a
+      internalID: -126041604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_117
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 265
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a59721a5c13741e68a3f6ba774aee31
+      internalID: -1909137059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_118
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 263
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc85ff56207424166b485ab1cc38b4e0
+      internalID: 705059145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_119
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 267
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc3160bb66724dda9a2665e02b3e3b6
+      internalID: 631923474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_120
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 267
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a606db13ea0c48418910c826cc0a723
+      internalID: -1822959768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_121
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 265
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d729deb2422a9466e83601f11830149c
+      internalID: 849694954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_122
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 263
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b26bee6bfc4d64963a4ef81da4480d96
+      internalID: -915343443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_123
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 232
+        width: 46
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c040be6ebade64b2d9112970955051ad
+      internalID: 216488327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_124
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 232
+        width: 384
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde9f06a192da4eb090288bfc0ba473f
+      internalID: 1543630201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_125
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 168
+        width: 46
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdf8dd1e51e584185b0a4a843a277293
+      internalID: 920295516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_126
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 201
+        width: 5
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a678393fb39df4799b544ec24fcd9c1e
+      internalID: 1071669368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_127
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 203
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ed88b9c0f265437ea9334b1a0636de4
+      internalID: -2102690750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_128
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 201
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a9ca4ca4d69946c3b4fd784495eb9e1
+      internalID: -748321778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_129
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 195
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d6506fff0a6549d39a6b7608ae41301
+      internalID: -1107270488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_130
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 203
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf27615e6455b4e32b3974333e8eb4a7
+      internalID: -1712542701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_131
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 201
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a995f3e0df58422aa54261daab61d93
+      internalID: -634994111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_132
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 195
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d21b65569594eb1a76943adf4150f9
+      internalID: 541216119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_133
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 203
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ac1f6c0fcd0486c8c89d2fdcbfd2a2
+      internalID: 1630353521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_134
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 201
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a05288c26a6d428785b3a6397f622ca
+      internalID: 1387025112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_135
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 195
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e87cc546ef85445190dd99428d451de
+      internalID: 2098969575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_136
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 203
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2066c0d9f573d4bc1a9bdd6f5570795a
+      internalID: 2007170933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_137
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 201
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afd2e55af343747a48437afb266d7477
+      internalID: 1268090283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_138
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 195
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f2fa67fdfd9c4f6ba081337fd34c908
+      internalID: 133342896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_139
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 203
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4377b8f18ee214503b44344c7ed50ca4
+      internalID: 577387460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_140
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 201
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e4c18c1c65284c7096255b02c1ded68
+      internalID: 1030028202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_141
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 195
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe87cda1646c045d287da2a567a97070
+      internalID: -1276682575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_142
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 203
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46bbd8f6857ac412eae8e09feede2800
+      internalID: 1349115172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_143
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 201
+        width: 34
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba30d79289a44e4da9e52c7d5861982
+      internalID: 53583096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_144
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 195
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de4455bfaaa784d0680bca2e890e8caa
+      internalID: -1832183083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_145
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 173
+        width: 28
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a089ee0ac827477ebdfdfd9c1fd76f1
+      internalID: -160014338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_146
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 173
+        width: 28
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 850fda1aecfc94c9db6ed574e199334b
+      internalID: 228272953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_147
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 173
+        width: 28
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8256fd545557143668878e2e04958a1c
+      internalID: 890876787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_148
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 173
+        width: 28
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55db7b09b36594039af282d88c33ec03
+      internalID: 332966023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_149
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 173
+        width: 28
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0370bab2631834097ae69e29410030d6
+      internalID: -1127017087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_150
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 173
+        width: 28
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1138f686e56cd47e1abbda5ec65da115
+      internalID: 1636321314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_151
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 172
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de496367cf5254471861690cb3ea2058
+      internalID: -1456465141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_152
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 172
+        width: 19
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c027c80e8cc7436e8a8f68f2ee8c560
+      internalID: -510038398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_153
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 172
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7573091624c404c4a974edadf96f3bf9
+      internalID: 2123711324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_154
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 172
+        width: 19
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b409bd1d8c089404b93641c97f2b88b6
+      internalID: 73508151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_155
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 173
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8989f31434fdd45e4b1d2a846df4ed8e
+      internalID: 527145049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_156
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 172
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42fb5cc204ccd4a5a8c99f24c0b9643d
+      internalID: -232619078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_157
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 173
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03af2bdf8213b477a893daa9f51be083
+      internalID: -598692331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_158
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 160
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0d60fbe0251d46679046e82e9763b7f
+      internalID: -1696354460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_159
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 141
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7999ac6e94ca648208ae3285d2fe8e02
+      internalID: 1854795295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_160
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 141
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 697d432f42c97460da2d533e27ea2ba2
+      internalID: 1530378401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_161
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 141
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ab27814164e3487bb30eaa833413013
+      internalID: -1993191160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_162
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 141
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32316c3aa97db4c689fdc61d1a84ca40
+      internalID: -176335220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_163
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 141
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d608c3b3bcd7841479c4a13a0587ac26
+      internalID: -1606419655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_164
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 141
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e87497d75dac49a896c1e658cfd82e9
+      internalID: -1264832174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_165
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 141
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c30ec932193c4f7f9bd621669ffbd87
+      internalID: 172066923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_166
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 142
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0834cb191d37448b682a319226ecf77b
+      internalID: -1010149187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_167
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 141
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea733db08f6d84f9899269fa430289fc
+      internalID: 751477570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_168
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 140
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cb8609bfb6e044c2a04a4434acb3a4e
+      internalID: -966268874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_169
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 140
+        width: 20
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee963cb9c237c47a59a997a992233276
+      internalID: 54418834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_170
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 141
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ff6388fccb1473db5fe228a8d5d549
+      internalID: 100535360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_171
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 141
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef9617287f9eb49319a64953d4232559
+      internalID: 2082589969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_172
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 141
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a9ac5f791619467aa7ba43c3662258a
+      internalID: -497049366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_173
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 140
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df445369e3c6846b488eedc3bbc85c7a
+      internalID: -1074352120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_174
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 140
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29696e57c5318463d8c6b735feb97de0
+      internalID: -1623152904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_175
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 106
+        width: 192
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1fcfee25e21a4a80bd0f3bae095783a
+      internalID: -1258191035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_176
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 108
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 405fb61f97b834159bdd682825c83226
+      internalID: 2084914370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_177
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 108
+        width: 19
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcc290c5e82c5415caa1d3ed954b6823
+      internalID: -139938764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_178
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 108
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d16f90692a9448cda2ba349590a9162
+      internalID: 894382331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_179
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 108
+        width: 19
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae560e7d7b1fa4984b5cd043635ee0a6
+      internalID: 240855447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_180
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 109
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88c689d9623954cef917c682bb21ebe6
+      internalID: -903361298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_181
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 108
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a891cfd82c44874bc49b65e1c15cb8
+      internalID: -140630459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_182
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 109
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b4005148f579461c8d1b539b928ff5c
+      internalID: -1115138190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_183
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 65
+        width: 14
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27427ab7243c646a1bafb1de7cfc8647
+      internalID: 1886452418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_184
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 37
+        width: 15
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee8fdabe16eb04543948ee4669ff93d0
+      internalID: 2100690862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_185
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 79
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e88ce5da3c8a04246b6c80da687f066a
+      internalID: -211821411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_186
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 100
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72b7ad010afad40e9a56a5f002610b3b
+      internalID: 1867877278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_187
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 98
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 187efe534e7e44a58974674bc0d1e680
+      internalID: 1159312101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_188
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 74
+        width: 28
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ff13902426048c79755945fac2b256
+      internalID: 768629228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_189
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 74
+        width: 28
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e52bfc5039945e6934a47f24017459
+      internalID: -326465539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_190
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 74
+        width: 28
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 194671ee9ffad4655b8b31f8dd1af301
+      internalID: -385151568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_191
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 74
+        width: 28
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53fc31746444d43c3894e6a6dae462bf
+      internalID: -139528507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_192
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 74
+        width: 28
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 592e28c0feff6444ab68f0066b4ef750
+      internalID: 1686333210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_193
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 74
+        width: 28
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f9f853cd5ff7484ea752078a2516f66
+      internalID: 187192447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_194
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 84
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e45e3b85d5c0441828e900efdbdd827e
+      internalID: -2043994636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_195
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 82
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de1a84c4d76504e058087fc43096ec0b
+      internalID: -393313810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_196
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 84
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9220abfb6837641a8aae2a68f2d21cdd
+      internalID: 1245480956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_197
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 82
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 095a0b93a82554712a3a77f6068920f4
+      internalID: -96814192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_198
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 82
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 544871a9c8a754a489e1a5fa21cdc2b0
+      internalID: 389296367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_199
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 82
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e6b3ed35d57469fb19afd0dc3c01fb
+      internalID: 173130101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_200
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 77
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfca9198692c9403ab8cb32cd865a358
+      internalID: -234492056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_201
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 78
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec07bebc3f444436588378c8d9a2f85f
+      internalID: 170433129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_202
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 77
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 827d71ea6a151419fbf62702b3ed8e23
+      internalID: 836057838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_203
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 76
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2374f9ac4110b4a7c9828aebae715f0b
+      internalID: 1673363256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_204
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 76
+        width: 20
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2c49aa7454e14d21bf798910fe7dbf5
+      internalID: 1768786143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_205
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 77
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 156009f2764d74bc4b45b4cfdac5ad1b
+      internalID: -350044189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_206
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 77
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e947e4f3f9749e78719fb4972a69f6
+      internalID: 1573436956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_207
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 77
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d1e7ca32f5c94e7ca616260d3d6cd25
+      internalID: -1826836236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_208
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 76
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ebdd5bee5bdb4055b2959b5631a8820
+      internalID: 1043396761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_209
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 76
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0db09435372a451b9ac6fc0ed57058c
+      internalID: 490885608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_210
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 31
+        width: 14
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea21c7a617dcb4280a2b50f0056707c0
+      internalID: 263286095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_211
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 66
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa7fe167f65834aeab1e906152aba7f7
+      internalID: -1070263093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_212
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 32
+        width: 16
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07b8e17bb3089435c9dd7558e3a50b2c
+      internalID: -1167156919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_213
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 65
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6176c11718e074da284a2573d485ac51
+      internalID: 1981339408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_214
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 65
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a64f51daad9a4841bc4a7f594baf710
+      internalID: -1974463324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_215
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 68
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcae58d091ddb4e15b7d97f44d404077
+      internalID: -565826501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_216
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 68
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484f7a8b2733c43bdaf6aa939431bcf9
+      internalID: -1919304050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_217
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 36
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95320d8ee4ba0445c81d86695466bc27
+      internalID: 302767906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_218
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 54
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfcf06d66750940f397f42c2e1bef9e5
+      internalID: 1257948147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_219
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 36
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf143450858e34cd4b2ea10b0893dd98
+      internalID: -2084775997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_220
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 54
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45b0983dc8702487488e55f7318ea137
+      internalID: 408747695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_221
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 36
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e591cc8b3590846a6a42d97abf4679b2
+      internalID: -1350384336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_222
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 54
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94edd530c3f404f6ab912c3141a76c3e
+      internalID: 951155863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_223
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 36
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34485c646fc0c406a9bcdf1c22f48a4a
+      internalID: 125740473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_224
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 54
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c68ea4f3e05534f279dc09139919c2c1
+      internalID: 116597408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_225
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 36
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60da757de1497427298d070fcf04c312
+      internalID: 1510650726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_226
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 54
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9aae8f858130498daf0763cb648a2fb
+      internalID: 1645411557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_227
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 36
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 031f293933f5a4bd0b0802162ac041c4
+      internalID: 939644233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_228
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 54
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffcb88f8e1e7f4b54b0076b56e1f7829
+      internalID: -1508803841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_229
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 50
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 811b34217127249e3935f3f59478cb86
+      internalID: -175981575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_230
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 50
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c105173f5d6542dea21449fcc866040
+      internalID: -2100702891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_231
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 55
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a0d8975660cf48e1a603518894e3458
+      internalID: 46116100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_232
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 59
+        width: 12
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee9f925b1b2648c1b481e04476748c9
+      internalID: -409333983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_233
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 16
+        width: 4
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f3e03d102eca4d4cb986da34f675e0a
+      internalID: -1947207105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_234
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 36
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c5106c2747cf4ef0b87995d54123b36
+      internalID: -1388540156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_235
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 34
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3feba08b70f574d50a9e7a993dd0dd84
+      internalID: -1630407261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_236
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 33
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b04ab413c42498298afcfdfdfc2c45
+      internalID: -715147407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_237
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b14e7e491893349ccb06a9a9b17585a4
+      internalID: -629913303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_238
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 22
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 054dd5eadb54f45d89363f19bbac7293
+      internalID: -619786074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_239
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 4
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294550548c13c435f882cf34598a7b78
+      internalID: -533010908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_240
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 22
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b57abd4944d495abc6e7cda3030e74
+      internalID: 398867047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_241
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 4
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb2c73250d084ce48557adb18463024
+      internalID: -587598675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_242
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 22
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd71ca3a919f4a5b80c50e69b0ec859
+      internalID: -428699086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_243
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 4
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6652ada80dea0446aa2b6c185e13d4b8
+      internalID: -71251911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_244
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 22
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 095f9fb0a75a241c9906f1fbfb950b75
+      internalID: -776105408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_245
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 4
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e512a4ba7953742a2889ede20f1389fb
+      internalID: -781613597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_246
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 22
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 935299a27f593408bbb826664eae0d58
+      internalID: -1163608071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_247
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 4
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1360a98b6df84ff2a0801e80c6bc510
+      internalID: -834832114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_248
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 22
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5533e2b6771554866b7f60ab748ca4f0
+      internalID: -1526988353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_249
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 8
+        width: 7
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d21f5b289335f42a8b98fd3122f85007
+      internalID: -1843329590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_250
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 1
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92071101490984ac8b779f8c41f85b10
+      internalID: 313783845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_251
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 2
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3f958f870f1040ca98e877056aa7695
+      internalID: -1694763265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ships tiles_252
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 3
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe4fb49f39554014b2eb95aa5c83615
+      internalID: -1356397698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Ships tiles_0: -756636657
+      Ships tiles_1: -1802112520
+      Ships tiles_10: 473940232
+      Ships tiles_100: 41204282
+      Ships tiles_101: -2094400767
+      Ships tiles_102: -1895810881
+      Ships tiles_103: -364732293
+      Ships tiles_104: -377609197
+      Ships tiles_105: -1394476049
+      Ships tiles_106: -1639192597
+      Ships tiles_107: 161751541
+      Ships tiles_108: -22948395
+      Ships tiles_109: -344552597
+      Ships tiles_11: -385410612
+      Ships tiles_110: 1277858632
+      Ships tiles_111: -790133332
+      Ships tiles_112: 1624395451
+      Ships tiles_113: 986571260
+      Ships tiles_114: -1549060444
+      Ships tiles_115: 636405764
+      Ships tiles_116: -126041604
+      Ships tiles_117: -1909137059
+      Ships tiles_118: 705059145
+      Ships tiles_119: 631923474
+      Ships tiles_12: 971592053
+      Ships tiles_120: -1822959768
+      Ships tiles_121: 849694954
+      Ships tiles_122: -915343443
+      Ships tiles_123: 216488327
+      Ships tiles_124: 1543630201
+      Ships tiles_125: 920295516
+      Ships tiles_126: 1071669368
+      Ships tiles_127: -2102690750
+      Ships tiles_128: -748321778
+      Ships tiles_129: -1107270488
+      Ships tiles_13: 240623960
+      Ships tiles_130: -1712542701
+      Ships tiles_131: -634994111
+      Ships tiles_132: 541216119
+      Ships tiles_133: 1630353521
+      Ships tiles_134: 1387025112
+      Ships tiles_135: 2098969575
+      Ships tiles_136: 2007170933
+      Ships tiles_137: 1268090283
+      Ships tiles_138: 133342896
+      Ships tiles_139: 577387460
+      Ships tiles_14: -1589863429
+      Ships tiles_140: 1030028202
+      Ships tiles_141: -1276682575
+      Ships tiles_142: 1349115172
+      Ships tiles_143: 53583096
+      Ships tiles_144: -1832183083
+      Ships tiles_145: -160014338
+      Ships tiles_146: 228272953
+      Ships tiles_147: 890876787
+      Ships tiles_148: 332966023
+      Ships tiles_149: -1127017087
+      Ships tiles_15: 113698002
+      Ships tiles_150: 1636321314
+      Ships tiles_151: -1456465141
+      Ships tiles_152: -510038398
+      Ships tiles_153: 2123711324
+      Ships tiles_154: 73508151
+      Ships tiles_155: 527145049
+      Ships tiles_156: -232619078
+      Ships tiles_157: -598692331
+      Ships tiles_158: -1696354460
+      Ships tiles_159: 1854795295
+      Ships tiles_16: 917652101
+      Ships tiles_160: 1530378401
+      Ships tiles_161: -1993191160
+      Ships tiles_162: -176335220
+      Ships tiles_163: -1606419655
+      Ships tiles_164: -1264832174
+      Ships tiles_165: 172066923
+      Ships tiles_166: -1010149187
+      Ships tiles_167: 751477570
+      Ships tiles_168: -966268874
+      Ships tiles_169: 54418834
+      Ships tiles_17: -791312451
+      Ships tiles_170: 100535360
+      Ships tiles_171: 2082589969
+      Ships tiles_172: -497049366
+      Ships tiles_173: -1074352120
+      Ships tiles_174: -1623152904
+      Ships tiles_175: -1258191035
+      Ships tiles_176: 2084914370
+      Ships tiles_177: -139938764
+      Ships tiles_178: 894382331
+      Ships tiles_179: 240855447
+      Ships tiles_18: -1029240690
+      Ships tiles_180: -903361298
+      Ships tiles_181: -140630459
+      Ships tiles_182: -1115138190
+      Ships tiles_183: 1886452418
+      Ships tiles_184: 2100690862
+      Ships tiles_185: -211821411
+      Ships tiles_186: 1867877278
+      Ships tiles_187: 1159312101
+      Ships tiles_188: 768629228
+      Ships tiles_189: -326465539
+      Ships tiles_19: -741477080
+      Ships tiles_190: -385151568
+      Ships tiles_191: -139528507
+      Ships tiles_192: 1686333210
+      Ships tiles_193: 187192447
+      Ships tiles_194: -2043994636
+      Ships tiles_195: -393313810
+      Ships tiles_196: 1245480956
+      Ships tiles_197: -96814192
+      Ships tiles_198: 389296367
+      Ships tiles_199: 173130101
+      Ships tiles_2: 99003149
+      Ships tiles_20: -1625709137
+      Ships tiles_200: -234492056
+      Ships tiles_201: 170433129
+      Ships tiles_202: 836057838
+      Ships tiles_203: 1673363256
+      Ships tiles_204: 1768786143
+      Ships tiles_205: -350044189
+      Ships tiles_206: 1573436956
+      Ships tiles_207: -1826836236
+      Ships tiles_208: 1043396761
+      Ships tiles_209: 490885608
+      Ships tiles_21: 1524680946
+      Ships tiles_210: 263286095
+      Ships tiles_211: -1070263093
+      Ships tiles_212: -1167156919
+      Ships tiles_213: 1981339408
+      Ships tiles_214: -1974463324
+      Ships tiles_215: -565826501
+      Ships tiles_216: -1919304050
+      Ships tiles_217: 302767906
+      Ships tiles_218: 1257948147
+      Ships tiles_219: -2084775997
+      Ships tiles_22: -2073263313
+      Ships tiles_220: 408747695
+      Ships tiles_221: -1350384336
+      Ships tiles_222: 951155863
+      Ships tiles_223: 125740473
+      Ships tiles_224: 116597408
+      Ships tiles_225: 1510650726
+      Ships tiles_226: 1645411557
+      Ships tiles_227: 939644233
+      Ships tiles_228: -1508803841
+      Ships tiles_229: -175981575
+      Ships tiles_23: 1244346543
+      Ships tiles_230: -2100702891
+      Ships tiles_231: 46116100
+      Ships tiles_232: -409333983
+      Ships tiles_233: -1947207105
+      Ships tiles_234: -1388540156
+      Ships tiles_235: -1630407261
+      Ships tiles_236: -715147407
+      Ships tiles_237: -629913303
+      Ships tiles_238: -619786074
+      Ships tiles_239: -533010908
+      Ships tiles_24: 1817937239
+      Ships tiles_240: 398867047
+      Ships tiles_241: -587598675
+      Ships tiles_242: -428699086
+      Ships tiles_243: -71251911
+      Ships tiles_244: -776105408
+      Ships tiles_245: -781613597
+      Ships tiles_246: -1163608071
+      Ships tiles_247: -834832114
+      Ships tiles_248: -1526988353
+      Ships tiles_249: -1843329590
+      Ships tiles_25: -1957871301
+      Ships tiles_250: 313783845
+      Ships tiles_251: -1694763265
+      Ships tiles_252: -1356397698
+      Ships tiles_26: 809895690
+      Ships tiles_27: 1154010190
+      Ships tiles_28: 76278508
+      Ships tiles_29: -440262031
+      Ships tiles_3: 607410199
+      Ships tiles_30: -1458855797
+      Ships tiles_31: 126822938
+      Ships tiles_32: -643301200
+      Ships tiles_33: 166790557
+      Ships tiles_34: -806035778
+      Ships tiles_35: 1515105164
+      Ships tiles_36: 1316988350
+      Ships tiles_37: -19453973
+      Ships tiles_38: 646000745
+      Ships tiles_39: 1334335454
+      Ships tiles_4: -105307381
+      Ships tiles_40: -273966606
+      Ships tiles_41: 578139396
+      Ships tiles_42: 1211434150
+      Ships tiles_43: 1610178686
+      Ships tiles_44: 1785258023
+      Ships tiles_45: -1899426348
+      Ships tiles_46: -1188111576
+      Ships tiles_47: -1202199046
+      Ships tiles_48: -475775832
+      Ships tiles_49: -854745584
+      Ships tiles_5: -1909918438
+      Ships tiles_50: -293511979
+      Ships tiles_51: -1676060135
+      Ships tiles_52: -615709746
+      Ships tiles_53: -507506453
+      Ships tiles_54: 804046328
+      Ships tiles_55: 87656608
+      Ships tiles_56: -191962630
+      Ships tiles_57: -389897679
+      Ships tiles_58: 1564020132
+      Ships tiles_59: -1039436640
+      Ships tiles_6: -648865508
+      Ships tiles_60: 221994700
+      Ships tiles_61: -941025489
+      Ships tiles_62: -1421282016
+      Ships tiles_63: 102819011
+      Ships tiles_64: 1137959619
+      Ships tiles_65: -2012409505
+      Ships tiles_66: 1351269699
+      Ships tiles_67: -1296271012
+      Ships tiles_68: 1081905918
+      Ships tiles_69: -2135769898
+      Ships tiles_7: -1838341299
+      Ships tiles_70: -1651701774
+      Ships tiles_71: -207636272
+      Ships tiles_72: -519679040
+      Ships tiles_73: 1425226087
+      Ships tiles_74: 1078490800
+      Ships tiles_75: 1751268141
+      Ships tiles_76: -1723668923
+      Ships tiles_77: 1182028229
+      Ships tiles_78: -1893225195
+      Ships tiles_79: 1085232524
+      Ships tiles_8: -1933096015
+      Ships tiles_80: -721784946
+      Ships tiles_81: 1027100734
+      Ships tiles_82: 539022969
+      Ships tiles_83: 465872215
+      Ships tiles_84: 1761784763
+      Ships tiles_85: 767518337
+      Ships tiles_86: -745603033
+      Ships tiles_87: -1935182381
+      Ships tiles_88: -1884832787
+      Ships tiles_89: -81158402
+      Ships tiles_9: 227059389
+      Ships tiles_90: 1541916724
+      Ships tiles_91: 784170487
+      Ships tiles_92: -1200752035
+      Ships tiles_93: -1859090206
+      Ships tiles_94: 1180605321
+      Ships tiles_95: 1581112310
+      Ships tiles_96: 794874496
+      Ships tiles_97: 706371825
+      Ships tiles_98: 2135037094
+      Ships tiles_99: 915041099
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
