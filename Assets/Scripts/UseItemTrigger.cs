@@ -11,7 +11,7 @@ public class UseItemTrigger : MonoBehaviour
     public CameraSwitcher cameraSwitcher; 
     [SerializeField] public bool withCameraPan; 
     public static event Action<bool> OnCharacterFreeze; 
-    public static event Action<bool> OnBossEnabled; 
+    public static event Action OnBossEnabled; 
     public static event Action OnItemUsed; 
 
     void Awake(){
@@ -31,8 +31,8 @@ public class UseItemTrigger : MonoBehaviour
     void handleOnRightButtonPress(){
         stopListeningToPrompt(); 
         InventoryManager.instance.RemoveItem(itemToUse);
-        Debug.Log("using boards"); 
         OnItemUsed?.Invoke(); 
+        OnBossEnabled?.Invoke(); 
         gameObject.GetComponent<Collider2D>().enabled = false; 
     }
 
@@ -52,8 +52,6 @@ public class UseItemTrigger : MonoBehaviour
             }
         } 
     }
-
-   
 
     void handleOnDialogueComplete(bool isDialogueComplete){
         if (isDialogueComplete){

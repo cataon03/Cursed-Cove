@@ -110,8 +110,6 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
 
             // Apply force 
             // Impulse for instantaneous forces
-            Debug.Log("Damage applied to " + gameObject.tag);
-            
             rb.AddForce(knockback, ForceMode2D.Impulse);
 
             if(canTurnInvincible) {

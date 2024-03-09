@@ -13,9 +13,6 @@ public class PickupableItem : MonoBehaviour
                 InventoryManager.instance.SetInventoryItemPrefab(itemPrefab); 
                 InventoryManager.instance.AddItem(item); 
             }
-            else {
-                Debug.Log("No item found."); 
-            }
             Destroy(gameObject); 
         }
     }

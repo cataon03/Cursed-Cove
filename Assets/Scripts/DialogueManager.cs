@@ -53,7 +53,6 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void StartDialogueItem(DialogueItem item){
-        Debug.Log("starting dialogue"); 
         OnPlayerAttackDisabled?.Invoke(true); 
 
         animator.SetBool("isOpen", true); 
@@ -84,17 +83,10 @@ public class DialogueManager : MonoBehaviour
             sentences.Clear(); 
         }
 
-        foreach (string sentence in dialogue.sentences){
-            Debug.Log("enqueue " + sentence); 
+        foreach (string sentence in dialogue.sentences){ 
             sentences.Enqueue(sentence); 
         }
-        DisplayNextSentence(); 
-
-        /*
-        foreach (string sentence in dialogue.sentences){
-            sentences.Enqueue(sentence); 
-        }
-        DisplayNextSentence(); */
+        DisplayNextSentence();
     }
 
 
@@ -129,13 +121,12 @@ public class DialogueManager : MonoBehaviour
         continueButton.enabled = false; 
         continueButtonText.enabled = false; 
         middleText.text = ""; 
-        Debug.Log("End dialogue."); 
+
         animator.SetBool("isOpen", false); 
         OnDialogueComplete?.Invoke(true); 
     }
 
     public void StartPrompt(Prompt prompt){
-        Debug.Log("starting prompt");
         middleText.enabled = true;  
         leftButton.enabled = true; 
         rightButton.enabled = true;  
@@ -170,7 +161,6 @@ public class DialogueManager : MonoBehaviour
         leftButtonText.enabled = false; 
         rightButtonText.enabled = false; 
 
-        Debug.Log("End prompt."); 
         animator.SetBool("isOpen", false); 
         OnDialogueComplete?.Invoke(true); 
     }
@@ -186,15 +176,12 @@ public class DialogueManager : MonoBehaviour
         }
 
     }
-    
 
     public void HandleRightButtonClick(){
-        Debug.Log("pressing right button"); 
         OnRightButtonPress?.Invoke(); 
         EndDialogueItem(); 
     }
     public void HandleLeftButtonClick(){
-        Debug.Log("pressingLeftButton"); 
         OnLeftButtonPress?.Invoke(); 
         EndDialogueItem(); 
     }

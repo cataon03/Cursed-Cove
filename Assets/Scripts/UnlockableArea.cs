@@ -14,7 +14,6 @@ public class UnlockableArea : MonoBehaviour
     }
     
     void handleOnItemUsed(){
-        Debug.Log("in handler"); 
         unlockableArea.SetActive(true); 
         oldBoundary.SetActive(false); 
         newBoundary.SetActive(true); 

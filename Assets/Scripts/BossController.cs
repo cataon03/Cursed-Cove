@@ -37,11 +37,12 @@ public class BossController : MonoBehaviour, ICharacter
     bool isMoving = false;
 
     void Awake(){
-        DialogueTriggerWithCollider.OnCharacterFreeze += OnFreeze;
+        //DialogueTriggerWithCollider.OnCharacterFreeze += OnFreeze;
     }
 
     void Start(){
-        canMove = true; 
+        UseItemTrigger.OnBossEnabled += handleOnBossEnabled; 
+        canMove = false; 
         isMoving = false;
         lastPosition = transform.position; 
         rb = GetComponent<Rigidbody2D>();
@@ -74,6 +75,14 @@ public class BossController : MonoBehaviour, ICharacter
     }
     void Update(){
         
+    }
+    
+    void OnDestroy(){
+        UseItemTrigger.OnBossEnabled -= handleOnBossEnabled; 
+    }
+
+    void handleOnBossEnabled(){
+        canMove = true; 
     }
 
     void FixedUpdate() {
@@ -117,7 +126,6 @@ public class BossController : MonoBehaviour, ICharacter
                 currentWaypoint++; 
             }
             if (attackZone.detectedObjs.Count > 0){
-                Debug.Log("attack!"); 
                 animator.SetTrigger("attack");
             }
             
@@ -148,12 +156,10 @@ public class BossController : MonoBehaviour, ICharacter
     }
 
     public void LockMovement() {
-        Debug.Log("Position locked");
         canMove = false;
     }
 
     public void UnlockMovement() {
-        Debug.Log("Position unlocked"); 
         canMove = true;
     }
 }

@@ -48,14 +48,7 @@ public class Chest : MonoBehaviour
         if (other.CompareTag("Player")) 
         {
             startListeningToPrompt(); 
-            //Debug.Log("in range to open"); 
             DialogueManager.instance.StartDialogueItem(prompt); 
-            //DialogueManager.instance.Start(prompt); 
-           // yesButton = DialogueManager.instance.getRightButton();
-          //  noButton = DialogueManager.instance.getLeftButton(); 
-
-            //yesButton.onClick.AddListener(HandleYesClick);
-           // noButton.onClick.AddListener(HandleNoClick); 
             isPlayerInRange = true;
         }
     }
@@ -66,23 +59,6 @@ public class Chest : MonoBehaviour
         inventoryItem.InitialiseItem(item);
     }
 
-/*
-    void HandleYesClick(){
-        if (InventoryManager.instance.HasItem(key)){
-            OpenChest();  
-        }
-        else { 
-            //PromptManager.instance.ClosePrompt(); 
-            DialogueManager.instance.EndPrompt(); 
-            DialogueManager.instance.StartDialogueItem(dialogue); 
-        }
-    }
-
-    void HandleNoClick(){
-        //Debug.Log("No"); 
-        DialogueManager.instance.EndPrompt(); 
-    }
-*/
     void OnTriggerExit2D(Collider2D other)
     {
         // Check if the collider belongs to the player
@@ -101,13 +77,10 @@ public class Chest : MonoBehaviour
 
     public void handleOnRightButtonPress(){
         stopListeningToPrompt(); 
-        Debug.Log("handling right button press in chest"); 
         if (InventoryManager.instance.HasItem(key)){
-            Debug.Log("1"); 
             OpenChest();  
         }
         else {
-            Debug.Log("2"); 
             DialogueManager.instance.EndDialogueItem(); 
             DialogueManager.instance.StartDialogueItem(needKeyDialogue); 
         }
@@ -117,20 +90,12 @@ public class Chest : MonoBehaviour
     public void OpenChest()
     {
         // Logic to open the chest
-        Debug.Log("Chest opened!");
-        //.instance.ClosePrompt(); 
         spriteRenderer.sprite = openChest; 
         insideChest.SetActive(true); 
         if (!hasPopulatedItem){
             initInsideChest(); 
         }
-        // Optionally disable the prompt and collider to prevent reopening
         
         GetComponent<Collider2D>().enabled = false;
-
-        // Add additional logic here for what happens when the chest is opened
-        // e.g., spawning items, playing an animation, etc.
-    }
-
-    
+    }   
 }
