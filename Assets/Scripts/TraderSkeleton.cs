@@ -45,9 +45,7 @@ public class TraderSkeleton : MonoBehaviour
             tradeZone.GetComponent<Collider2D>().enabled = false; 
             Debug.Log("entering trigger 2d"); 
             DialogueManager.instance.StartDialogueItem(talkToTraderPrompt); 
-            yesButton = DialogueManager.instance.getRightButton();
-            noButton = DialogueManager.instance.getLeftButton(); 
-
+          
             yesButton.onClick.AddListener(HandleYesClick);
             noButton.onClick.AddListener(HandleNoClick); 
         
@@ -65,7 +63,7 @@ public class TraderSkeleton : MonoBehaviour
         // Player wants to accept the trade 
         else if (currentChoice == 1){
             Debug.Log("accepted the trade"); 
-            DialogueManager.instance.EndDialgoue(); 
+            //DialogueManager.instance.EndDialogue(); 
         }
         
     }

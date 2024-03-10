@@ -111,7 +111,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
             // Apply force 
             // Impulse for instantaneous forces
             rb.AddForce(knockback, ForceMode2D.Impulse);
-
+        
             if(canTurnInvincible) {
                 // Activate invincibility and timer 
                 Invincible = true;

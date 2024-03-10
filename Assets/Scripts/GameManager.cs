@@ -37,7 +37,22 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        PickupableItem.FireIslandWin += handleOnFireIslandWin; 
         SetGameState(GameState.MainMenu);
+    }
+      void Update()
+    {
+        // Check if the Esc key was pressed
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // Load the Main Menu scene
+            SceneManager.LoadScene("MainMenu");
+        }
+    }
+    
+
+    private void handleOnFireIslandWin()
+    {
     }
 
     public void SetGameState(GameState newState)
@@ -56,7 +71,6 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case GameState.MainMenu:
-                Debug.Log("Switched to MainMenu state");
                 SceneManager.LoadScene("MainMenu"); 
                 break;
             case GameState.FireIsland:
@@ -64,7 +78,6 @@ public class GameManager : MonoBehaviour
 
                 break;
             case GameState.GameOver:
-                Debug.Log("Switched to GameOver state");
                 Application.Quit(); 
                 break;
         }

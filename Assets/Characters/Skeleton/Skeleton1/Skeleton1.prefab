@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 9120064068997695963}
   m_Layer: 6
   m_Name: Skeleton1
-  m_TagString: Untagged
+  m_TagString: Skeleton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,7 +188,7 @@ MonoBehaviour:
   canMove: 0
   damage: 1
   knockbackForce: 50
-  moveSpeed: 500
+  moveSpeed: 700
   detectionZone: {fileID: 1381848413245221838}
 --- !u!114 &9120064068997695963
 MonoBehaviour:

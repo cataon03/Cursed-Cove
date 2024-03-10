@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Skeleton : MonoBehaviour, ICharacter
@@ -77,7 +78,7 @@ public class Skeleton : MonoBehaviour, ICharacter
         Collider2D collider = collision.collider;
         IDamageable damageable = collider.GetComponent<IDamageable>();
 
-        if(damageable != null) {
+        if (damageable != null && collision.gameObject.tag != "Skeleton") {
             // Offset for collision detection changes the direction where the force comes from
             Vector2 direction = (collider.transform.position - transform.position).normalized;
 

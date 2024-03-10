@@ -10,6 +10,7 @@ public class DialogueTriggerWithCollider : MonoBehaviour
     public static event Action<bool> OnCharacterFreeze; 
     public CameraSwitcher cameraSwitcher; 
     [SerializeField] public bool withCameraPan; 
+    public bool disableAfterFirstCollision; 
     
     void Awake(){
         DialogueManager.OnDialogueComplete += handleOnDialogueComplete;
@@ -25,7 +26,9 @@ public class DialogueTriggerWithCollider : MonoBehaviour
                 cameraSwitcher.switchToCamera2(); 
             }
         }
-        //gameObject.GetComponent<Collider2D>().enabled = false; 
+        if (disableAfterFirstCollision){
+            gameObject.GetComponent<Collider2D>().enabled = false; 
+        }
     }
 
     void handleOnDialogueComplete(bool isDialogueComplete){

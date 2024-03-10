@@ -30,6 +30,7 @@ public class UseItemTrigger : MonoBehaviour
 
     void handleOnRightButtonPress(){
         stopListeningToPrompt(); 
+        DialogueManager.instance.EndDialogueItem(); 
         InventoryManager.instance.RemoveItem(itemToUse);
         OnItemUsed?.Invoke(); 
         OnBossEnabled?.Invoke(); 
@@ -38,6 +39,7 @@ public class UseItemTrigger : MonoBehaviour
 
     void handleOnLeftButtonPress(){
         stopListeningToPrompt(); 
+        DialogueManager.instance.EndDialogueItem(); 
     
     }
 
