@@ -27,7 +27,7 @@ public class Skeleton : MonoBehaviour, ICharacter
     bool isMoving = false;
 
     void Awake(){
-        DialogueTriggerWithCollider.OnCharacterFreeze += OnFreeze;
+        Events.OnCharacterFreeze += OnFreeze;
     }
 
     void Start(){

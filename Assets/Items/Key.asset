@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562c9cc74207943898ebf4e2c7edaa28, type: 3}
   m_Name: Key
   m_EditorClassIdentifier: 
-  tile: {fileID: 0}
-  type: 1
-  actionType: 0
+  type: 0
   range: {x: 5, y: 4}
   stackable: 0
   image: {fileID: -1650486327, guid: 3ff8f5ac471cb3649b0951ff71c8702b, type: 3}

@@ -41,7 +41,7 @@ public class BossController : MonoBehaviour, ICharacter
     }
 
     void Start(){
-        UseItemTrigger.OnBossEnabled += handleOnBossEnabled; 
+        Events.OnBossEnabled += handleOnBossEnabled; 
         canMove = false; 
         isMoving = false;
         lastPosition = transform.position; 
@@ -78,7 +78,7 @@ public class BossController : MonoBehaviour, ICharacter
     }
     
     void OnDestroy(){
-        UseItemTrigger.OnBossEnabled -= handleOnBossEnabled; 
+        Events.OnBossEnabled -= handleOnBossEnabled; 
     }
 
     void handleOnBossEnabled(){

@@ -1,23 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using System; 
+using Yarn.Unity; 
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class UnlockableArea : MonoBehaviour
 {
-    public GameObject unlockableArea; 
-    public GameObject oldBoundary; 
-    public GameObject newBoundary; 
-
-    void Start(){ 
-        UseItemTrigger.OnItemUsed += handleOnItemUsed;
-    }
+    public Tilemap unlockableArea; 
+    public Tilemap oldBoundary; 
+    public Tilemap newBoundary; 
     
-    void handleOnItemUsed(){
-        unlockableArea.SetActive(true); 
-        oldBoundary.SetActive(false); 
-        newBoundary.SetActive(true); 
-        UseItemTrigger.OnItemUsed -= handleOnItemUsed;
-    }
-    
+    [YarnCommand("unlock_area")]
+    public void UnlockArea(){
+        unlockableArea.enabled = true; 
+        oldBoundary.enabled = false; 
+        newBoundary.enabled = true; 
+    }   
 }

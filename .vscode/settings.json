@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Cursed Cove Project.sln"
+    "dotnet.defaultSolution": "Cursed Cove Project - Copy.sln"
 }

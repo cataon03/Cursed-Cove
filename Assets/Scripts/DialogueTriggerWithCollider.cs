@@ -6,37 +6,25 @@ using System;
 
 public class DialogueTriggerWithCollider : MonoBehaviour
 {
-    [SerializeField] DialogueTrigger dialogueTrigger; 
-    public static event Action<bool> OnCharacterFreeze; 
-    public CameraSwitcher cameraSwitcher; 
-    [SerializeField] public bool withCameraPan; 
+    public string nodeName; 
     public bool disableAfterFirstCollision; 
     
-    void Awake(){
-        DialogueManager.OnDialogueComplete += handleOnDialogueComplete;
-    }
 
-    void OnTriggerEnter2D(Collider2D collider) {
-        if (collider.gameObject.tag == "Player"){
-            if (dialogueTrigger != null){
-                OnCharacterFreeze?.Invoke(true);
-                dialogueTrigger.TriggerDialogue(); 
+    void OnTriggerEnter2D(Collider2D other) {
+    
+        // Check if the collider belongs to the player
+        if (other.CompareTag("Player"))
+        {
+            if (nodeName == null){
+                Debug.Log("No dialogue node name set for DialogueTriggerWithCollider!"); 
             }
-            if (withCameraPan){
-                cameraSwitcher.switchToCamera2(); 
+            else {
+                DialogueManager.instance.StartDialogue(nodeName);
+                
+                if (disableAfterFirstCollision){
+                    gameObject.GetComponent<Collider2D>().enabled = false; 
+                }
             }
-        }
-        if (disableAfterFirstCollision){
-            gameObject.GetComponent<Collider2D>().enabled = false; 
-        }
-    }
-
-    void handleOnDialogueComplete(bool isDialogueComplete){
-        if (isDialogueComplete){
-            if (withCameraPan){
-                cameraSwitcher.switchToCamera1(); 
-            }
-            OnCharacterFreeze?.Invoke(false);
         }
     }
 }

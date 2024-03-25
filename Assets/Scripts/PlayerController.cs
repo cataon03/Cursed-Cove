@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.TextCore.Text;
 
 public class PlayerController : MonoBehaviour, ICharacter
 {
@@ -41,8 +42,8 @@ public class PlayerController : MonoBehaviour, ICharacter
     bool canMove;
 
     void Awake(){
-        DialogueTriggerWithCollider.OnCharacterFreeze += OnFreeze;
-        DialogueManager.OnPlayerAttackDisabled += onAttackDisabled; 
+        Events.OnCharacterFreeze += OnFreeze;
+        Events.OnPlayerAttackDisabled += onAttackDisabled; 
     }
 
     void Start(){

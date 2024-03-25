@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562c9cc74207943898ebf4e2c7edaa28, type: 3}
   m_Name: FireSword
   m_EditorClassIdentifier: 
-  tile: {fileID: 0}
-  type: 0
-  actionType: 0
+  type: 1
   range: {x: 5, y: 4}
   stackable: 1
   image: {fileID: 849080029, guid: c59d6efa560f95043893d5d781aa98c7, type: 3}

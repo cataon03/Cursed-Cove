@@ -20,8 +20,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     bool isAlive = true;
     private float invincibleTimeElapsed = 0f;
     private Canvas sceneCanvas;
-
-    
+ 
     public float Health {
         set {
             // When health is dropped (new value less than old value), play hit animation and show damage taken as text
@@ -116,6 +115,10 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
                 // Activate invincibility and timer 
                 Invincible = true;
             }
+        }
+        if (gameObject.tag == "SmartSkeleton"){
+            SmartSkeleton smartSkeleton = GetComponent<SmartSkeleton>(); 
+            StartCoroutine(smartSkeleton.ApplyKnockbackWithDelay(knockback));
         }
         if (gameObject.tag == "Player"){
             OnPlayerHit?.Invoke(Health); 

@@ -1,68 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using Yarn.Unity; 
 using System; 
 using UnityEngine;
 
 public class UseItemTrigger : MonoBehaviour
 {
     public Item itemToUse; 
-    public Dialogue noItemYetDialogue; 
-   [SerializeField] Prompt useItemPrompt; 
-    public CameraSwitcher cameraSwitcher; 
-    [SerializeField] public bool withCameraPan; 
-    public static event Action<bool> OnCharacterFreeze; 
-    public static event Action OnBossEnabled; 
-    public static event Action OnItemUsed; 
+    public string dialogueNodeName; 
 
-    void Awake(){
-        DialogueManager.OnDialogueComplete += handleOnDialogueComplete;
-    }
-
-    public void startListeningToPrompt(){
-        DialogueManager.OnLeftButtonPress += handleOnLeftButtonPress;
-        DialogueManager.OnRightButtonPress += handleOnRightButtonPress;
-    }
-
-    public void stopListeningToPrompt(){
-        DialogueManager.OnLeftButtonPress -= handleOnLeftButtonPress;
-        DialogueManager.OnRightButtonPress -= handleOnRightButtonPress;
-    }
-
-    void handleOnRightButtonPress(){
-        stopListeningToPrompt(); 
-        DialogueManager.instance.EndDialogueItem(); 
-        InventoryManager.instance.RemoveItem(itemToUse);
-        OnItemUsed?.Invoke(); 
-        OnBossEnabled?.Invoke(); 
-        gameObject.GetComponent<Collider2D>().enabled = false; 
-    }
-
-    void handleOnLeftButtonPress(){
-        stopListeningToPrompt(); 
-        DialogueManager.instance.EndDialogueItem(); 
+    /* Use instead of DialogueTriggerWithCollider when you don't want the dialogue 
+    to show up until the character has a specific item */ 
+    void OnTriggerEnter2D(Collider2D other) {
     
-    }
-
-    void OnTriggerEnter2D(Collider2D collider) {
-        if (collider.gameObject.tag == "Player"){
-            if (InventoryManager.instance.HasItem(itemToUse)){
-                startListeningToPrompt(); 
-                DialogueManager.instance.StartDialogueItem(useItemPrompt); 
+        // Check if the collider belongs to the player
+        if (other.CompareTag("Player") && InventoryManager.instance.HasItem(itemToUse))
+        {
+            if (dialogueNodeName == null){
+                Debug.Log("No dialogue node name set for UseItemTriggerWithCollider!"); 
             }
             else {
-                DialogueManager.instance.StartDialogueItem(noItemYetDialogue); 
+                DialogueManager.instance.StartDialogue(dialogueNodeName);
             }
-        } 
-    }
-
-    void handleOnDialogueComplete(bool isDialogueComplete){
-        if (isDialogueComplete){
-            if (withCameraPan){
-                cameraSwitcher.switchToCamera1(); 
-            }
-            OnCharacterFreeze?.Invoke(false);
         }
     }
 
-
+   [YarnCommand("use_item")]
+    public void UseItem()
+    {
+        InventoryManager.instance.RemoveItem(itemToUse); 
+        gameObject.GetComponent<Collider2D>().enabled = false;
+    }
 }
+
