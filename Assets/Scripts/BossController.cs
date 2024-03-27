@@ -25,6 +25,7 @@ public class BossController : MonoBehaviour, ICharacter
     Vector3 currentPosition; 
     Vector3 lastPosition; 
     public Transform target; 
+    public bool playerInRange; 
     Path path; 
     int currentWaypoint = 0; 
     bool reachedEndOfPath = false; 
@@ -36,13 +37,13 @@ public class BossController : MonoBehaviour, ICharacter
     DamageableCharacter damagableCharacter;
     bool isMoving = false;
 
-    void Awake(){
-        //DialogueTriggerWithCollider.OnCharacterFreeze += OnFreeze;
-    }
-
     void Start(){
+        attackZone = GetComponentInChildren<AttackZone>(); 
+        if (attackZone == null){
+            Debug.Log("Attack zone not detected on boss");
+        }
         Events.OnBossEnabled += handleOnBossEnabled; 
-        canMove = false; 
+        canMove = true; 
         isMoving = false;
         lastPosition = transform.position; 
         rb = GetComponent<Rigidbody2D>();
@@ -50,21 +51,21 @@ public class BossController : MonoBehaviour, ICharacter
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         seeker = GetComponent<Seeker>();
-        InvokeRepeating("UpdatePath", 0f, 0.5f); 
+        //InvokeRepeating("UpdatePath", 0f, 0.5f); 
     }
+    /*
      void UpdatePath(){
         if (seeker.IsDone()){
             seeker.StartPath(rb.position, target.position, OnPathComplete); 
         }
     }
-
     void OnPathComplete(Path p){
         if (!p.error){
             path = p; 
             currentWaypoint = 0; 
         } 
     }
-
+    */ 
     public void OnFreeze(bool isFrozen){
         if (isFrozen){
             LockMovement(); 
@@ -86,7 +87,6 @@ public class BossController : MonoBehaviour, ICharacter
     }
 
     void FixedUpdate() {
-
         if (canMove) {
             float distanceToPlayer = Vector2.Distance(rb.position, target.position);
             if (distanceToPlayer <= minDistanceToPlayer) {
@@ -97,24 +97,35 @@ public class BossController : MonoBehaviour, ICharacter
                 IsMoving = true; 
             }
 
+            bool shouldFaceRight = (target.position.x > transform.position.x);
+
+            // Flip the sprite based on the player's position relative to the boss 
+            spriteRenderer.flipX = !shouldFaceRight;
+            gameObject.BroadcastMessage("IsFacingRight", shouldFaceRight);
+
+            /*
             if (path == null){
                 return; 
-            }
+            } */ 
+            /*
             if (currentWaypoint >= path.vectorPath.Count){
                 reachedEndOfPath = true; 
                 return; 
             }
             else {
                 reachedEndOfPath = false; 
-            }
-
+            } */ 
+            
+            /*
             Vector2 direction = ((Vector2) path.vectorPath[currentWaypoint] - rb.position).normalized; 
             Vector2 force = direction * speed * Time.deltaTime; 
             
            float directionToTarget = target.position.x - rb.position.x;
 
+        Debug.Log(directionToTarget); 
         // Flip the sprite based on the direction to the target
         if (directionToTarget > 0) {
+        
             spriteRenderer.flipX = false; // Assuming the sprite faces right by default
         } else if (directionToTarget < 0) {
             spriteRenderer.flipX = true;
@@ -125,10 +136,15 @@ public class BossController : MonoBehaviour, ICharacter
             if (distance < nextWaypointDistance){
                 currentWaypoint++; 
             }
+            
             if (attackZone.detectedObjs.Count > 0){
                 animator.SetTrigger("attack");
             }
-            
+            */ 
+            if (attackZone.playerDetected){
+                Debug.Log("attack"); 
+                animator.SetTrigger("attack");
+            }
         } 
         else {
             IsMoving = false;

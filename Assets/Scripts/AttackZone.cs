@@ -6,13 +6,34 @@ using Unity.Profiling;
 
 public class AttackZone : MonoBehaviour
 {
+    public bool playerDetected; 
+
+    void Start(){
+        playerDetected = false; 
+    }
+
+    void OnTriggerEnter2D(Collider2D collider) {
+        if(collider.gameObject.tag == "Player") {
+            playerDetected = true; 
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider){
+        if (collider.gameObject.tag == "Player"){
+            playerDetected = false; 
+        }
+    }
+    
+    /*
     public Animator animator; 
+ 
     public float swordDamage = 1f;
     public float reloadTime = 5f; 
     public float RELOAD_TIME = 5f; 
 
     public float knockbackForce = 100;
     public Collider2D swordCollider;
+    
     public string tagTarget = "Player";
 
     // When object is detected, it is added to the list of actively detected objects
@@ -30,7 +51,7 @@ public class AttackZone : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collider) {
-        if(collider.gameObject.tag == tagTarget && isTriggered == false) {
+        if(collider.gameObject.tag == tagTarget) {
             isTriggered = true; 
             reloadTime += RELOAD_TIME; 
             gameObject.GetComponent<CircleCollider2D>().enabled = false; 
@@ -57,10 +78,10 @@ public class AttackZone : MonoBehaviour
 
     // Detect when object leaves range
     void OnTriggerExit2D(Collider2D collider) {
-        /*if(collider.gameObject.tag == tagTarget) {
+        if(collider.gameObject.tag == tagTarget) {
             detectedObjs.Remove(collider);
-        }*/
+        }
     }
-
+    */ 
     
 }

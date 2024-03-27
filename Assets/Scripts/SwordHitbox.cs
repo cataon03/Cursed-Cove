@@ -21,6 +21,7 @@ public class SwordHitbox : MonoBehaviour
         IDamageable damagableObject = collider.GetComponent<IDamageable>();
 
         if(damagableObject != null) {
+            print("damageable"); 
             // Calculate Direction between character and enemy
             Vector3 parentPosition = transform.parent.position;
 
