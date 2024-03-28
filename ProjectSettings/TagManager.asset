@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ship
+  - Canvas
+  - Boss
+  - Skeleton
+  - SmartSkeleton
   layers:
   - Default
   - TransparentFX
@@ -12,6 +15,11 @@ TagManager:
   - 
   - Water
   - UI
+  - UI OVER
+  - 
+  - 
+  - Lava
+  - GroundCollision
   - 
   - 
   - 
@@ -21,6 +29,7 @@ TagManager:
   - 
   - 
   - 
+  - GroundObjects
   - 
   - 
   - 
@@ -30,13 +39,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - UI
   - 
   m_SortingLayers:
   - name: Default

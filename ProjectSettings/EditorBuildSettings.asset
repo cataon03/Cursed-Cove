@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Island Scene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/MainMenu.unity
+    guid: 7242f8c890f7b93408df7864e60c2882
   - enabled: 1
-    path: Assets/Scenes/Ship Sail Scene.unity
-    guid: 32504d9e4f16641078a8af8cf95aad82
+    path: Assets/Scenes/FireIsland.unity
+    guid: 942b6833cb49a3642be0e0bf3e5a21fc
   m_configObjects: {}
