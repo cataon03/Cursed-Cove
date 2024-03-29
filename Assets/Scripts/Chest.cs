@@ -4,52 +4,44 @@ using System;
 
 public class Chest : MonoBehaviour
 {
-    public GameObject insideChest; 
-    public Item item;
-    public Item key; 
-    public GameObject inventoryItemPrefab;
-    public InventorySlot slot; 
+    /* Chest items must be set in the corresponding "Inside Chest" prefab */ 
     public Sprite chest_open; 
-    private bool hasPopulatedItem; 
     SpriteRenderer spriteRenderer; 
-    public string chestDialogueNodeName; 
+    public DetectionZone detectionZone; 
+    public Item key; 
+    public Item item; 
+    public string openChestDialogueNodeName; // Dialogue to ask player if they want to open the chest
+    public string needKeyChestDialogueNodeName; // Dialogue to state that the chest needs a key to be opened 
 
     void Start(){
         spriteRenderer = GetComponent<SpriteRenderer>(); 
-        hasPopulatedItem = false; 
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Check if the collider belongs to the player
-        if (other.CompareTag("Player"))
-        {
-            if (chestDialogueNodeName != null){
-                DialogueManager.instance.StartDialogue(chestDialogueNodeName); 
+        if(detectionZone.detectedObjs.Count == 0) {
+            // Check if the collider belongs to the player
+            if (other.CompareTag("Player"))
+            {
+                if (InventoryManager.instance.HasItem(key)){
+                    DialogueManager.instance.StartDialogue(openChestDialogueNodeName); 
+                }
+                else {
+                    DialogueManager.instance.StartDialogue(needKeyChestDialogueNodeName); 
+                }
             }
-            else {
-                Debug.Log("Dialogue node name for Chest is not set!"); 
-            }
+           
         }
-       
     }
-    void initInsideChest() {
-        hasPopulatedItem = true; 
-        GameObject newItemGo = Instantiate(inventoryItemPrefab, slot.transform);
-        InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();
-        inventoryItem.InitialiseItem(item);
-    }
-
 
     [YarnCommand("open_chest")]
     public void OpenChest()
     {
+        ChestManager.instance.LoadItemIntoChest(item); 
+        ChestManager.instance.ShowInsideChest(); 
         spriteRenderer.sprite = chest_open; 
-        insideChest.SetActive(true); 
-        if (!hasPopulatedItem){
-            initInsideChest(); 
-        }
-        
+        //insideChest.SetActive(true); 
+
         GetComponent<Collider2D>().enabled = false;
     }
 }

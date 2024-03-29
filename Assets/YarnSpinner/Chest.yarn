@@ -1,5 +1,4 @@
-﻿title: Chest
-tags:
+﻿title: ChestOpen
 position: -79,-67
 ---
 
@@ -8,5 +7,13 @@ Chest:Do you want to open this chest?
     <<open_chest Chest>>
 -> No 
     <<stop>>
+
+===
+
+title: ChestNeedKey
+position: -79,-67
+---
+
+Chest:It looks like this chest needs a key to be opened... 
 
 ===

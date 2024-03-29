@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 580193712130170118}
   - component: {fileID: 1768477546084257175}
   - component: {fileID: 3849673765770458466}
+  - component: {fileID: 8451335410589321978}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.42, y: 29.91, z: 0}
-  m_LocalScale: {x: 1.87902, y: 1.4375, z: 0}
+  m_LocalScale: {x: 1.0791733, y: 0.83665943, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -133,10 +134,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eab5fbb5910b1b448c2d321dcdf2c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  insideChest: {fileID: 0}
-  item: {fileID: 11400000, guid: b2a2b257b1a52464bb7feae148012258, type: 2}
-  key: {fileID: 11400000, guid: 175e13791ef962c488151d410e470abf, type: 2}
-  inventoryItemPrefab: {fileID: 1114754644064328970, guid: 242042550481cb946aff99dfef4a4940, type: 3}
-  slot: {fileID: 0}
   chest_open: {fileID: -1604185379, guid: c1067c7cd25c8184a82f2359376a0cd9, type: 3}
-  chestDialogueNodeName: Chest
+  key: {fileID: 11400000, guid: 175e13791ef962c488151d410e470abf, type: 2}
+  item: {fileID: 11400000, guid: b2a2b257b1a52464bb7feae148012258, type: 2}
+  openChestDialogueNodeName: ChestOpen
+  needKeyChestDialogueNodeName: ChestNeedKey
+--- !u!61 &8451335410589321978
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3248100496966458825}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.007701874, y: -0.111765504}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8074477, y: 0.6870617}
+  m_EdgeRadius: 0

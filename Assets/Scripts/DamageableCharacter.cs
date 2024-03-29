@@ -116,7 +116,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
                 Invincible = true;
             }
         }
-        if (gameObject.tag == "SmartSkeleton"){
+        if (gameObject.tag == "SmartSkeleton" || gameObject.tag == "Boss"){
             SmartSkeleton smartSkeleton = GetComponent<SmartSkeleton>(); 
             StartCoroutine(smartSkeleton.ApplyKnockbackWithDelay(knockback));
         }
