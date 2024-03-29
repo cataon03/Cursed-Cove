@@ -47,14 +47,16 @@ public class InventoryManager : MonoBehaviour
         if (selectedSlot >= 0) {
             inventorySlots[selectedSlot].Deselect();
         }
-        inventorySlots[newValue].Select();
+        //inventorySlots[newValue].Select();
 
         InventoryItem itemInSlot = inventorySlots[newValue].GetComponentInChildren<InventoryItem>();
         
-        // If the player clicked on a weapon notify listeners 
-        if (itemInSlot.item.type == ItemType.Weapon){
-            Debug.Log("Selecting a weapon in the inventory"); 
-            OnItemEquipped?.Invoke(itemInSlot.item.name); 
+        if (itemInSlot){
+            // If the player clicked on a weapon notify listeners 
+            if (itemInSlot.item.type == ItemType.Weapon){
+                Debug.Log("Selecting a weapon in the inventory"); 
+                OnItemEquipped?.Invoke(itemInSlot.item.name); 
+            }
         }
         selectedSlot = newValue;
     }
