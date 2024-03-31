@@ -1,31 +1,55 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using Pathfinding;
 using UnityEngine;
-using Pathfinding; 
 
-public class SmartSkeleton : MonoBehaviour 
-
-{ public bool canMove = true; 
+public class SmartSkeleton : MonoBehaviour, ICharacter
+{
+    bool IsMoving { 
+        set {
+            isMoving = value;
+            animator.SetBool("isMoving", isMoving);
+        }
+    }
+   public float hitDelay; 
+   public bool isAgro; 
+   public float minDistanceToPlayer = 2.6f; 
+    public bool canMove; 
     Animator animator;
     SpriteRenderer spriteRenderer;
-    public float hitDelay; 
     public float damage = 1;
     public float knockbackForce = 20f;
-    Rigidbody2D rb;
-    public AIPath aiPath; 
+    public float nextWaypointDistance = 3f; 
+    private AIDestinationSetter destinationSetter;
+    private AILerp aiLerp; 
+    public Transform target; 
+    public bool playerInRange; 
+    Seeker seeker; 
 
-    void Awake(){
-        Events.OnCharacterFreeze += OnFreeze;
-    }
+    public AttackZone attackZone;
+    Rigidbody2D rb;
+    DamageableCharacter damagableCharacter;
+    bool isMoving = false;
 
     void Start(){
+        destinationSetter = GetComponent<AIDestinationSetter>();
+        destinationSetter.target = target;
+        attackZone = GetComponentInChildren<AttackZone>(); 
+        if (attackZone == null){
+            Debug.Log("Attack zone not detected on patrol skeleton");
+        }
+        canMove = true; 
+        isMoving = false;
         rb = GetComponent<Rigidbody2D>();
+        aiLerp = GetComponent<AILerp>();
+        damagableCharacter = GetComponent<DamageableCharacter>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        aiPath = GetComponentInParent<AIPath>(); // Assuming the AIPath component is on the parent object
+        seeker = GetComponent<Seeker>();
+        isAgro = false; 
     }
-
+     
     public void OnFreeze(bool isFrozen){
         if (isFrozen){
             LockMovement(); 
@@ -35,27 +59,40 @@ public class SmartSkeleton : MonoBehaviour
         }
     }
 
-    void Update() {
-        if(canMove) {
-            // Use velocity.magnitude to check if the skeleton is moving
-            bool isMoving = aiPath.velocity.magnitude > 0.1; // Adjust the threshold as needed
-            animator.SetBool("isMoving", isMoving);
+    void moveOnAgro(){
+        bool shouldFaceRight = target.position.x > transform.position.x;
+        spriteRenderer.flipX = !shouldFaceRight;
+        gameObject.BroadcastMessage("IsFacingRight", shouldFaceRight);
+        
+        float distanceToPlayer = Vector2.Distance(rb.position, target.position);
+        if (distanceToPlayer <= minDistanceToPlayer) {
+            // The boss is close to the player and not moving significantly
+            IsMoving = false; 
+        }
+        else {
+            IsMoving = true; 
+        }
+    }
 
-            // Update sprite direction based on velocity
-            if (aiPath.velocity.x > 0.1) {
-                spriteRenderer.flipX = false;
-            } else if (aiPath.velocity.x < -0.1) {
-                spriteRenderer.flipX = true;
-            }
+    void FixedUpdate() {
+        if (attackZone.playerDetected){
+            isAgro = true; 
+        }
+        if (canMove && isAgro){
+            moveOnAgro(); 
+        }
+        else {
+            IsMoving = false;
         }
     }
     
+
     /// Deal damage and knockback to IDamageable 
     void OnCollisionEnter2D(Collision2D collision) {
         Collider2D collider = collision.collider;
         IDamageable damageable = collider.GetComponent<IDamageable>();
 
-        if (damageable != null && collision.gameObject.tag != "Skeleton") {
+        if(damageable != null && collision.gameObject.tag != "Skeleton") {
             // Offset for collision detection changes the direction where the force comes from
             Vector2 direction = (collider.transform.position - transform.position).normalized;
 
@@ -67,24 +104,24 @@ public class SmartSkeleton : MonoBehaviour
         }
     }
 
-    public IEnumerator ApplyKnockbackWithDelay(Vector2 knockback) {
-        if (aiPath != null) {
-            aiPath.enabled = false; // Disable pathfinding movement
-            LockMovement(); 
-            rb.velocity = knockback; // Apply knockback
-            yield return new WaitForSeconds(hitDelay); // Wait for knockback effect to apply
-            UnlockMovement(); 
-            aiPath.enabled = true; // Re-enable pathfinding movement
-        }
-    }
-
     public void LockMovement() {
-        canMove = false;
-        animator.SetBool("isMoving", false); 
+        aiLerp.canMove = false; 
     }
 
     public void UnlockMovement() {
         canMove = true;
-        animator.SetBool("isMoving", true); 
+    }
+
+    public IEnumerator ApplyKnockbackWithDelay(Vector2 knockback) {
+         
+         // aiLerp.speed = 0; 
+    aiLerp.canMove = false;
+    rb.AddForce(knockback, ForceMode2D.Impulse);
+
+    yield return new WaitForSeconds(hitDelay); // Wait for knockback effect to apply
+
+    aiLerp.Teleport(transform.position, true); // Update AILerp's position to the current position
+    aiLerp.canMove = true;
+        
     }
 }

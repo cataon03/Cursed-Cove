@@ -1,0 +1,27 @@
+﻿title: ReadSign1
+position: -79,-67
+---
+
+Sign:Read sign?
+-> Yes
+    Sign:Why didn't the skeleton go to the party? 
+    Pirate:...
+    Sign:Because it had no BODY to go with!
+    Pirate:That was kind of lame. 
+    <<stop>>
+-> No 
+    <<stop>>
+===
+
+title: ReadSign2
+position: -79,-67
+---
+
+Sign:Read sign?
+-> Yes
+    Sign:NO FLESH-HAVERS ALLOWED!
+    Pirate:At least they warned me.
+    <<stop>>
+-> No 
+    <<stop>>
+===

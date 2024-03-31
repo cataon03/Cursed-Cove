@@ -41,7 +41,8 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
 
             if(_health <= 0) {
                 animator.SetBool("isAlive", false);
-                Targetable = false;
+                // Turn this off because skeletons clip through map with knockback if this is turned off
+                //Targetable = false;
             }
         }
         get {

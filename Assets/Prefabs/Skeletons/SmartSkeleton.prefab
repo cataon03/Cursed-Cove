@@ -114,7 +114,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.3785143, y: 14.983671, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.1, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 294129053861065435}
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b12143489704147887c475f751948b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasItemDrops: 1
+  hasItemDrops: 0
   itemDrops: {fileID: 4340201932020997266, guid: 73b64fe33ff4640bf8d87c35a2207852, type: 3}
   healthText: {fileID: 4446440190103696447, guid: e61196338ebbccc43a9ab2bd4211308d, type: 3}
   disableSimulation: 0

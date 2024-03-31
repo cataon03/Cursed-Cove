@@ -26,8 +26,6 @@ public class PatrolSkeleton : MonoBehaviour, ICharacter
     public float speed = 500f;
     public float nextWaypointDistance = 3f; 
     private AIDestinationSetter destinationSetter;
-    Vector3 currentPosition; 
-    Vector3 lastPosition; 
     public Transform target; 
     public bool playerInRange; 
     Path path; 
@@ -52,7 +50,6 @@ public class PatrolSkeleton : MonoBehaviour, ICharacter
         }
         canMove = true; 
         isMoving = false;
-        lastPosition = transform.position; 
         rb = GetComponent<Rigidbody2D>();
         damagableCharacter = GetComponent<DamageableCharacter>();
         animator = GetComponent<Animator>();
@@ -75,19 +72,8 @@ public class PatrolSkeleton : MonoBehaviour, ICharacter
             targetPoint = 0; 
         }
     }
-
-/*
-    void Update()
-    {
-        if (transform.position == patrolPoints[targetPoint].position){
-            increaseTargetInt();
-            aiLerp.destination = patrolPoints[targetPoint].position;
-             
-        }
-        //transform.position = Vector3.MoveTowards(transform.position, patrolPoints[targetPoint].position, speed * Time.deltaTime); 
-    }
-    */ 
     
+
     void OnDestroy(){
         Events.OnBossEnabled -= handleOnBossEnabled; 
     }
@@ -95,27 +81,6 @@ public class PatrolSkeleton : MonoBehaviour, ICharacter
     void handleOnBossEnabled(){
         canMove = true; 
     }
-
-   /* void Update(){
-        if (canMove && !isAgro){
-            if (transform.position == patrolPoints[targetPoint].position){
-                increaseTargetInt();
-                destinationSetter.target = patrolPoints[targetPoint].transform;
-            }
-        }
-    }
-*/ 
-
-/*
-    void Update(){
-        if (attackZone.playerDetected){
-            isAgro = true; 
-        }
-        else {
-            isAgro = false; 
-        }
-    }
-*/ 
 
     void moveOnPatrol(){
         IsMoving = true; 
@@ -145,6 +110,9 @@ public class PatrolSkeleton : MonoBehaviour, ICharacter
     }
 
     void FixedUpdate() {
+        if (attackZone.playerDetected){
+            isAgro = true; 
+        }
         // If the enemy detects the player, agro on it 
         if (isAgro){
             destinationSetter.target = target; 
@@ -163,24 +131,6 @@ public class PatrolSkeleton : MonoBehaviour, ICharacter
         else {
             IsMoving = false;
         }
-   
-
-/*
-        bool shouldFaceRight = (target.position.x > transform.position.x);
-        spriteRenderer.flipX = !shouldFaceRight;
-        gameObject.BroadcastMessage("IsFacingRight", shouldFaceRight);
-
-        /*
-        if (attackZone.playerDetected){
-            isAgro = true; 
-            /*
-            Debug.Log("attack"); 
-            animator.SetTrigger("attack");
-            
-        }
-        */ 
-        
-        //lastPosition = transform.position; 
     }
     
 
@@ -189,7 +139,7 @@ public class PatrolSkeleton : MonoBehaviour, ICharacter
         Collider2D collider = collision.collider;
         IDamageable damageable = collider.GetComponent<IDamageable>();
 
-        if(damageable != null) {
+        if(damageable != null && collision.gameObject.tag != "Skeleton") {
             // Offset for collision detection changes the direction where the force comes from
             Vector2 direction = (collider.transform.position - transform.position).normalized;
 

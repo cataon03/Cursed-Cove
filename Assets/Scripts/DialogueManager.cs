@@ -37,6 +37,11 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void StartDialogue(string nodeName){
+        dialogueRunner.Stop(); 
         dialogueRunner.StartDialogue(nodeName);
+    }
+
+    public void StopDialogue(){
+        dialogueRunner.Stop(); 
     }
 }
