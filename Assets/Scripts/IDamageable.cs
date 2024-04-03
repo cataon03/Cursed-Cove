@@ -2,6 +2,7 @@
 using UnityEngine;
 
 public interface IDamageable {
+        public void OnCharacterDeath();
         public float Health { set; get; }
         public bool Targetable { set; get; }
         public bool Invincible { set; get; }

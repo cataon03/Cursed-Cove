@@ -1,28 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Skeleton : MonoBehaviour, ICharacter
+public abstract class Skeleton : MonoBehaviour, ICharacter
 {
-    bool IsMoving { 
+    public bool IsMoving { 
         set {
             isMoving = value;
-            animator.SetBool("isMoving", isMoving);
+            if (animator){
+                animator.SetBool("isMoving", isMoving);
+            }
+            
         }
     }
     public bool canMove; 
-    Animator animator;
-    SpriteRenderer spriteRenderer;
+    public Animator animator;
+    public SpriteRenderer spriteRenderer;
     public float damage = 1;
     public float knockbackForce = 20f;
     public float moveSpeed = 500f;
-    Vector3 currentPosition; 
-    Vector3 lastPosition; 
-
-    public DetectionZone detectionZone;
-    Rigidbody2D rb;
-    Vector2 moveInput = Vector2.zero;
+    public Rigidbody2D rb;
     DamageableCharacter damagableCharacter;
     bool isMoving = false;
 
@@ -30,9 +25,8 @@ public class Skeleton : MonoBehaviour, ICharacter
         Events.OnCharacterFreeze += OnFreeze;
     }
 
-    void Start(){
+    public void Start(){
         canMove = true; 
-        lastPosition = transform.position; 
         rb = GetComponent<Rigidbody2D>();
         damagableCharacter = GetComponent<DamageableCharacter>();
         animator = GetComponent<Animator>();
@@ -48,37 +42,24 @@ public class Skeleton : MonoBehaviour, ICharacter
         }
     }
 
-    void FixedUpdate() {
+    public abstract void move(); 
 
-        if(canMove && damagableCharacter.Targetable && detectionZone.detectedObjs.Count > 0) {
-            // Calculate direction to target object
-            Vector2 direction = (detectionZone.detectedObjs[0].transform.position - transform.position).normalized;
-
-            // Move towards detected object
-            rb.AddForce(direction * moveSpeed * Time.fixedDeltaTime);
-
-             if ((transform.position.x - lastPosition.x )> 0) {
-                spriteRenderer.flipX = false;
-                //gameObject.BroadcastMessage("IsFacingRight", true);
-            } else if ((transform.position.x - lastPosition.x) < 0) {
-                spriteRenderer.flipX = true;
-                //gameObject.BroadcastMessage("IsFacingRight", false);
-            }
-            IsMoving = true;
-
-        } else {
+    virtual public void FixedUpdate() {
+        
+        if (canMove) {
+            move(); 
+        }
+        else {
             IsMoving = false;
         }
-       lastPosition = transform.position; 
+        adjustGraphics();
     }
-    
 
-    /// Deal damage and knockback to IDamageable 
-    void OnCollisionEnter2D(Collision2D collision) {
+    public void OnCollisionEnter2D(Collision2D collision) {
         Collider2D collider = collision.collider;
         IDamageable damageable = collider.GetComponent<IDamageable>();
 
-        if (damageable != null && collision.gameObject.tag != "Skeleton") {
+        if(damageable != null && collision.gameObject.tag != "Skeleton") {
             // Offset for collision detection changes the direction where the force comes from
             Vector2 direction = (collider.transform.position - transform.position).normalized;
 
@@ -89,6 +70,8 @@ public class Skeleton : MonoBehaviour, ICharacter
             damageable.OnHit(damage, knockback);
         }
     }
+    
+    public abstract void adjustGraphics(); 
 
     public void LockMovement() {
         canMove = false;

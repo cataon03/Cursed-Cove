@@ -10,6 +10,10 @@ public class DetectionZone : MonoBehaviour
     public List<Collider2D> detectedObjs = new List<Collider2D>();
 
 
+    void Start(){
+        Debug.Log("starting"); 
+    }
+
     // Detect when object enters range
     void OnTriggerEnter2D(Collider2D collider) {
         if(collider.gameObject.tag == tagTarget) {

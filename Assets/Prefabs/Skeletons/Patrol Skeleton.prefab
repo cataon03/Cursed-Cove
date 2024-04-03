@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4619667109999162024}
   - component: {fileID: 5198405152811126831}
   - component: {fileID: 1276355827362196784}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SwordHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 585624937138335874}
   - component: {fileID: 452737659630428723}
   - component: {fileID: 4534091371311913707}
-  m_Layer: 7
+  m_Layer: 12
   m_Name: AttackZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.65049803
+  m_Radius: 4.9305744
 --- !u!114 &4534091371311913707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,9 +195,9 @@ GameObject:
   - component: {fileID: 191716966498663113}
   - component: {fileID: 7474921032685531985}
   - component: {fileID: 531111353225025510}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Patrol Skeleton
-  m_TagString: Skeleton
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -479,6 +479,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67304e872cf50b45a762c905c8172a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 1
+  animator: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  damage: 1
+  knockbackForce: 20
+  moveSpeed: 500
+  rb: {fileID: 0}
+  hitDelay: 0
+  minDistanceToPlayer: 0
+  playerInRange: 0
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -486,12 +496,5 @@ MonoBehaviour:
   - {fileID: 0}
   isAgro: 0
   targetPoint: 0
-  minDistanceToPlayer: 2.6
-  canMove: 1
-  damage: 1
-  knockbackForce: 20
-  speed: 500
   nextWaypointDistance: 3
-  target: {fileID: 0}
-  playerInRange: 0
   attackZone: {fileID: 4534091371311913707}

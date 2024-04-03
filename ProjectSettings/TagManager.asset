@@ -8,6 +8,8 @@ TagManager:
   - Boss
   - Skeleton
   - SmartSkeleton
+  - AI
+  - Projectile
   layers:
   - Default
   - TransparentFX

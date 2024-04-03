@@ -1,6 +1,7 @@
 using System; 
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DamageableCharacter : MonoBehaviour, IDamageable
@@ -13,7 +14,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
 
     public bool canTurnInvincible = false;
     public float invincibilityTime = 0.25f;
-    Animator animator;
+    public Animator animator;
     Rigidbody2D rb;
     Collider2D physicsCollider;
     
@@ -40,15 +41,33 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
             _health = value;
 
             if(_health <= 0) {
-                animator.SetBool("isAlive", false);
-                // Turn this off because skeletons clip through map with knockback if this is turned off
-                //Targetable = false;
+                OnCharacterDeath(); 
             }
         }
         get {
             return _health;
         }
     }
+
+    virtual public void OnCharacterDeath(){
+        animator.SetBool("isAlive", false);
+        SetPositionFreeze(true); 
+        Targetable = false; 
+    }
+
+    public void SetPositionFreeze(bool shouldFreeze)
+    {
+    if (shouldFreeze)
+    {
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+    }
+    else
+    {
+        // Unfreeze positions 
+        GetComponent<Rigidbody2D>().constraints &= ~RigidbodyConstraints2D.FreezePositionX;
+        GetComponent<Rigidbody2D>().constraints &= ~RigidbodyConstraints2D.FreezePositionY;
+    }
+}
 
     public bool Targetable { get { return _targetable; }
     set {
@@ -117,9 +136,12 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
                 Invincible = true;
             }
         }
-        if (gameObject.tag == "SmartSkeleton" || gameObject.tag == "Boss"){
-            SmartSkeleton smartSkeleton = GetComponent<SmartSkeleton>(); 
-            StartCoroutine(smartSkeleton.ApplyKnockbackWithDelay(knockback));
+        if (gameObject.tag == "AI"){
+            StartCoroutine(gameObject.GetComponent<SkeletonAIBase>().ApplyKnockbackWithDelay(knockback));
+        }
+        if (gameObject.tag == "Boss"){
+            StartCoroutine(gameObject.GetComponent<BossSkeleton>().ApplyKnockbackWithDelay(knockback));
+            gameObject.GetComponent<BossSkeleton>().updateHealthBar(damage); 
         }
         if (gameObject.tag == "Player"){
             OnPlayerHit?.Invoke(Health); 

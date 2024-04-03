@@ -142,7 +142,7 @@ public class BossController : MonoBehaviour, ICharacter
             }
             */ 
             if (attackZone.playerDetected){
-                Debug.Log("attack"); 
+                //Debug.Log("attack"); 
                 animator.SetTrigger("attack");
             }
         } 
