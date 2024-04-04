@@ -1,5 +1,6 @@
 using System.Collections;
 using Pathfinding;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class SkeletonAIBase : Skeleton, ICharacter
@@ -24,8 +25,9 @@ public abstract class SkeletonAIBase : Skeleton, ICharacter
 
     override public void adjustGraphics(){
         if (destinationSetter){
-        bool shouldFaceRight = destinationSetter.target.position.x > transform.position.x;
-        spriteRenderer.flipX = !shouldFaceRight; 
+            bool shouldFaceRight = destinationSetter.target.position.x > transform.position.x;
+            spriteRenderer.flipX = !shouldFaceRight; 
+            gameObject.BroadcastMessage("IsFacingRight", shouldFaceRight);
         }
     }
 
@@ -42,20 +44,14 @@ public abstract class SkeletonAIBase : Skeleton, ICharacter
     }
 
     public void setCanAIMove(bool canAIMove){
-        if (canAIMove){
-            aiLerp.speed = speed; 
-        }
-        else {
-            aiLerp.speed = 0; 
-        }
-        aiLerp.canMove = canAIMove; 
+        aiLerp.enabled = canAIMove; 
         IsMoving = canAIMove; 
         canMove = canAIMove; 
     }
 
     new public void LockMovement() {
-        aiLerp.canMove = false; 
-        aiLerp.speed = 0; 
+        aiLerp.enabled = false; 
+        IsMoving = false; 
     }
 
     public void LockAndUpdateGraphics(){
@@ -72,8 +68,8 @@ public abstract class SkeletonAIBase : Skeleton, ICharacter
     new public void UnlockMovement() {
         Debug.Log("unlock"); 
         //setCanAIMove(true); 
-        aiLerp.canMove = true; 
-        aiLerp.speed = speed; 
+      aiLerp.enabled = true; 
+      IsMoving = true; 
     }
 
     public void Update() {

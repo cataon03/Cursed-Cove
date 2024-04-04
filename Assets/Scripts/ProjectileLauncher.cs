@@ -32,6 +32,7 @@ public class ProjectileLauncher : MonoBehaviour
 
     void Update(){
         if (launchEnabled){
+            Debug.Log("enabled rocket launcher"); 
             //if (detectionZone.detectedObjs.Count > 0) {
             timeSinceSpawned += Time.deltaTime;
 

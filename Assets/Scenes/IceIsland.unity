@@ -150343,7 +150343,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1888365645997202170, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888365645997202170, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
+      propertyPath: launchFrequency
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2225811180658793247, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
       propertyPath: target
@@ -150389,6 +150393,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3622113336187710281, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426743930146411303, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
+      propertyPath: m_Radius
+      value: 0.61538094
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023669800840135127, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
+      propertyPath: m_Radius
+      value: 1.3915285
+      objectReference: {fileID: 0}
+    - target: {fileID: 5087981326944676923, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5148965640780545304, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
       propertyPath: m_Name
       value: Boss Skeleton
@@ -150406,8 +150426,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 335728739}
     - target: {fileID: 6772537189791826034, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
+      propertyPath: regenRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772537189791826034, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
       propertyPath: minDistanceToPlayer
-      value: 3
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6772537189791826034, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
       propertyPath: healthRegenZones.Array.size
@@ -150417,6 +150441,10 @@ PrefabInstance:
       propertyPath: healthRegenZones.Array.data[0]
       value: 
       objectReference: {fileID: 167102638}
+    - target: {fileID: 8044595546529715754, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
