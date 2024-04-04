@@ -150398,9 +150398,17 @@ PrefabInstance:
       value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 6772537189791826034, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
+      propertyPath: hitDelay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772537189791826034, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 335728739}
+    - target: {fileID: 6772537189791826034, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
+      propertyPath: minDistanceToPlayer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6772537189791826034, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
       propertyPath: healthRegenZones.Array.size
       value: 1

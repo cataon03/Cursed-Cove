@@ -6,12 +6,13 @@ public abstract class SkeletonAIBase : Skeleton, ICharacter
 {
     public float hitDelay; 
     public float minDistanceToPlayer = 1.0f; 
+    public bool currentlyGettingKnockback; 
     public bool playerInRange; 
     public float speed; 
 
     private AIDestinationSetter destinationSetter;
-    private AILerp aiLerp; 
-    private Transform playerTransform; 
+    public AILerp aiLerp; 
+    public Transform playerTransform; 
 
     new public void Start(){
         base.Start(); 
@@ -19,7 +20,6 @@ public abstract class SkeletonAIBase : Skeleton, ICharacter
         destinationSetter = GetComponent<AIDestinationSetter>();
         setTarget(GameObject.FindGameObjectWithTag("Player").transform);
         aiLerp = GetComponent<AILerp>();
-        aiLerp.canMove = false; 
     }
 
     override public void adjustGraphics(){
@@ -54,37 +54,31 @@ public abstract class SkeletonAIBase : Skeleton, ICharacter
     }
 
     new public void LockMovement() {
-        setCanAIMove(false); 
+        aiLerp.canMove = false; 
+        aiLerp.speed = 0; 
+    }
+
+    public void LockAndUpdateGraphics(){
+        LockMovement(); 
+        Debug.Log("lock"); 
+        IsMoving = false; 
+    }
+
+    public void UnlockAndUpdateGraphics(){
+        IsMoving = true; 
+        UnlockMovement(); 
     }
 
     new public void UnlockMovement() {
-        setCanAIMove(true); 
+        Debug.Log("unlock"); 
+        //setCanAIMove(true); 
+        aiLerp.canMove = true; 
+        aiLerp.speed = speed; 
     }
 
-    override public void FixedUpdate() {
-        if (canMove && shouldMoveCloser()) {
-            if (!getCanAIMove()){
-                setCanAIMove(true); 
-            }
-            move(); 
-        }
-        else {
-            setCanAIMove(false); 
-        }
+    public void Update() {
+        move(); 
         adjustGraphics();
-    }
-
-    public bool shouldMoveCloser(){
-        float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
-        // Check if the enemy is farther away from the player than the threshold distance
-        if(distanceToPlayer > minDistanceToPlayer){
-            // The enemy is far enough to move closer
-            return true;
-        }
-        else {
-            // The enemy is within the threshold distance, no need to move closer
-            return false;
-        }
     }
 
     public void changeAISpeed(float amount){
@@ -92,15 +86,18 @@ public abstract class SkeletonAIBase : Skeleton, ICharacter
     }
 
     public IEnumerator ApplyKnockbackWithDelay(Vector2 knockback) {
-        aiLerp.canMove = false;
-        canMove = false; 
+        LockMovement(); 
+        aiLerp.enabled = false; 
         rb.AddForce(knockback, ForceMode2D.Impulse);
-
+        Debug.Log("Waiting"); 
+        currentlyGettingKnockback = true; 
         yield return new WaitForSeconds(hitDelay); // Wait for knockback effect to apply
-        
-        aiLerp.Teleport(transform.position, true); 
-        aiLerp.canMove = true;
+        currentlyGettingKnockback = false; 
+        aiLerp.enabled = true; 
+        Debug.Log("stopwaiting"); 
+        //aiLerp.Teleport(transform.position, true); 
+        UnlockMovement(); 
         aiLerp.SearchPath();
-        canMove = true; 
+  
     }
 }

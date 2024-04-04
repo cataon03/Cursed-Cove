@@ -19,11 +19,12 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
     private bool isAgro; 
     float maxHealth = 0; 
     private Enemy enemy; 
-    public enum BossState { Aggressive, Protective, Chasing, Retreating, Regenerating } 
+    public enum BossState { Aggressive, Chasing, Retreating, Regenerating } 
     public enum Health { Critical, Medium, Okay }
     public Bar healthBar; 
     public BossState currentState; 
     public PlayerBehaviorMonitor.PlayerBehavior playerBehavior; 
+    public bool movementLocked = false; 
 
     new public void Start(){
         base.Start(); 
@@ -36,6 +37,9 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
         setTarget(GameObject.FindGameObjectWithTag("Player").transform);
         attackZone = gameObject.GetComponentInChildren<AttackZone>(); 
         maxHealth = enemy._health; 
+        aiLerp.canMove = true; 
+        IsMoving = true; 
+        
     }
 
     public void updateHealthBar(float change){
@@ -75,8 +79,7 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
                     return BossState.Chasing; 
                 }
             case (Health.Okay): 
-                if ((playerState == PlayerBehaviorMonitor.PlayerBehavior.Retreating) 
-                || (playerState == PlayerBehaviorMonitor.PlayerBehavior.Shy)){
+                if ((playerState == PlayerBehaviorMonitor.PlayerBehavior.Retreating)){
                     return BossState.Chasing; 
                 }
                 else {
@@ -87,6 +90,15 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
         }
     }
     
+    override public void FixedUpdate(){
+        if (!currentlyGettingKnockback){
+            checkMoveCloser(); 
+            moveOnState(currentState);  
+            adjustGraphics(); 
+        }
+    }
+
+
     override public void move() {
         playerBehavior = playerBehaviorMonitor.getPlayerBehaviorState(); 
         currentState = getBossState(playerBehavior); 
@@ -97,9 +109,6 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
         switch (currentState){
             case BossState.Aggressive: 
                 moveAggressive(); 
-                break; 
-            case BossState.Protective: 
-                moveProtective(); 
                 break; 
             case BossState.Chasing: 
                 moveChasing(); 
@@ -114,8 +123,6 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
 
     }
     void moveAggressive(){
-       // Debug.Log("moving aggressively"); 
-        
         projectileLauncher.setLaunchEnabled(true); 
         projectileLauncher.setLaunchFrequency(1f); // Need to make Low, Med, High enum 
         projectileLauncher.setLaunchType(ProjectileLauncher.LaunchType.Directional); 
@@ -170,6 +177,27 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
         setCanAIMove(false);  
         //enemy._targetable = false; 
     }
+
+    public void checkMoveCloser(){
+        float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+        // Check if the enemy is farther away from the player than the threshold distance
+        if (distanceToPlayer > minDistanceToPlayer){
+            if (movementLocked){
+                UnlockMovement();
+                IsMoving = true; 
+                movementLocked = false;  
+            }
+        }
+        else {
+            // The enemy is within the threshold distance, no need to move closer
+            if (!movementLocked){
+                movementLocked = true; 
+                IsMoving = false; 
+                LockMovement();
+            }
+        }
+    }
+    
 
     
     
