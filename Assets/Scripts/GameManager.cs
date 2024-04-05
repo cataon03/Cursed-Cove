@@ -10,7 +10,8 @@ public enum GameState
     MainMenu,
     FireIsland,
     Home, 
-    GameOver
+    GameOver,
+    TutorialScene
 }
 
 public class GameManager : MonoBehaviour
@@ -58,7 +59,7 @@ public class GameManager : MonoBehaviour
     public void SetGameState(GameState newState)
     {
         currentGameState = newState;
-       this. HandleOnGameStateChanged(newState); 
+       this.HandleOnGameStateChanged(newState); 
     }
 
     public GameState GetGameState()
@@ -73,10 +74,16 @@ public class GameManager : MonoBehaviour
             case GameState.MainMenu:
                 SceneManager.LoadScene("MainMenu"); 
                 break;
+
             case GameState.FireIsland:
                 SceneManager.LoadScene("FireIsland"); 
 
                 break;
+
+            case GameState.TutorialScene:
+                SceneManager.LoadScene("TutorialScene"); 
+                break;
+
             case GameState.GameOver:
                 Application.Quit(); 
                 break;

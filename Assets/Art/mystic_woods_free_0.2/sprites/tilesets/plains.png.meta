@@ -3,7 +3,7 @@ guid: 30afc9b300983cf49a6991fce373fb0c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -25,7 +25,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -65,6 +65,7 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -76,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -88,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -100,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -1040,51 +1044,51 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      plains_35: -333151807
-      plains_22: 1961316725
-      plains_40: -1986847755
-      plains_21: 942810104
-      plains_15: -876821777
-      plains_3: 1895444485
-      plains_24: -1021977568
-      plains_1: -39102537
-      plains_34: 1230543099
-      plains_33: -93166217
-      plains_19: 214232071
-      plains_18: -413766816
       plains_0: -202823217
-      plains_8: -544585711
-      plains_11: -370273490
-      plains_16: 2127966860
-      plains_32: -546192038
-      plains_14: -1144451958
-      plains_25: -603021513
-      plains_30: 237115484
-      plains_12: 1102314801
-      plains_4: -1281343675
-      plains_38: -884030782
-      plains_27: 1399335698
-      plains_6: 2144373923
-      plains_9: 1168072044
-      plains_42: -529557141
-      plains_28: 1991468721
+      plains_1: -39102537
       plains_10: 1835482766
-      plains_20: -982303981
-      plains_5: -564018347
-      plains_7: -1730154938
-      plains_23: -2004218232
-      plains_43: -1305416990
-      plains_39: 1266463412
-      plains_29: 886789462
-      plains_17: 803384447
+      plains_11: -370273490
+      plains_12: 1102314801
       plains_13: -2090668627
-      plains_31: 1821165382
-      plains_37: -1169187343
+      plains_14: -1144451958
+      plains_15: -876821777
+      plains_16: 2127966860
+      plains_17: 803384447
+      plains_18: -413766816
+      plains_19: 214232071
       plains_2: 1166715648
+      plains_20: -982303981
+      plains_21: 942810104
+      plains_22: 1961316725
+      plains_23: -2004218232
+      plains_24: -1021977568
+      plains_25: -603021513
       plains_26: 505713755
+      plains_27: 1399335698
+      plains_28: 1991468721
+      plains_29: 886789462
+      plains_3: 1895444485
+      plains_30: 237115484
+      plains_31: 1821165382
+      plains_32: -546192038
+      plains_33: -93166217
+      plains_34: 1230543099
+      plains_35: -333151807
       plains_36: -1183564633
+      plains_37: -1169187343
+      plains_38: -884030782
+      plains_39: 1266463412
+      plains_4: -1281343675
+      plains_40: -1986847755
       plains_41: 1725445628
-  spritePackingTag: 
+      plains_42: -529557141
+      plains_43: -1305416990
+      plains_5: -564018347
+      plains_6: 2144373923
+      plains_7: -1730154938
+      plains_8: -544585711
+      plains_9: 1168072044
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
   assetBundleName: 

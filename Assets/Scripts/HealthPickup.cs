@@ -1,10 +1,12 @@
 
 using UnityEngine;
+using Yarn.Unity;
 
 public class HealthPickup : MonoBehaviour
 {
     PlayerHealthBar healthBar;
     public int healthBonus = 1;
+    public DialogueRunner dialogueRunnerChicken;
 
 
     void Awake()
@@ -16,6 +18,7 @@ public class HealthPickup : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
+            dialogueRunnerChicken.StartDialogue("TraderSystem");
             if(healthBar.health < PlayerHealthBar.MAX_HEALTH){
                 healthBar.health += healthBonus; 
                 Destroy(gameObject);

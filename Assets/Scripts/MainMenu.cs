@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
 {
      public void PlayGame(){
           GameManager gameManager = FindObjectOfType<GameManager>();
-          gameManager.SetGameState(GameState.FireIsland);
+          gameManager.SetGameState(GameState.TutorialScene);
      }
 
      public void QuitGame(){

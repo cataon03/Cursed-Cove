@@ -24,12 +24,17 @@ public class Chest : MonoBehaviour
         // Check if the collider belongs to the player
         if (other.CompareTag("Player"))
         {
+
+            //Open the chest
+            OpenChest();
+            /*
             if (chestDialogueNodeName != null){
                 DialogueManager.instance.StartDialogue(chestDialogueNodeName); 
             }
             else {
                 Debug.Log("Dialogue node name for Chest is not set!"); 
             }
+            */
         }
        
     }

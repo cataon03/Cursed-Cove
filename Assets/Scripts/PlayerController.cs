@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour, ICharacter
     Vector2 moveInput = Vector2.zero;
 
     bool isMoving = false;
-    bool canMove;
+    public bool canMove;
 
     void Awake(){
         Events.OnCharacterFreeze += OnFreeze;
