@@ -9,15 +9,17 @@ using UnityEngine.AI;
 
 public class BossSkeleton : SkeletonAIBase, ICharacter
 {
+    /* For health regeneration */ 
     public Transform[] healthRegenZones; 
-    public float regenRate; 
-    public static event Action<float> OnBossHit; 
-    public float timeBetweenRegens; 
-    float timeSinceLastHit; 
-    float span; // Time span over which to determine whether player is moving away/towards enemy 
-    AttackZone attackZone; 
     DetectionZone detectionZone; 
+    public float regenRate; 
+    public float timeBetweenRegens; 
+
+    public static event Action<float> OnBossHit;     
+    float span; // Time span over which to determine whether player is moving away/towards enemy 
+    //AttackZone attackZone; 
     ProjectileLauncher projectileLauncher;
+    AutonomousAttack autonomousAttack; 
     PlayerBehaviorMonitor playerBehaviorMonitor;  
     private bool isAgro; 
     float maxHealth = 0; 
@@ -30,23 +32,27 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
     public bool movementLocked = false; 
     int zoneIdx = 0; 
     float timeSinceLastRegen = 0f; 
+
     new public void Start(){
         base.Start(); 
         detectionZone = gameObject.GetComponentInChildren<DetectionZone>(); 
         enemy = gameObject.GetComponent<Enemy>();
         playerBehaviorMonitor = gameObject.GetComponent<PlayerBehaviorMonitor>(); 
         projectileLauncher = gameObject.GetComponentInChildren<ProjectileLauncher>();  
+        autonomousAttack = gameObject.GetComponent<AutonomousAttack>(); 
+        autonomousAttack.setAttackEnabled(true); 
+
         healthBar = gameObject.GetComponentInChildren<Bar>(); 
         healthBar.MaxValue = (int) enemy.Health; 
         healthBar.Value = (int) enemy.Health; 
         setTarget(GameObject.FindGameObjectWithTag("Player").transform);
-        attackZone = gameObject.GetComponentInChildren<AttackZone>(); 
+        //attackZone = gameObject.GetComponentInChildren<AttackZone>(); 
         maxHealth = enemy._health; 
         aiLerp.canMove = true; 
         currentState = BossState.Retreating;
         ChangeState(currentState); 
         IsMoving = true; 
-        
+
     }
 
     public void updateHealthBar(float change){
@@ -176,17 +182,9 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
 
     }
     void moveAggressive(){
-        if (attackZone.playerDetected){
-            Debug.Log("attack"); 
-            animator.SetTrigger("attack");
-        }
     }
 
     void moveChasing(){
-        if (attackZone.playerDetected){
-            Debug.Log("attack"); 
-            animator.SetTrigger("attack");
-        }
     }
 
     void moveRetreating(){

@@ -7,7 +7,8 @@ using UnityEngine;
 public class WeaponManager : MonoBehaviour
 {
     public static WeaponManager instance;
-
+    public GameObject player; 
+    
     private void Awake()
     {
         if (instance == null)
@@ -22,6 +23,7 @@ public class WeaponManager : MonoBehaviour
     }
 
     private void Start() {
+     
         InventoryManager.OnItemEquipped += HandleOnItemEquipped;
     }
 
@@ -29,7 +31,11 @@ public class WeaponManager : MonoBehaviour
    // the player actually wants to change weapons. 
    void HandleOnItemEquipped(string weaponName){
         Debug.Log("Need to handle logic for implementing different weapons here!"); 
-        
+        Debug.Log(weaponName); 
+
+        if (weaponName == "FireSword"){
+            Debug.Log("Here's where we'd change the animation on the player!"); 
+        }
         /*
         Changing between weapons includes things like changing the animation to 
         show the new weapon (for example, if the weaponName is "fire sword" or whatever, 

@@ -23,21 +23,22 @@ public class ProjectileLauncher : MonoBehaviour
     private Transform target; 
     bool launchEnabled = false; 
     private BossSkeleton boss; 
+    public SkeletonAIBase skeletonAIBase; 
 
     void Start(){
         target = GameObject.FindGameObjectWithTag("Player").transform; 
         boss = gameObject.GetComponentInParent<BossSkeleton>(); 
+        skeletonAIBase = gameObject.GetComponentInParent<SkeletonAIBase>(); 
     }
     System.Random rand = new System.Random();
 
     void Update(){
-        if (launchEnabled){
-            Debug.Log("enabled rocket launcher"); 
+        if (launchEnabled && skeletonAIBase.canAttack){
             //if (detectionZone.detectedObjs.Count > 0) {
             timeSinceSpawned += Time.deltaTime;
 
             if (timeSinceSpawned >= launchFrequency) {
-       
+                Debug.Log("launching"); 
                 Launch(); 
                 timeSinceSpawned = 0;
             }
@@ -57,16 +58,19 @@ public class ProjectileLauncher : MonoBehaviour
     }
 
     public void Launch(){
-        boss.chargeUp();
 
-        if (launchType == LaunchType.Directional){
-            LaunchDirectional(); 
-        }
-        else if (launchType == LaunchType.Bloom){
-            LaunchBloom(); 
-        }
-        else {
-            LaunchMixed(); 
+        if (skeletonAIBase.canAttack){       
+            boss.chargeUp();
+             
+            if (launchType == LaunchType.Directional){
+                LaunchDirectional(); 
+            }
+            else if (launchType == LaunchType.Bloom){
+                LaunchBloom(); 
+            }
+            else {
+                LaunchMixed(); 
+            }
         }
     }
 
