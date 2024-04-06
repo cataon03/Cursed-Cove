@@ -59,7 +59,7 @@ public abstract class Skeleton : MonoBehaviour, ICharacter
         Collider2D collider = collision.collider;
         IDamageable damageable = collider.GetComponent<IDamageable>();
 
-        if(damageable != null && collision.gameObject.tag != "Skeleton") {
+        if(damageable != null && collision.gameObject.tag != "Skeleton" || collision.gameObject.tag != "AI" || collision.gameObject.tag != "Boss") {
             // Offset for collision detection changes the direction where the force comes from
             Vector2 direction = (collider.transform.position - transform.position).normalized;
 

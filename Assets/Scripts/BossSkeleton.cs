@@ -86,15 +86,8 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
     }
 
     void CheckState(){
-        BossState newState = currentState; 
-        
-        if (GetHealth() == Health.Critical){
-            newState = BossState.Retreating;
-        }
-
-        if (newState != currentState){
-            ChangeState(newState); 
-        }
+       
+    
     }
 
     override public void move() {
@@ -156,6 +149,9 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
         || playerBehaviorMonitor.GetHealth() == PlayerBehaviorMonitor.Health.High) 
         && (playerBehaviorMonitor.GetProximity() == PlayerBehaviorMonitor.Proximity.Far)){
             ChangeState(BossState.Chasing); 
+        }
+        if (GetHealth() == Health.Critical){
+            ChangeState(BossState.Retreating);
         }
         
     }

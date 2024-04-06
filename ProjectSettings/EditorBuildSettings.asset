@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FireIsland.unity
     guid: 942b6833cb49a3642be0e0bf3e5a21fc
+  - enabled: 1
+    path: Assets/Scenes/IceIsland.unity
+    guid: 2e9578bdbf3bb3c42994b036632da19b
   m_configObjects: {}

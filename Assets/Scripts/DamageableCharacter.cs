@@ -7,6 +7,7 @@ using UnityEngine;
 public class DamageableCharacter : MonoBehaviour, IDamageable
 {
     public static event Action<float> OnPlayerHit; 
+    public static event Action OnPlayerDeath; 
     public bool hasItemDrops; 
     public GameObject itemDrops;
     public GameObject healthText;
@@ -51,6 +52,10 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     public float maxHealth; 
     
     virtual public void OnCharacterDeath(){
+        if (gameObject.tag == "Player"){
+            Debug.Log("died"); 
+            OnPlayerDeath?.Invoke(); 
+        }
         animator.SetBool("isAlive", false);
         SetPositionFreeze(true); 
         Targetable = false; 
