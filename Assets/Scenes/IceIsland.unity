@@ -149560,9 +149560,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b21cfb5e9905dc4698ff81341ea535e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackFrequency: 1
+  attackFrequency: 2
   timeSinceLastAttack: 0
   attackAnimName: attack
+  attackEnabled: 0
 --- !u!1001 &1696534389712105573
 PrefabInstance:
   m_ObjectHideFlags: 0

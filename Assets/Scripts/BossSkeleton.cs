@@ -9,29 +9,29 @@ using UnityEngine.AI;
 
 public class BossSkeleton : SkeletonAIBase, ICharacter
 {
+    public static event Action<float> OnBossHit;     
+
     /* For health regeneration */ 
     public Transform[] healthRegenZones; 
     DetectionZone detectionZone; 
     public float regenRate; 
     public float timeBetweenRegens; 
+    int zoneIdx = 0; 
+    float timeSinceLastRegen = 0f; 
 
-    public static event Action<float> OnBossHit;     
-    float span; // Time span over which to determine whether player is moving away/towards enemy 
-    //AttackZone attackZone; 
     ProjectileLauncher projectileLauncher;
     AutonomousAttack autonomousAttack; 
     PlayerBehaviorMonitor playerBehaviorMonitor;  
-    private bool isAgro; 
-    float maxHealth = 0; 
+
     private Enemy enemy; 
-    public enum BossState { Aggressive, Chasing, Retreating, Regenerating } 
+
+    /* Boss state regulation */ 
+    public enum BossState { Base, Chasing, Retreating, Regenerating } 
     public enum Health { Critical, Medium, Okay, Full }
-    public Bar healthBar; 
     public BossState currentState; 
-    public PlayerBehaviorMonitor.PlayerBehavior playerBehavior; 
+    public Bar healthBar; 
     public bool movementLocked = false; 
-    int zoneIdx = 0; 
-    float timeSinceLastRegen = 0f; 
+
 
     new public void Start(){
         base.Start(); 
@@ -46,10 +46,9 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
         healthBar.MaxValue = (int) enemy.Health; 
         healthBar.Value = (int) enemy.Health; 
         setTarget(GameObject.FindGameObjectWithTag("Player").transform);
-        //attackZone = gameObject.GetComponentInChildren<AttackZone>(); 
-        maxHealth = enemy._health; 
+
         aiLerp.canMove = true; 
-        currentState = BossState.Retreating;
+        currentState = BossState.Base;
         ChangeState(currentState); 
         IsMoving = true; 
 
@@ -60,90 +59,61 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
     }
 
     public Health GetHealth(){
-        if (!enemy){
-            Debug.Log("problem"); 
-        }
-        float health = enemy._health; 
-
-        if (health <= maxHealth/3){
+        if (enemy._health <= enemy.maxHealth/3){
             return Health.Critical; 
         }
-        else if (health <= maxHealth/2){
+        else if (enemy._health <= enemy.maxHealth/2){
             return Health.Medium; 
         }
-        else if (health == maxHealth){
+        else if (enemy._health == enemy.maxHealth){
             return Health.Full; 
         }
-        else { // Increments of health in the upper range of 1/2 to 1 aren't significant 
+        else { 
             return Health.Okay; 
         }
     }
 
-    // Get oppositional boss behavior for a given player behavior, considering boss health 
-    void CheckBossState(){
-        Health health = GetHealth(); 
-        
-        /*BossState newBossState = BossState.Retreating; 
-
-        if (newBossState != currentState){
-            ChangeState(newBossState); 
-        }  */ 
-        /*
-        switch (health){
-            case (Health.Critical):
-                return BossState.Retreating; 
-            case (Health.Medium): 
-                if ((playerState == PlayerBehaviorMonitor.PlayerBehavior.Aggressive) 
-                || (playerState == PlayerBehaviorMonitor.PlayerBehavior.Evasive)) {
-                    return BossState.Aggressive; 
-                }
-                else {
-                    return BossState.Chasing; 
-                }
-            case (Health.Okay): 
-                if ((playerState == PlayerBehaviorMonitor.PlayerBehavior.Retreating)){
-                    return BossState.Chasing; 
-                }
-                else {
-                    return BossState.Aggressive; 
-                }
-            default: 
-                return BossState.Aggressive; 
-            }
-
-                */ 
-        
-    }
     
     override public void FixedUpdate(){
         if (!currentlyGettingKnockback){
-            CheckBossState(); 
             if (!(currentState == BossState.Retreating)){
                 checkMoveCloser();
             } 
+            CheckState(); 
             moveOnState(currentState);  
             adjustGraphics(); 
         }
     }
 
+    void CheckState(){
+        BossState newState = currentState; 
+        
+        if (GetHealth() == Health.Critical){
+            newState = BossState.Retreating;
+        }
+
+        if (newState != currentState){
+            ChangeState(newState); 
+        }
+    }
 
     override public void move() {
        
     }
 
     public void ChangeState(BossState newState){
-        Debug.Log("Changing state to: " + newState.ToString()); 
+        Debug.Log("Changing boss state to: " + newState.ToString()); 
         switch (newState){
-            case (BossState.Aggressive):
+            case (BossState.Base):
                 setTarget(playerTransform);  
                 projectileLauncher.setLaunchEnabled(true); 
-                projectileLauncher.setLaunchFrequency(3f); // Need to make Low, Med, High enum 
-                projectileLauncher.setLaunchType(ProjectileLauncher.LaunchType.Directional); 
+                projectileLauncher.setLaunchFrequency(4.5f); // Need to make Low, Med, High enum 
+                projectileLauncher.setLaunchType(ProjectileLauncher.LaunchType.Mixed); 
                 break; 
             case (BossState.Chasing):
                 setTarget(playerTransform);  
                 projectileLauncher.setLaunchEnabled(true); 
-                projectileLauncher.setLaunchType(ProjectileLauncher.LaunchType.Mixed); 
+                projectileLauncher.setLaunchType(ProjectileLauncher.LaunchType.Directional); 
                 projectileLauncher.setLaunchFrequency(5f); 
                 changeAISpeed(2); // Speed up 
                 break; 
@@ -166,7 +136,7 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
 
     public void moveOnState(BossState currentState){
         switch (currentState){
-            case BossState.Aggressive: 
+            case BossState.Base: 
                 moveAggressive(); 
                 break; 
             case BossState.Chasing: 
@@ -179,12 +149,21 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
                 moveRegenerating(); 
                 break; 
         }
-
     }
+
     void moveAggressive(){
+        if ((playerBehaviorMonitor.GetHealth() == PlayerBehaviorMonitor.Health.Medium 
+        || playerBehaviorMonitor.GetHealth() == PlayerBehaviorMonitor.Health.High) 
+        && (playerBehaviorMonitor.GetProximity() == PlayerBehaviorMonitor.Proximity.Far)){
+            ChangeState(BossState.Chasing); 
+        }
+        
     }
 
     void moveChasing(){
+        if (playerBehaviorMonitor.GetHealth() == PlayerBehaviorMonitor.Health.Medium || playerBehaviorMonitor.GetHealth() == PlayerBehaviorMonitor.Health.High){
+
+        }
     }
 
     void moveRetreating(){
@@ -198,12 +177,16 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
 
     void moveRegenerating(){
         if (GetHealth() == Health.Full){
-            ChangeState(BossState.Aggressive); 
+            ChangeState(BossState.Base); 
             UnlockMovement(); 
-            IsMoving = true; 
         } 
         else if (detectionZone.detectedObjs.Count > 0){
-            ChangeState(BossState.Retreating); 
+            if (GetHealth() == Health.Okay){
+                ChangeState(BossState.Base); 
+            }
+            else {
+                ChangeState(BossState.Retreating);
+            } 
         }
         else { // regenerate
             if (timeSinceLastRegen >= regenRate){
@@ -220,11 +203,11 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
     public void chargeUp(){
         animator.SetTrigger("chargeUp");
         setCanAIMove(false);  
-        //enemy._targetable = false; 
     }
 
     public void checkMoveCloser(){
         float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+        
         // Check if the enemy is farther away from the player than the threshold distance
         if (distanceToPlayer > minDistanceToPlayer){
             if (movementLocked){

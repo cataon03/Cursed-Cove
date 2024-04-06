@@ -48,7 +48,8 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
             return _health;
         }
     }
-
+    public float maxHealth; 
+    
     virtual public void OnCharacterDeath(){
         animator.SetBool("isAlive", false);
         SetPositionFreeze(true); 
@@ -102,6 +103,8 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         }
     }
     public void Start(){
+        maxHealth = Health; 
+
         animator = GetComponent<Animator>();
 
         // Make sure the enemy is alive at the start of it's script
@@ -121,7 +124,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         }
     }
 
-    /// Take damage with knockback
+    // Take damage with knockback
     public void OnHit(float damage, Vector2 knockback)
     {
         if(!Invincible) {

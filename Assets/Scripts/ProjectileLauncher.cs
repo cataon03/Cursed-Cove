@@ -29,6 +29,7 @@ public class ProjectileLauncher : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform; 
         boss = gameObject.GetComponentInParent<BossSkeleton>(); 
         skeletonAIBase = gameObject.GetComponentInParent<SkeletonAIBase>(); 
+        launchType = LaunchType.Mixed; 
     }
     System.Random rand = new System.Random();
 
