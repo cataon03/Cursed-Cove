@@ -12,12 +12,15 @@ public class MainMenu : MonoBehaviour
 
      public void Start(){
           gameManager = FindObjectOfType<GameManager>();
-          if (gameManager.getIsGameStart()){
-               startResumeButtonTxt.text = "Start Game!"; 
-          }
-          else {
-               startResumeButtonTxt.text = "Resume"; 
-          }
+         
+         if (startResumeButtonTxt != null){
+               if (gameManager.getIsGameStart()){
+                    startResumeButtonTxt.text = "Start Game!"; 
+               }
+               else {
+                    startResumeButtonTxt.text = "Resume"; 
+               }
+         }
      }
 
      public void PlayGame(){

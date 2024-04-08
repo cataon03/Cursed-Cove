@@ -147483,6 +147483,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9899346579d64421bbc99d0daa2e8317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1745145509 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4590136096900928294, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
+  m_PrefabInstance: {fileID: 7868266179239792936}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 399f2dde998bcb5449c57bad47baa438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1757729777
 GameObject:
   m_ObjectHideFlags: 0
@@ -149184,6 +149195,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &362909543148197028 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3109828525233444685, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
+  m_PrefabInstance: {fileID: 7868266179239792936}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &362909543148197052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029551710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2fc9909bccc2e44b868134cc8996ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectiles:
+  - {fileID: 3756945089894630524, guid: adee4252501759c46af1f90bc9cc4adf, type: 3}
+  - {fileID: 5148900513270122182, guid: 3c5f55ad4e7fcb94296aaa375b5eff7a, type: 3}
+  - {fileID: 1015633907119699822, guid: eb6d5c198a6c939408d9008c25ff0834, type: 3}
+  - {fileID: 8204312091790791052, guid: d8679113440e54b43b63027042201d3b, type: 3}
+  spawnLocation: {fileID: 362909543148197028}
+  spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  detectionZone: {fileID: 1745145509}
+  launchFrequency: 2
+  skeletonAIBase: {fileID: 0}
 --- !u!1001 &1696534389712105573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -149315,7 +149353,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 772791554084965408, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
       propertyPath: _health
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1239721392876592406, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
       propertyPath: m_Material
@@ -150029,6 +150067,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4109797543628976755, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
+      propertyPath: _health
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4109797543628976755, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5087981326944676923, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5148965640780545304, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
       propertyPath: m_Name
       value: Boss Skeleton
@@ -150044,7 +150094,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5148965640780545304, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 362909543148197052}
   m_SourcePrefab: {fileID: 100100000, guid: 7be8023f265675c4fb1e3a61005580ab, type: 3}
 --- !u!1001 &8974994962064599472
 PrefabInstance:
@@ -150054,50 +150107,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 482865470}
     m_Modifications:
-    - target: {fileID: 213571356340124570, guid: e8861796d11350f469c944a203dcca53, type: 3}
-      propertyPath: m_fontSize
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 213571356340124570, guid: e8861796d11350f469c944a203dcca53, type: 3}
-      propertyPath: m_margin.z
-      value: -343.76074
-      objectReference: {fileID: 0}
-    - target: {fileID: 213571356340124570, guid: e8861796d11350f469c944a203dcca53, type: 3}
-      propertyPath: m_fontColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 213571356340124570, guid: e8861796d11350f469c944a203dcca53, type: 3}
-      propertyPath: m_fontColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 213571356340124570, guid: e8861796d11350f469c944a203dcca53, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 213571356340124570, guid: e8861796d11350f469c944a203dcca53, type: 3}
-      propertyPath: m_fontColor.r
-      value: 0.7830189
-      objectReference: {fileID: 0}
-    - target: {fileID: 213571356340124570, guid: e8861796d11350f469c944a203dcca53, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 213571356340124570, guid: e8861796d11350f469c944a203dcca53, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4278190280
-      objectReference: {fileID: 0}
-    - target: {fileID: 213571356340124570, guid: e8861796d11350f469c944a203dcca53, type: 3}
-      propertyPath: m_enableVertexGradient
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1464942010999838744, guid: e8861796d11350f469c944a203dcca53, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -125
-      objectReference: {fileID: 0}
-    - target: {fileID: 1464942010999838744, guid: e8861796d11350f469c944a203dcca53, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 77
-      objectReference: {fileID: 0}
     - target: {fileID: 5103892237158138353, guid: e8861796d11350f469c944a203dcca53, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -150181,10 +150190,6 @@ PrefabInstance:
     - target: {fileID: 7132310439378805006, guid: e8861796d11350f469c944a203dcca53, type: 3}
       propertyPath: m_Name
       value: Death Screen
-      objectReference: {fileID: 0}
-    - target: {fileID: 7458080334344423748, guid: e8861796d11350f469c944a203dcca53, type: 3}
-      propertyPath: m_Color.a
-      value: 0.84313726
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

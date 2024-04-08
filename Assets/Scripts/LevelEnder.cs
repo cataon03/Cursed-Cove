@@ -1,35 +1,55 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class LevelEnder : MonoBehaviour {
     Animator animator; 
+    public TextMeshProUGUI text; 
+
     private GameManager gameManager; 
 
     private void Start()
-    {
-        DamageableCharacter.OnPlayerDeath += HandleOnPlayerDeath;
+    { 
+       // DontDestroyOnLoad(gameObject);
         animator = gameObject.GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManager>();
-        
-        DontDestroyOnLoad(gameObject);
+        DamageableCharacter.OnPlayerDeath += HandleOnPlayerDeath;
+        Enemy.OnBossDeath += HandleOnBossDeath; 
     }
 
     private void OnDestroy(){
-        DamageableCharacter.OnPlayerDeath -= HandleOnPlayerDeath; 
+        DamageableCharacter.OnPlayerDeath -= HandleOnPlayerDeath;
+        Enemy.OnBossDeath -= HandleOnBossDeath; 
     }
 
     private void HandleOnPlayerDeath(){
-        Debug.Log("received on player"); 
-      
+        DialogueManager.instance.StopDialogue(); 
+        text.text = "YOU DIED."; 
+        text.color = Color.red; 
         animator.SetTrigger("open");
-        StartCoroutine(ShowDeathScreen()); 
+        StartCoroutine(WaitForLevelRestart()); 
     }
 
-    private IEnumerator ShowDeathScreen(){; 
-        yield return new WaitForSeconds(2f);
+    private void HandleOnBossDeath(){
+        DialogueManager.instance.StopDialogue(); 
+        text.text = "LEVEL SUCCESS."; 
+        text.color = Color.white; 
+        animator.SetTrigger("open");
+        StartCoroutine(WaitForNextLevel()); 
+    }
+
+
+    private IEnumerator WaitForLevelRestart(){; 
+        yield return new WaitForSeconds(5f);
         animator.SetTrigger("close"); 
         gameManager.restartLevel(); 
+    }
+
+    private IEnumerator WaitForNextLevel(){
+        yield return new WaitForSeconds(5f);
+        animator.SetTrigger("close"); 
+        gameManager.nextLevel();
     }
 
 }

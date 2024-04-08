@@ -38,7 +38,8 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
         detectionZone = gameObject.GetComponentInChildren<DetectionZone>(); 
         enemy = gameObject.GetComponent<Enemy>();
         playerBehaviorMonitor = gameObject.GetComponent<PlayerBehaviorMonitor>(); 
-        projectileLauncher = gameObject.GetComponentInChildren<ProjectileLauncher>();  
+        projectileLauncher = gameObject.GetComponent<ProjectileLauncher>();  
+        projectileLauncher.setLaunchEnabled(true); 
         autonomousAttack = gameObject.GetComponent<AutonomousAttack>(); 
         autonomousAttack.setAttackEnabled(true); 
 
@@ -79,7 +80,7 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
             if (!(currentState == BossState.Retreating)){
                 checkMoveCloser();
             } 
-            CheckState(); 
+            //CheckState(); 
             moveOnState(currentState);  
             adjustGraphics(); 
         }
@@ -148,10 +149,10 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
         if ((playerBehaviorMonitor.GetHealth() == PlayerBehaviorMonitor.Health.Medium 
         || playerBehaviorMonitor.GetHealth() == PlayerBehaviorMonitor.Health.High) 
         && (playerBehaviorMonitor.GetProximity() == PlayerBehaviorMonitor.Proximity.Far)){
-            ChangeState(BossState.Chasing); 
+            //ChangeState(BossState.Chasing); 
         }
         if (GetHealth() == Health.Critical){
-            ChangeState(BossState.Retreating);
+            //ChangeState(BossState.Retreating);
         }
         
     }
@@ -181,7 +182,7 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
                 ChangeState(BossState.Base); 
             }
             else {
-                ChangeState(BossState.Retreating);
+                //ChangeState(BossState.Retreating);
             } 
         }
         else { // regenerate

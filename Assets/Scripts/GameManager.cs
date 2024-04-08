@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +5,7 @@ using UnityEngine.SceneManagement;
 public enum GameState
 {
     MainMenu,
+    WinMenu, 
     FireIsland,
     IceIsland,
     Home, 
@@ -20,6 +18,9 @@ public class GameManager : MonoBehaviour
     private bool isGameStart = true; 
     public delegate void OnGameStateChange(GameState newState);
     public static event OnGameStateChange gameStateChange;
+    private int levelIdx = 0; 
+    private static GameState[] LEVELS = {GameState.FireIsland, GameState.IceIsland}; 
+
     private GameState currentGameState;
     public GameState previousGameState; 
 
@@ -34,6 +35,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        SetGameState(GameState.MainMenu); 
     }
 
     public void restartLevel(){
@@ -55,10 +61,22 @@ public class GameManager : MonoBehaviour
     public GameState getCurrentGameState(){
         return currentGameState; 
     }
-    private void Start()
-    {
-        SetGameState(GameState.MainMenu);
+
+    public void nextLevel(){
+        // Increment the current level 
+        levelIdx += 1; 
+
+        if (levelIdx == LEVELS.Length){
+            Debug.Log("game is over"); 
+            HandleOnGameStateChanged(GameState.WinMenu); // End the game 
+        }
+        else {
+            Debug.Log("going to: " + levelIdx); 
+            HandleOnGameStateChanged(LEVELS[levelIdx]); // Load the next level 
+        }
     }
+
+
       void Update()
     {
         // Check if the Esc key was pressed
@@ -97,6 +115,9 @@ public class GameManager : MonoBehaviour
             case GameState.GameOver:
                 Application.Quit(); 
                 break;
+            case GameState.WinMenu: 
+                SceneManager.LoadScene("WinMenu"); 
+                break; 
         }
         currentGameState = newState; 
     }

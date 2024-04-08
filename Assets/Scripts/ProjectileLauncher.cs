@@ -7,8 +7,6 @@ using UnityEngine.Rendering.Universal;
 public class ProjectileLauncher : MonoBehaviour
 {
     [SerializeField] public List<GameObject> projectiles = new List<GameObject>();
-    //public GameObject projectile;
-    //public Transform target; 
     public Transform spawnLocation;
     public Quaternion spawnRotation;
     public DetectionZone detectionZone;
@@ -27,8 +25,8 @@ public class ProjectileLauncher : MonoBehaviour
 
     void Start(){
         target = GameObject.FindGameObjectWithTag("Player").transform; 
-        boss = gameObject.GetComponentInParent<BossSkeleton>(); 
-        skeletonAIBase = gameObject.GetComponentInParent<SkeletonAIBase>(); 
+        boss = gameObject.GetComponent<BossSkeleton>(); 
+        skeletonAIBase = gameObject.GetComponent<SkeletonAIBase>(); 
         launchType = LaunchType.Mixed; 
     }
     System.Random rand = new System.Random();
@@ -39,11 +37,14 @@ public class ProjectileLauncher : MonoBehaviour
             timeSinceSpawned += Time.deltaTime;
 
             if (timeSinceSpawned >= launchFrequency) {
-                Debug.Log("launching"); 
-                Launch(); 
+                TriggerLaunch(); 
                 timeSinceSpawned = 0;
             }
         }
+    }
+
+    public void TriggerLaunch(){
+        boss.chargeUp();
     }
 
     public void setLaunchEnabled(bool enableLaunch){
@@ -58,11 +59,8 @@ public class ProjectileLauncher : MonoBehaviour
         launchFrequency = frequency; 
     }
 
-    public void Launch(){
-
+    public void Launch(){  
         if (skeletonAIBase.canAttack){       
-            boss.chargeUp();
-             
             if (launchType == LaunchType.Directional){
                 LaunchDirectional(); 
             }
@@ -87,7 +85,7 @@ public class ProjectileLauncher : MonoBehaviour
         if (((LaunchType) nextLaunch) == LaunchType.Directional){
             LaunchDirectional(); 
         }
-        else if (((LaunchType) nextLaunch) == LaunchType.Bloom){
+        else {
             LaunchBloom(); 
         }
     }

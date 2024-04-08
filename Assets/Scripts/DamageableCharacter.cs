@@ -28,7 +28,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
             // When health is dropped (new value less than old value), play hit animation and show damage taken as text
             if(value < _health) {
                 animator.SetTrigger("hit");
-
+                
                 // Spawn damage text right above the character
                 HealthText healthTextInstance = Instantiate(healthText).GetComponent<HealthText>();
                 RectTransform textTransform = healthTextInstance.GetComponent<RectTransform>();
@@ -53,7 +53,6 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     
     virtual public void OnCharacterDeath(){
         if (gameObject.tag == "Player"){
-            Debug.Log("died"); 
             OnPlayerDeath?.Invoke(); 
         }
         animator.SetBool("isAlive", false);
@@ -134,6 +133,9 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     {
         if(!Invincible) {
             Health -= damage;
+            Debug.Log(gameObject.tag + " taking damage"); 
+            Debug.Log("damage: " + damage); 
+            Debug.Log("Health is: " + Health +  " " + gameObject.tag); 
 
             // Apply force 
             // Impulse for instantaneous forces

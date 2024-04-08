@@ -60,13 +60,12 @@ public abstract class SkeletonAIBase : Skeleton, ICharacter
     }
 
     new public void LockMovement() {
-        aiLerp.enabled = false; 
         IsMoving = false; 
+        aiLerp.enabled = false; 
     }
 
     public void LockAndUpdateGraphics(){
         LockMovement(); 
-        Debug.Log("lock"); 
         IsMoving = false; 
     }
 
@@ -76,7 +75,6 @@ public abstract class SkeletonAIBase : Skeleton, ICharacter
     }
 
     new public void UnlockMovement() {
-        Debug.Log("unlock"); 
         aiLerp.enabled = true; 
         IsMoving = true; 
     }
