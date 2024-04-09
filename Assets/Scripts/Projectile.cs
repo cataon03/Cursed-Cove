@@ -31,9 +31,7 @@ public class Projectile : MonoBehaviour
                 dCharacter.OnHit(damage, knockbackDirection * knockbackForce);
                 Destroy(gameObject);
             }
-            
         }
-        //Destroy(gameObject);
     }
 
     public void Launch(Vector2 direction)

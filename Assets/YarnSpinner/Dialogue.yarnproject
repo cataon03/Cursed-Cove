@@ -3,6 +3,7 @@
   "sourceFiles": [
     "**/*.yarn",
     "**/*.yarn",
+    "**/*.yarn",
     "**/*.yarn"
   ],
   "excludeFiles": [

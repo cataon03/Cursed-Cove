@@ -6,7 +6,6 @@ using TMPro;
 public class CoinCounter : MonoBehaviour
 {
     public static CoinCounter Instance; 
-
     public TMP_Text cointText; 
     public int currentCoins = 0; 
 
@@ -14,13 +13,12 @@ public class CoinCounter : MonoBehaviour
         cointText = GetComponent<TMP_Text>();
         Instance = this; 
     }
-    // Start is called before the first frame update
-    void Start()
-    {
+
+    void Start(){
         cointText.text = "COINS: " + currentCoins.ToString(); 
     }
 
-    public void IncreaseCoins(int v){
+    public void IncreaseCoins(){
         currentCoins += 1; 
         cointText.text = "COINS: " + currentCoins.ToString(); 
     } 

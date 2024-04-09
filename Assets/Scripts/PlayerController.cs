@@ -41,11 +41,6 @@ public class PlayerController : MonoBehaviour, ICharacter
     bool isMoving = false;
     bool canMove;
 
-    void Awake(){
-        Events.OnCharacterFreeze += OnFreeze;
-        Events.OnPlayerAttackDisabled += onAttackDisabled; 
-    }
-
     void Start(){
         canMove = true; 
         rb = GetComponent<Rigidbody2D>();

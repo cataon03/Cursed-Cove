@@ -7,22 +7,13 @@ TagManager:
   - Canvas
   - Boss
   - Skeleton
-  - SmartSkeleton
-  - AI
-  - Projectile
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - GroundCollision
   - Water
   - UI
-  - UI OVER
-  - Boundary
-  - 
-  - Lava
-  - GroundCollision
-  - Player
   - Enemy
   - 
   - 
@@ -31,7 +22,6 @@ TagManager:
   - 
   - 
   - 
-  - GroundObjects
   - 
   - 
   - 
@@ -41,7 +31,14 @@ TagManager:
   - 
   - 
   - 
-  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   m_SortingLayers:
   - name: Default

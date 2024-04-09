@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 [CreateAssetMenu(menuName = "Scriptable object/Item")]
 public class Item : ScriptableObject {
@@ -17,10 +14,21 @@ public class Item : ScriptableObject {
     [Header("Both")]
     public Sprite image;
 
+    [Header("Powerups")]
+    public PowerupType powerupType;
+    public float powerupValue; 
+    public float timeForPowerup; 
+
 }
 
 public enum ItemType {
     Object, 
-    Weapon
+    Weapon, 
+    Powerup
 }
 
+public enum PowerupType {
+    Speed, 
+    Damage, 
+    Invincibility
+}

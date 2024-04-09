@@ -8,7 +8,6 @@ public class Sign : MonoBehaviour
 {
     public string signDialogueNodeName; 
 
-
     void OnTriggerEnter2D(Collider2D other)
     {   
         GetComponent<CircleCollider2D>().enabled = false; 

@@ -56,23 +56,8 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
             OnPlayerDeath?.Invoke(); 
         }
         animator.SetBool("isAlive", false);
-        SetPositionFreeze(true); 
         Targetable = false; 
     }
-
-    public void SetPositionFreeze(bool shouldFreeze)
-    {
-    if (shouldFreeze)
-    {
-        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
-    }
-    else
-    {
-        // Unfreeze positions 
-        GetComponent<Rigidbody2D>().constraints &= ~RigidbodyConstraints2D.FreezePositionX;
-        GetComponent<Rigidbody2D>().constraints &= ~RigidbodyConstraints2D.FreezePositionY;
-    }
-}
 
     public bool Targetable { get { return _targetable; }
     set {
@@ -133,9 +118,6 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     {
         if(!Invincible) {
             Health -= damage;
-            Debug.Log(gameObject.tag + " taking damage"); 
-            Debug.Log("damage: " + damage); 
-            Debug.Log("Health is: " + Health +  " " + gameObject.tag); 
 
             // Apply force 
             // Impulse for instantaneous forces
@@ -146,11 +128,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
                 Invincible = true;
             }
         }
-        if (gameObject.tag == "AI"){
-            StartCoroutine(gameObject.GetComponent<SkeletonAIBase>().ApplyKnockbackWithDelay(knockback));
-        }
         if (gameObject.tag == "Boss"){
-            StartCoroutine(gameObject.GetComponent<BossSkeleton>().ApplyKnockbackWithDelay(knockback));
             gameObject.GetComponent<BossSkeleton>().updateHealthBar(damage); 
         }
         if (gameObject.tag == "Player"){

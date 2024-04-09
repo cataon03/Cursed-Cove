@@ -11,7 +11,6 @@ public class LevelEnder : MonoBehaviour {
 
     private void Start()
     { 
-       // DontDestroyOnLoad(gameObject);
         animator = gameObject.GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManager>();
         DamageableCharacter.OnPlayerDeath += HandleOnPlayerDeath;

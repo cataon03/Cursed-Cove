@@ -8,7 +8,6 @@ public class ProximityAttackSkeleton : Skeleton
     new public void Start(){
         base.Start();
         if (!animator){
-            Debug.Log("still no animator"); 
             animator = GetComponent<Animator>(); 
         }
         detectionZone = gameObject.GetComponentInChildren<DetectionZone>(); 
@@ -30,9 +29,12 @@ public class ProximityAttackSkeleton : Skeleton
 
     public override void adjustGraphics()
     {
-        if ((transform.position.x - lastPosition.x )> 0) {
+        if (rb.velocity.x > 0.1f)
+        {
             spriteRenderer.flipX = false;
-        } else if ((transform.position.x - lastPosition.x) < 0) {
+        }
+        else if (rb.velocity.x < -0.1f) 
+        {
             spriteRenderer.flipX = true;
         }
     }

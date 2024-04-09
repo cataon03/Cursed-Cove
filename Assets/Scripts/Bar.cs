@@ -1,9 +1,5 @@
-using Pathfinding;
 using UnityEngine;
 using System.Collections;
-using System;
-using UnityEngine.InputSystem;
-using Pathfinding.Util;
 
 
 public class Bar : MonoBehaviour

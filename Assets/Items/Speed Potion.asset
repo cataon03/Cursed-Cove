@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 562c9cc74207943898ebf4e2c7edaa28, type: 3}
+  m_Name: Speed Potion
+  m_EditorClassIdentifier: 
+  type: 2
+  range: {x: 5, y: 4}
+  stackable: 0
+  image: {fileID: 21300000, guid: 080cc7e1ddf0a9b479997bd288f82eb5, type: 3}
+  powerupType: 0
+  powerupValue: 2
+  timeForPowerup: 5

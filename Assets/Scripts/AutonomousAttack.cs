@@ -2,31 +2,32 @@ using UnityEngine;
 using System;
 
 
-public class AutonomousAttack : MonoBehaviour
+public class AutonomousAttack : SkeletonAIBase
 {
+    public string attackAnimName; 
     public float attackFrequency; 
     public float timeSinceLastAttack; 
-    private DetectionZone detectionZone; 
-    public String attackAnimName; 
-    SkeletonAIBase skeletonAIBase; 
-    public bool attackEnabled = false; 
-    Animator animator; 
 
-    void Start(){
+    private DetectionZone detectionZone; 
+    private bool attackEnabled = false; 
+
+    new public void Start(){
+        base.Start(); 
         detectionZone = gameObject.GetComponentInChildren<DetectionZone>(); 
-        animator = gameObject.GetComponent<Animator>(); 
-        skeletonAIBase = gameObject.GetComponent<SkeletonAIBase>(); 
     }
 
-    void Update(){
-        if (skeletonAIBase.canAttack){
-            timeSinceLastAttack += Time.deltaTime;
-            if (timeSinceLastAttack >= attackFrequency && detectionZone.detectedObjs.Count > 0) {
-                Debug.Log("Attacking"); 
-                animator.SetTrigger(attackAnimName);
-                timeSinceLastAttack = 0;
+    new void FixedUpdate(){
+        if (timeSinceLastAttack >= attackFrequency){
+            if (getCanAttack()){
+                if (attackEnabled && detectionZone.detectedObjs.Count > 0){
+                    animator.SetTrigger(attackAnimName); 
+                    timeSinceLastAttack = 0f;  
+                }
             }
         }
+        else {
+            timeSinceLastAttack += Time.deltaTime; 
+        }      
     }
 
     public void setAttackEnabled(bool attackEnabled){

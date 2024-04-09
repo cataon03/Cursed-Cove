@@ -4,47 +4,38 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.Rendering.Universal;
 
-public class ProjectileLauncher : MonoBehaviour
+public class ProjectileLauncher : SkeletonAIBase
 {
     [SerializeField] public List<GameObject> projectiles = new List<GameObject>();
-    public Transform spawnLocation;
+    System.Random rand = new System.Random();
     public Quaternion spawnRotation;
-    public DetectionZone detectionZone;
     public float launchFrequency = 0.5f;
-    private float timeSinceSpawned = 0.5f;
+    private float timeSinceLastLaunch = 0f;
+    public string launchAnimName;
+    bool launchEnabled = false; 
     public enum LaunchType {
         Directional, 
         Bloom, 
         Mixed
     }
-    LaunchType launchType = LaunchType.Directional;
-    private Transform target; 
-    bool launchEnabled = false; 
-    private BossSkeleton boss; 
-    public SkeletonAIBase skeletonAIBase; 
+    LaunchType currentLaunchType = LaunchType.Directional;
+    
 
-    void Start(){
-        target = GameObject.FindGameObjectWithTag("Player").transform; 
-        boss = gameObject.GetComponent<BossSkeleton>(); 
-        skeletonAIBase = gameObject.GetComponent<SkeletonAIBase>(); 
-        launchType = LaunchType.Mixed; 
+    new public void Start(){
+        base.Start(); 
+        currentLaunchType = LaunchType.Mixed; 
     }
-    System.Random rand = new System.Random();
 
-    void Update(){
-        if (launchEnabled && skeletonAIBase.canAttack){
-            //if (detectionZone.detectedObjs.Count > 0) {
-            timeSinceSpawned += Time.deltaTime;
-
-            if (timeSinceSpawned >= launchFrequency) {
-                TriggerLaunch(); 
-                timeSinceSpawned = 0;
+    new void FixedUpdate(){
+        if (timeSinceLastLaunch >= launchFrequency){
+            if (getCanAttack() && launchEnabled){  
+                animator.SetTrigger(launchAnimName); 
+                timeSinceLastLaunch = 0f;  
             }
         }
-    }
-
-    public void TriggerLaunch(){
-        boss.chargeUp();
+        else {
+            timeSinceLastLaunch += Time.deltaTime; 
+        }     
     }
 
     public void setLaunchEnabled(bool enableLaunch){
@@ -52,7 +43,7 @@ public class ProjectileLauncher : MonoBehaviour
     }
 
     public void setLaunchType(LaunchType type){
-        launchType = type; 
+        currentLaunchType = type; 
     }
 
     public void setLaunchFrequency(float frequency){
@@ -60,16 +51,17 @@ public class ProjectileLauncher : MonoBehaviour
     }
 
     public void Launch(){  
-        if (skeletonAIBase.canAttack){       
-            if (launchType == LaunchType.Directional){
+        if (launchEnabled){
+            if (currentLaunchType == LaunchType.Directional){
                 LaunchDirectional(); 
             }
-            else if (launchType == LaunchType.Bloom){
+            else if (currentLaunchType == LaunchType.Bloom){
                 LaunchBloom(); 
             }
             else {
                 LaunchMixed(); 
             }
+            timeSinceLastLaunch = 0f;
         }
     }
 
@@ -93,7 +85,7 @@ public class ProjectileLauncher : MonoBehaviour
     // Basic single-projectile launch in the direction of the player
     public void LaunchDirectional(){
         GameObject newProjectile = Instantiate(pickProjectilePrefab(), transform.position, spawnRotation);
-        Vector2 direction = (target.position - transform.position).normalized;
+        Vector2 direction = (getTarget().position - transform.position).normalized;
         newProjectile.GetComponent<Projectile>().Launch(direction);
     }
 

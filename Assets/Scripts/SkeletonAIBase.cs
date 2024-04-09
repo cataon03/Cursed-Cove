@@ -1,27 +1,25 @@
 using System.Collections;
 using Pathfinding;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class SkeletonAIBase : Skeleton, ICharacter
 {
     public float hitDelay; 
-    public float minDistanceToPlayer = 1.0f; 
+    public float minDistanceToPlayer = 1.2f; 
     public bool currentlyGettingKnockback; 
     public bool playerInRange; 
     public float speed; 
-    public bool canAttack;
-
+    private bool canAttack;
     private AIDestinationSetter destinationSetter;
     public AILerp aiLerp; 
     public Transform playerTransform; 
 
     new public void Start(){
-        base.Start(); 
+        base.Start();
+        aiLerp = GetComponent<AILerp>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform; 
         destinationSetter = GetComponent<AIDestinationSetter>();
         setTarget(GameObject.FindGameObjectWithTag("Player").transform);
-        aiLerp = GetComponent<AILerp>();
         canAttack = true; 
     }
 
@@ -29,8 +27,19 @@ public abstract class SkeletonAIBase : Skeleton, ICharacter
         if (destinationSetter){
             bool shouldFaceRight = destinationSetter.target.position.x > transform.position.x;
             spriteRenderer.flipX = !shouldFaceRight; 
-            gameObject.BroadcastMessage("IsFacingRight", shouldFaceRight);
+            //gameObject.BroadcastMessage("IsFacingRight", shouldFaceRight);
         }
+        
+        if (aiLerp.velocity.magnitude > 0.1f){
+            IsMoving = true; 
+        }
+        else {
+            IsMoving = false; 
+        }
+    }
+
+    public bool getCanAttack(){
+        return canAttack; 
     }
 
     public void lockAttack(){
@@ -49,58 +58,35 @@ public abstract class SkeletonAIBase : Skeleton, ICharacter
         return destinationSetter.target; 
     }
 
-    public bool getCanAIMove(){
-        return aiLerp.canMove; 
-    }
-
-    public void setCanAIMove(bool canAIMove){
-        aiLerp.enabled = canAIMove; 
-        IsMoving = canAIMove; 
-        canMove = canAIMove; 
-    }
-
     new public void LockMovement() {
-        IsMoving = false; 
         aiLerp.enabled = false; 
-    }
-
-    public void LockAndUpdateGraphics(){
-        LockMovement(); 
-        IsMoving = false; 
-    }
-
-    public void UnlockAndUpdateGraphics(){
-        IsMoving = true; 
-        UnlockMovement(); 
     }
 
     new public void UnlockMovement() {
         aiLerp.enabled = true; 
-        IsMoving = true; 
+    }
+
+    public bool isTooClose(){
+        float dist = Vector2.Distance(transform.position, playerTransform.position);
+        if (dist <= minDistanceToPlayer){
+            return true; 
+        }
+        return false; 
     }
 
     public void Update() {
+        if (isTooClose()){
+            aiLerp.isStopped = true; 
+        }
+        else {
+            aiLerp.isStopped = false; 
+        }
+
         move(); 
         adjustGraphics();
     }
 
     public void changeAISpeed(float amount){
         aiLerp.speed += amount; 
-    }
-
-    public IEnumerator ApplyKnockbackWithDelay(Vector2 knockback) {
-        LockMovement(); 
-        aiLerp.enabled = false; 
-        rb.AddForce(knockback, ForceMode2D.Impulse);
-        Debug.Log("Waiting"); 
-        currentlyGettingKnockback = true; 
-        yield return new WaitForSeconds(hitDelay); // Wait for knockback effect to apply
-        currentlyGettingKnockback = false; 
-        aiLerp.enabled = true; 
-        Debug.Log("stopwaiting"); 
-        //aiLerp.Teleport(transform.position, true); 
-        UnlockMovement(); 
-        aiLerp.SearchPath();
-  
     }
 }

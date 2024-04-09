@@ -6,7 +6,6 @@ public class HealthPickup : MonoBehaviour
     PlayerHealthBar healthBar;
     public int healthBonus = 1;
 
-
     void Awake()
     {
         healthBar = FindObjectOfType<PlayerHealthBar>();

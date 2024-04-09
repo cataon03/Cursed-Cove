@@ -42,17 +42,12 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
         projectileLauncher.setLaunchEnabled(true); 
         autonomousAttack = gameObject.GetComponent<AutonomousAttack>(); 
         autonomousAttack.setAttackEnabled(true); 
-
         healthBar = gameObject.GetComponentInChildren<Bar>(); 
         healthBar.MaxValue = (int) enemy.Health; 
         healthBar.Value = (int) enemy.Health; 
         setTarget(GameObject.FindGameObjectWithTag("Player").transform);
-
-        aiLerp.canMove = true; 
         currentState = BossState.Base;
         ChangeState(currentState); 
-        IsMoving = true; 
-
     }
 
     public void updateHealthBar(float change){
@@ -71,18 +66,6 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
         }
         else { 
             return Health.Okay; 
-        }
-    }
-
-    
-    override public void FixedUpdate(){
-        if (!currentlyGettingKnockback){
-            if (!(currentState == BossState.Retreating)){
-                checkMoveCloser();
-            } 
-            //CheckState(); 
-            moveOnState(currentState);  
-            adjustGraphics(); 
         }
     }
 
@@ -197,30 +180,8 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
         }
     }
 
-    public void chargeUp(){
+    public void BossCharge(){
         animator.SetTrigger("chargeUp");
-        setCanAIMove(false);  
     }
-
-    public void checkMoveCloser(){
-        float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
-        
-        // Check if the enemy is farther away from the player than the threshold distance
-        if (distanceToPlayer > minDistanceToPlayer){
-            if (movementLocked){
-                UnlockMovement();
-                IsMoving = true; 
-                movementLocked = false;  
-            }
-        }
-        else {
-            // The enemy is within the threshold distance, no need to move closer
-            if (!movementLocked){
-                movementLocked = true; 
-            }
-            IsMoving = false; 
-            LockMovement();
-            
-        }
-    }    
+   
 }

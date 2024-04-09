@@ -11,6 +11,8 @@ public class InventoryManager : MonoBehaviour
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
     public static event Action<string> OnItemEquipped; 
+    public static event Action<Item> OnPowerupEquipped;
+
     int selectedSlot = -1;
 
     private void Awake()
@@ -56,6 +58,10 @@ public class InventoryManager : MonoBehaviour
             if (itemInSlot.item.type == ItemType.Weapon){
                 Debug.Log("Selecting a weapon in the inventory"); 
                 OnItemEquipped?.Invoke(itemInSlot.item.name); 
+            }
+            if (itemInSlot.item.type == ItemType.Powerup){
+                Debug.Log("powerup selected"); 
+                OnPowerupEquipped?.Invoke(itemInSlot.item);  
             }
         }
         selectedSlot = newValue;

@@ -21,9 +21,6 @@ public abstract class Skeleton : MonoBehaviour, ICharacter
     DamageableCharacter damagableCharacter;
     bool isMoving = false;
 
-    void Awake(){
-        Events.OnCharacterFreeze += OnFreeze;
-    }
 
     public void Start(){
         canMove = true; 
@@ -42,7 +39,7 @@ public abstract class Skeleton : MonoBehaviour, ICharacter
         }
     }
 
-    public abstract void move(); 
+    virtual public void move(){}
 
     virtual public void FixedUpdate() {
         
@@ -59,7 +56,7 @@ public abstract class Skeleton : MonoBehaviour, ICharacter
         Collider2D collider = collision.collider;
         IDamageable damageable = collider.GetComponent<IDamageable>();
 
-        if(damageable != null && collision.gameObject.tag != "Skeleton" || collision.gameObject.tag != "AI" || collision.gameObject.tag != "Boss") {
+        if(damageable != null) {
             // Offset for collision detection changes the direction where the force comes from
             Vector2 direction = (collider.transform.position - transform.position).normalized;
 

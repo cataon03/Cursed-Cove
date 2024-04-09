@@ -7,14 +7,13 @@ public class PatrolSkeleton : SkeletonAIBase, ICharacter
     public bool isAgro; 
     public int targetPoint; 
     public float nextWaypointDistance = 3f; 
-    public AttackZone attackZone;
+    public DetectionZone detectionZone;
 
     new public void Start(){
         base.Start(); 
         targetPoint = 0; 
         setTarget(patrolPoints[targetPoint].transform); // Start patrol by default 
-        setCanAIMove(true); 
-        attackZone = GetComponentInChildren<AttackZone>(); 
+        detectionZone = GetComponentInChildren<DetectionZone>(); 
         isAgro = false; 
     }
      
@@ -25,42 +24,23 @@ public class PatrolSkeleton : SkeletonAIBase, ICharacter
         }
     }
 
-    void moveOnPatrol(){
-        IsMoving = true; 
+    void patrol(){
         if (transform.position == patrolPoints[targetPoint].position){
             increaseTargetInt();
             setTarget(patrolPoints[targetPoint].transform);
         }
     }
 
-    void moveOnAgro(){    
-        float distanceToPlayer = Vector2.Distance(rb.position, getTarget().position);
-        if (distanceToPlayer <= minDistanceToPlayer) {
-            IsMoving = false; 
-        }
-        else {
-            IsMoving = true; 
-        }
-    }
-
     override public void move() {
-        if (attackZone.playerDetected){
+        // Switch to agro state if player detected
+        if (detectionZone.detectedObjs.Count > 0){
             isAgro = true; 
             setTarget(GameObject.FindGameObjectWithTag("Player").transform); 
         }
-
+        
         // Patrol if player not detected
-        if (canMove && !isAgro){
-            moveOnPatrol(); 
-            IsMoving = true; 
-        }
-        else if (canMove && isAgro){
-            moveOnAgro(); 
-            IsMoving = true; 
-        }
-        else {
-            IsMoving = false;
-            setCanAIMove(false); 
+        if (!isAgro){
+            patrol(); 
         }
     }
 }
