@@ -6,7 +6,6 @@ public abstract class SkeletonAIBase : Skeleton, ICharacter
 {
     public float hitDelay; 
     public float minDistanceToPlayer = 1.2f; 
-    public bool currentlyGettingKnockback; 
     public bool playerInRange; 
     public float speed; 
     private bool canAttack;
@@ -16,12 +15,13 @@ public abstract class SkeletonAIBase : Skeleton, ICharacter
 
     new public void Start(){
         base.Start();
-        aiLerp = GetComponent<AILerp>();
+        aiLerp = gameObject.GetComponent<AILerp>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform; 
         destinationSetter = GetComponent<AIDestinationSetter>();
         setTarget(GameObject.FindGameObjectWithTag("Player").transform);
         canAttack = true; 
     }
+
 
     override public void adjustGraphics(){
         if (destinationSetter){
@@ -30,7 +30,7 @@ public abstract class SkeletonAIBase : Skeleton, ICharacter
             //gameObject.BroadcastMessage("IsFacingRight", shouldFaceRight);
         }
         
-        if (aiLerp.velocity.magnitude > 0.1f){
+        if (aiLerp.enabled && aiLerp.velocity.magnitude > 0.1f){
             IsMoving = true; 
         }
         else {
@@ -43,10 +43,12 @@ public abstract class SkeletonAIBase : Skeleton, ICharacter
     }
 
     public void lockAttack(){
+        Debug.Log("unlock attack"); 
         canAttack = false; 
     }
 
     public void unlockAttack(){
+        Debug.Log("unlock attack"); 
         canAttack = true; 
     }
 

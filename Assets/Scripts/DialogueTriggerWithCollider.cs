@@ -10,6 +10,10 @@ public class DialogueTriggerWithCollider : MonoBehaviour
     public bool disableAfterFirstCollision; 
     
 
+    void OnTriggerExit2D(){
+        DialogueManager.instance.StopDialogue(); 
+    }
+    
     void OnTriggerEnter2D(Collider2D other) {
     
         // Check if the collider belongs to the player

@@ -7,11 +7,16 @@ public class ProximityAttackSkeleton : Skeleton
 
     new public void Start(){
         base.Start();
+        PowerupManager.OnPlayerInvisible += HandleOnPlayerInvisible;
         if (!animator){
             animator = GetComponent<Animator>(); 
         }
         detectionZone = gameObject.GetComponentInChildren<DetectionZone>(); 
         lastPosition = transform.position; 
+    }
+
+    public void OnDestroy(){
+        PowerupManager.OnPlayerInvisible -= HandleOnPlayerInvisible;
     }
 
     public override void move()
@@ -36,6 +41,16 @@ public class ProximityAttackSkeleton : Skeleton
         else if (rb.velocity.x < -0.1f) 
         {
             spriteRenderer.flipX = true;
+        }
+    }
+
+    public void HandleOnPlayerInvisible(bool isInvisible){
+        if (isInvisible){
+            LockMovement(); 
+            IsMoving = false; 
+        }
+        else {
+            UnlockMovement(); 
         }
     }
 }

@@ -1,0 +1,10 @@
+﻿title: AskToTrade
+position: -79,-67
+---
+
+Trader:Come look at my shop!
+-> Yes
+    <<open_shop Trader>>
+-> No 
+    <<stop>>
+===

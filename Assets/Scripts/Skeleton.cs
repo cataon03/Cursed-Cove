@@ -46,9 +46,6 @@ public abstract class Skeleton : MonoBehaviour, ICharacter
         if (canMove) {
             move(); 
         }
-        else {
-            IsMoving = false;
-        }
         adjustGraphics();
     }
 

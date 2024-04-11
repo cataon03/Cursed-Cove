@@ -30,8 +30,6 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
     public enum Health { Critical, Medium, Okay, Full }
     public BossState currentState; 
     public Bar healthBar; 
-    public bool movementLocked = false; 
-
 
     new public void Start(){
         base.Start(); 
@@ -105,7 +103,6 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
             case (BossState.Regenerating): 
                 projectileLauncher.setLaunchEnabled(false);
                 LockMovement(); 
-                IsMoving = false; 
                 break; 
         }
         currentState = newState; 

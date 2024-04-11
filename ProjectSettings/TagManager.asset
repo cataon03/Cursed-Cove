@@ -7,6 +7,8 @@ TagManager:
   - Canvas
   - Boss
   - Skeleton
+  - Projectile
+  - AI
   layers:
   - Default
   - TransparentFX
@@ -15,8 +17,8 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - 
-  - 
+  - SwordHitbox
+  - ' Dialogue Trigger Collider'
   - 
   - 
   - 

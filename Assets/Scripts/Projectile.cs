@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
         if(tag == "Player") {
             IDamageable dCharacter = collider.gameObject.GetComponent<IDamageable>();
 
-            if(dCharacter != null) {
+            if(dCharacter != null && !dCharacter.ProjectileInvincible) {
                 Rigidbody2D rb = GetComponent<Rigidbody2D>();
                 Vector2 knockbackDirection = rb.velocity.normalized;
                 dCharacter.OnHit(damage, knockbackDirection * knockbackForce);

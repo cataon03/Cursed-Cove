@@ -7,9 +7,11 @@ public class PatrolSkeleton : SkeletonAIBase, ICharacter
     public bool isAgro; 
     public int targetPoint; 
     public float nextWaypointDistance = 3f; 
+    private bool blindToPlayer = false; 
     public DetectionZone detectionZone;
 
     new public void Start(){
+        PowerupManager.OnPlayerInvisible += HandleOnPlayerInvisible;
         base.Start(); 
         targetPoint = 0; 
         setTarget(patrolPoints[targetPoint].transform); // Start patrol by default 
@@ -17,6 +19,10 @@ public class PatrolSkeleton : SkeletonAIBase, ICharacter
         isAgro = false; 
     }
      
+    public void OnDestroy(){
+        PowerupManager.OnPlayerInvisible -= HandleOnPlayerInvisible;
+    }
+
     void increaseTargetInt(){
         targetPoint++; 
         if (targetPoint >= patrolPoints.Length){
@@ -33,7 +39,7 @@ public class PatrolSkeleton : SkeletonAIBase, ICharacter
 
     override public void move() {
         // Switch to agro state if player detected
-        if (detectionZone.detectedObjs.Count > 0){
+        if (!blindToPlayer && detectionZone.detectedObjs.Count > 0){
             isAgro = true; 
             setTarget(GameObject.FindGameObjectWithTag("Player").transform); 
         }
@@ -41,6 +47,20 @@ public class PatrolSkeleton : SkeletonAIBase, ICharacter
         // Patrol if player not detected
         if (!isAgro){
             patrol(); 
+        }
+    }
+
+    public void HandleOnPlayerInvisible(bool isInvisible){
+        if (isInvisible){
+            blindToPlayer = true; 
+            // Resume patrol if previously agrod on player
+            if (isAgro){
+                isAgro = false;
+                setTarget(patrolPoints[targetPoint].transform);
+            } 
+        }
+        else {
+            blindToPlayer = false; 
         }
     }
 }

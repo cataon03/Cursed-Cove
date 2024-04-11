@@ -81,10 +81,22 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         }
      } }
 
+    public bool ProjectileInvincible { get {
+        return _projectile_invincible;
+     }
+     set {
+        _projectile_invincible = value;
+
+        if(_projectile_invincible == true) {
+            invincibleTimeElapsed = 0f;
+        }
+     } }
+
     public float _health = 5;
     public bool _targetable = true;
 
     public bool _invincible = false;
+    public bool _projectile_invincible = false;
     private void OnDestroy()
     {
         if (hasItemDrops){
@@ -118,7 +130,6 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     {
         if(!Invincible) {
             Health -= damage;
-
             // Apply force 
             // Impulse for instantaneous forces
             rb.AddForce(knockback, ForceMode2D.Impulse);

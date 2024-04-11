@@ -19,16 +19,21 @@ public class Item : ScriptableObject {
     public float powerupValue; 
     public float timeForPowerup; 
 
+    [Header("Shop Item Price")]
+    public int price; 
+
+
 }
 
 public enum ItemType {
     Object, 
     Weapon, 
-    Powerup
+    Powerup, 
+    ShopItem
 }
 
 public enum PowerupType {
     Speed, 
-    Damage, 
+    Invisibility, 
     Invincibility
 }

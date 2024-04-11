@@ -1,6 +1,7 @@
 using Yarn.Unity; 
 using UnityEngine;
 using System;
+using Yarn;
 
 public class Chest : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class Chest : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>(); 
     }
 
+    void OnTriggerExit2D(){
+        DialogueManager.instance.StopDialogue(); 
+    }
+    
     void OnTriggerEnter2D(Collider2D other)
     {
         if(detectionZone.detectedObjs.Count == 0) {
