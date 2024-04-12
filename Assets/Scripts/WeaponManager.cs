@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using System.Text;
 using System; 
 using UnityEngine;
+using UnityEditor.Animations;
+using Unity.VisualScripting.FullSerializer;
+using UnityEditor;
 
 public class WeaponManager : MonoBehaviour
 {
     public static WeaponManager instance;
-    public GameObject player; 
+
+    public AnimationClip[] fireSwordAnimations; 
+    public AnimationClip[] iceSwordAnimations; 
+    public AnimationClip[] purpleSwordAnimations; 
+
+    public AnimatorOverrideController animatorOverrideController;
     
     private void Awake()
     {
@@ -23,27 +31,28 @@ public class WeaponManager : MonoBehaviour
     }
 
     private void Start() {
-     
         InventoryManager.OnItemEquipped += HandleOnItemEquipped;
     }
 
-   // Handle equipping weapons here. Probably good to start out with a prompt to ask if 
-   // the player actually wants to change weapons. 
+   // Handle equipping weapons
    void HandleOnItemEquipped(string weaponName){
-        Debug.Log("Need to handle logic for implementing different weapons here!"); 
         Debug.Log(weaponName); 
-
+        AnimationClip[]  clips; 
+        string[] animationNames = { "player_attack", "waiting", "walking" };
         if (weaponName == "FireSword"){
-            Debug.Log("Here's where we'd change the animation on the player!"); 
+            clips = fireSwordAnimations; 
         }
-        /*
-        Changing between weapons includes things like changing the animation to 
-        show the new weapon (for example, if the weaponName is "fire sword" or whatever, 
-        you can change the gray parts on the sword in the character's animation to orange), 
-        changing the attack damage/knockback values, and any other special abilities that
-        come with the weapon (setting enemies on fire, making enemies slow, doing extra
-        damage to certain enemies, etc.)
-        */ 
+        else if (weaponName == "IceSword"){
+            clips = iceSwordAnimations; 
+        }
+        else {
+            clips = purpleSwordAnimations; 
+        }
 
+        for (int i = 0; i < animationNames.Length; i++){
+            print(animationNames[i]);
+            animatorOverrideController[animationNames[i]] = clips[i];
+        }
+           
     }
 }

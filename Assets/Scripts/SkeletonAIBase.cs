@@ -30,7 +30,7 @@ public abstract class SkeletonAIBase : Skeleton, ICharacter
             //gameObject.BroadcastMessage("IsFacingRight", shouldFaceRight);
         }
         
-        if (aiLerp.enabled && aiLerp.velocity.magnitude > 0.1f){
+        if (aiLerp && aiLerp.enabled && aiLerp.velocity.magnitude > 0.1f){
             IsMoving = true; 
         }
         else {
@@ -78,10 +78,15 @@ public abstract class SkeletonAIBase : Skeleton, ICharacter
 
     public void Update() {
         if (isTooClose()){
-            aiLerp.isStopped = true; 
+            if (aiLerp){
+                aiLerp.isStopped = true; 
+            }
+            
         }
         else {
-            aiLerp.isStopped = false; 
+            if (aiLerp){
+                aiLerp.isStopped = false; 
+            }
         }
 
         move(); 

@@ -8,9 +8,12 @@ public class Sign : MonoBehaviour
 {
     public string signDialogueNodeName; 
 
+    void OnTriggerExit2D(){
+        DialogueManager.instance.StopDialogue(); 
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {   
-        GetComponent<CircleCollider2D>().enabled = false; 
         DialogueManager.instance.StartDialogue(signDialogueNodeName); 
     }
 }

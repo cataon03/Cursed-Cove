@@ -61,10 +61,20 @@ public class InventoryManager : MonoBehaviour
             }
             if (itemInSlot.item.type == ItemType.Powerup){
                 Debug.Log("powerup selected"); 
+                removeExactItem(newValue); 
                 OnPowerupEquipped?.Invoke(itemInSlot.item);  
             }
         }
         selectedSlot = newValue;
+    }
+
+    public void removeExactItem(int itemIndex){
+            InventorySlot slot = inventorySlots[itemIndex];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+            
+            if (itemInSlot != null) {
+                Destroy(itemInSlot.gameObject);
+            }
     }
 
     public void RemoveItem(Item item) {

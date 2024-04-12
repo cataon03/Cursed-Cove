@@ -13,6 +13,5 @@ public class Trader : MonoBehaviour
     public void OpenShop()
     {
         ShopManager.instance.ShowShop(traderItems); 
-       // GetComponentInChildren<Collider2D>().enabled = false;
     }
 }

@@ -5,6 +5,7 @@ using Yarn.Unity;
 using UnityEditor.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.AI;
+using Unity.VisualScripting;
 
 
 public class BossSkeleton : SkeletonAIBase, ICharacter
@@ -23,7 +24,7 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
     AutonomousAttack autonomousAttack; 
     PlayerBehaviorMonitor playerBehaviorMonitor;  
 
-    private Enemy enemy; 
+    private Enemy enemy;  
 
     /* Boss state regulation */ 
     public enum BossState { Base, Chasing, Retreating, Regenerating } 
@@ -33,6 +34,8 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
 
     new public void Start(){
         base.Start(); 
+       
+
         detectionZone = gameObject.GetComponentInChildren<DetectionZone>(); 
         enemy = gameObject.GetComponent<Enemy>();
         playerBehaviorMonitor = gameObject.GetComponent<PlayerBehaviorMonitor>(); 
@@ -46,6 +49,21 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
         setTarget(GameObject.FindGameObjectWithTag("Player").transform);
         currentState = BossState.Base;
         ChangeState(currentState); 
+        LockMovement(); 
+        autonomousAttack.enabled = false; 
+        projectileLauncher.enabled = false; 
+        BossTrigger.OnReleaseBoss += HandleOnReleaseBoss; 
+    }
+
+    public void OnDestroy(){
+        BossTrigger.OnReleaseBoss -= HandleOnReleaseBoss; 
+    }
+
+    void HandleOnReleaseBoss(){
+        projectileLauncher.enabled = true;
+        Debug.Log("out");  
+        autonomousAttack.enabled = true;
+        UnlockMovement();  
     }
 
     public void updateHealthBar(float change){
@@ -73,7 +91,7 @@ public class BossSkeleton : SkeletonAIBase, ICharacter
     }
 
     override public void move() {
-       
+    
     }
 
     public void ChangeState(BossState newState){

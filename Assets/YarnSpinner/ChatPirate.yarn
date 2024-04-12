@@ -3,18 +3,12 @@ tags:
 ---
 Pirate: Would you like to chat with "Friendly Pirate"? 
 -> Yes
-    Friendly Pirate: What are you doing me hearty!? 
-    -> I lost my parrot, and I need to get him back!
-        Friendly Pirate: Well ye won't be gettin' far without this here!
-        Friendly Pirate: Here, take this! 
-        <<stop>>
-    -> Why do you care? 
-        Friendly Pirate: I may be a pirate, but I'm a soft pirate. I also used to have a bird...
-        Pirate: What happened to him? 
-        Friendly Pirate: I ate him. 
-        Pirate: ... 
-        <<stop>>
-    
+    Friendly Pirate: Woah! Aren't you the matey who defeated the skeletons of BlazeBeard's Isle?  
+    You: Yo ho ho, that would be me!
+    Friendly Pirate: I'm so happy to have my old stomping grounds back from the skellies! 
+    Friendly Pirate: As a token of my gratitude, take this! I wasn't able to defeat them myself, but maybe you can! 
+    <<pass_item FriendlyPirate>>
+    <<disable_dialogue_trigger FriendlyPirate>>
 -> No 
     <<stop>>
 ===

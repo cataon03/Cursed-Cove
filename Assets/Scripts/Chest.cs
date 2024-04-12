@@ -18,13 +18,16 @@ public class Chest : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>(); 
     }
 
-    void OnTriggerExit2D(){
-        DialogueManager.instance.StopDialogue(); 
+    void OnTriggerExit2D(Collider2D other){
+         if (other.CompareTag("Player"))
+            {
+                DialogueManager.instance.StopDialogue(); 
+            }
     }
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(detectionZone.detectedObjs.Count == 0) {
+        if (detectionZone.detectedObjs.Count == 0) { // Make sure no enemies detected
             // Check if the collider belongs to the player
             if (other.CompareTag("Player"))
             {

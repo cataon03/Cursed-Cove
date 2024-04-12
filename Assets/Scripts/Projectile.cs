@@ -18,6 +18,14 @@ public class Projectile : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>(); 
     }
 
+    void Update(){
+        if (timeSinceSpawned >= timeToLive){
+            Destroy(gameObject); 
+        }
+        else {
+            timeSinceSpawned += Time.deltaTime; 
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D collider) {
         string tag = collider.gameObject.tag;

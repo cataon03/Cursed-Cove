@@ -55,7 +55,7 @@ public class PowerupManager : MonoBehaviour
             Debug.Log("go invis"); 
             StartCoroutine(InvisibilityPowerup(powerup.timeForPowerup)); 
         }
-        InventoryManager.instance.RemoveItem(powerup); 
+        //InventoryManager.instance.RemoveItem(powerup); 
     }
 
     private IEnumerator SpeedPowerup(float waitTime, float oldValue){ 

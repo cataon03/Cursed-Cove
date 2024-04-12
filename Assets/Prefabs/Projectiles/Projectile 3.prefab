@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentDirection: {x: 0, y: 0}
   moveSpeed: 10
-  timeToLive: 5
+  timeToLive: 1.5
   knockbackForce: 75
   damage: 1
   spriteRenderer: {fileID: 0}

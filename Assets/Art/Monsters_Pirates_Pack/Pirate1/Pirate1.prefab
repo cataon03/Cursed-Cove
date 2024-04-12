@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 21200000}
   - component: {fileID: 5800000}
   - component: {fileID: 5000000}
+  - component: {fileID: 267539626854119653}
+  - component: {fileID: 1573652594365272457}
+  - component: {fileID: 6875660943628740587}
   m_Layer: 0
   m_Name: Pirate1
   m_TagString: Untagged
@@ -149,6 +152,55 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!95 &267539626854119653
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 79dbef69220fdf44082d6c4d049b83e7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1573652594365272457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 926ceacfbb571594993f67d642c218d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueTriggerWithCollider: {fileID: 6875660943628740587}
+  itemToPass: {fileID: 11400000, guid: b1500e0b8875c4e4abdb2d8a53d910bf, type: 2}
+--- !u!114 &6875660943628740587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63b53c08d8176b45a3f3de7d2a58ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeName: ChatPirate
+  disableAfterFirstCollision: 0
 --- !u!1 &6827704835887563482
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,8 +211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2450241608561047259}
   - component: {fileID: 989242810545037607}
-  - component: {fileID: 7277946813150563077}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DetectionZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,17 +268,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.16003036}
   serializedVersion: 2
   m_Radius: 1.5561981
---- !u!114 &7277946813150563077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6827704835887563482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d63b53c08d8176b45a3f3de7d2a58ca6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeName: ChatPirate
-  disableAfterFirstCollision: 0

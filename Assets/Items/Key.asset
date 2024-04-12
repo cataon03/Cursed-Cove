@@ -15,4 +15,8 @@ MonoBehaviour:
   type: 0
   range: {x: 5, y: 4}
   stackable: 0
-  image: {fileID: -1650486327, guid: 3ff8f5ac471cb3649b0951ff71c8702b, type: 3}
+  image: {fileID: 145694058, guid: 5ce263a040a1d8f459faaf529197adb4, type: 3}
+  powerupType: 0
+  powerupValue: 0
+  timeForPowerup: 0
+  price: 0

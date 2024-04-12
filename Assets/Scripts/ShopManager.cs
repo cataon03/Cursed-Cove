@@ -37,9 +37,10 @@ public class ShopManager : MonoBehaviour
     public void ShowShop(Item[] items){
         itemsInShop = items;
         for (int i = 0; i < items.Length; i++){
-            if (items[i] != null){
+            InventoryItem itm = inventorySlots[i].GetComponentInChildren<InventoryItem>();
+            if (itm == null && items[i] != null){
                 SpawnNewItem(items[i], inventorySlots[i]); 
-                priceTexts[i].text = (items[i].price).ToString(); 
+                priceTexts[i].text = "Price: " + (items[i].price).ToString(); 
             }
         }
         shopUI.SetActive(true); 
@@ -53,11 +54,11 @@ public class ShopManager : MonoBehaviour
     public void UnstockItem(int slotIdx){
         buyButtons[slotIdx].gameObject.SetActive(false); // Disable the button's GameObject
         priceTexts[slotIdx].gameObject.SetActive(false); // Disable the price text's GameObject
-        itemsInShop[slotIdx] = null; 
         InventoryItem itm = inventorySlots[slotIdx].GetComponentInChildren<InventoryItem>();
         if (itm != null){
             itm.gameObject.SetActive(false); // Disable the inventory item's GameObject
         }
+        itemsInShop[slotIdx] = null; 
     }   
 
     public void BuyItem(int slotIdx){
