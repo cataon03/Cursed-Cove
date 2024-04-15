@@ -1,11 +1,13 @@
 using System; 
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DamageableCharacter : MonoBehaviour, IDamageable
 {
     public static event Action<float> OnPlayerHit; 
+    public static event Action OnPlayerDeath; 
     public bool hasItemDrops; 
     public GameObject itemDrops;
     public GameObject healthText;
@@ -13,7 +15,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
 
     public bool canTurnInvincible = false;
     public float invincibilityTime = 0.25f;
-    Animator animator;
+    public Animator animator;
     Rigidbody2D rb;
     Collider2D physicsCollider;
     
@@ -26,7 +28,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
             // When health is dropped (new value less than old value), play hit animation and show damage taken as text
             if(value < _health) {
                 animator.SetTrigger("hit");
-
+                
                 // Spawn damage text right above the character
                 HealthText healthTextInstance = Instantiate(healthText).GetComponent<HealthText>();
                 RectTransform textTransform = healthTextInstance.GetComponent<RectTransform>();
@@ -40,13 +42,24 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
             _health = value;
 
             if(_health <= 0) {
-                animator.SetBool("isAlive", false);
-                Targetable = false;
+                OnCharacterDeath(); 
             }
         }
         get {
             return _health;
         }
+    }
+    public float maxHealth; 
+    
+    virtual public void OnCharacterDeath(){
+        if (hasItemDrops){
+            Instantiate(itemDrops, transform.position, Quaternion.identity);
+        }
+        if (gameObject.tag == "Player"){
+            OnPlayerDeath?.Invoke(); 
+        }
+        animator.SetBool("isAlive", false);
+        Targetable = false; 
     }
 
     public bool Targetable { get { return _targetable; }
@@ -71,17 +84,28 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         }
      } }
 
+    public bool ProjectileInvincible { get {
+        return _projectile_invincible;
+     }
+     set {
+        _projectile_invincible = value;
+
+        if(_projectile_invincible == true) {
+            invincibleTimeElapsed = 0f;
+        }
+     } }
+
     public float _health = 5;
     public bool _targetable = true;
 
     public bool _invincible = false;
+    public bool _projectile_invincible = false;
     private void OnDestroy()
     {
-        if (hasItemDrops){
-            Instantiate(itemDrops, transform.position, Quaternion.identity);
-        }
     }
     public void Start(){
+        maxHealth = Health; 
+
         animator = GetComponent<Animator>();
 
         // Make sure the enemy is alive at the start of it's script
@@ -101,12 +125,11 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         }
     }
 
-    /// Take damage with knockback
+    // Take damage with knockback
     public void OnHit(float damage, Vector2 knockback)
     {
         if(!Invincible) {
             Health -= damage;
-
             // Apply force 
             // Impulse for instantaneous forces
             rb.AddForce(knockback, ForceMode2D.Impulse);
@@ -116,9 +139,8 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
                 Invincible = true;
             }
         }
-        if (gameObject.tag == "SmartSkeleton"){
-            SmartSkeleton smartSkeleton = GetComponent<SmartSkeleton>(); 
-            StartCoroutine(smartSkeleton.ApplyKnockbackWithDelay(knockback));
+        if (gameObject.tag == "Boss"){
+            //gameObject.GetComponent<SkeletonAIBoss>().updateHealthBar(damage); 
         }
         if (gameObject.tag == "Player"){
             OnPlayerHit?.Invoke(Health); 

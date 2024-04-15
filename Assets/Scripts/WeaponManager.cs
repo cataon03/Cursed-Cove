@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using System.Text;
 using System; 
 using UnityEngine;
+using UnityEditor.Animations;
+using Unity.VisualScripting.FullSerializer;
+using UnityEditor;
 
 public class WeaponManager : MonoBehaviour
 {
     public static WeaponManager instance;
-
+    public AnimationClip[] fireSwordAnimations; 
+    public AnimationClip[] iceSwordAnimations; 
+    public AnimationClip[] purpleSwordAnimations; 
+    public AnimatorOverrideController animatorOverrideController;
+    public SwordHitbox playerSwordHitbox; 
+    
     private void Awake()
     {
         if (instance == null)
@@ -22,22 +30,29 @@ public class WeaponManager : MonoBehaviour
     }
 
     private void Start() {
-        InventoryManager.OnItemEquipped += HandleOnItemEquipped;
+        InventoryManager.OnWeaponEquipped += HandleOnWeaponEquipped;
+        playerSwordHitbox = GameObject.FindGameObjectWithTag("Player").GetComponent<SwordHitbox>(); 
     }
 
-   // Handle equipping weapons here. Probably good to start out with a prompt to ask if 
-   // the player actually wants to change weapons. 
-   void HandleOnItemEquipped(string weaponName){
-        Debug.Log("Need to handle logic for implementing different weapons here!"); 
+   // Handle equipping weapons
+   void HandleOnWeaponEquipped(Weapon weapon){
+        AnimationClip[]  clips; 
+        string[] animationNames = { "player_attack", "waiting", "walking" };
         
-        /*
-        Changing between weapons includes things like changing the animation to 
-        show the new weapon (for example, if the weaponName is "fire sword" or whatever, 
-        you can change the gray parts on the sword in the character's animation to orange), 
-        changing the attack damage/knockback values, and any other special abilities that
-        come with the weapon (setting enemies on fire, making enemies slow, doing extra
-        damage to certain enemies, etc.)
-        */ 
+        if (weapon.name == "Fire Sword"){
+            clips = fireSwordAnimations; 
+        }
+        else if (weapon.name == "Ice Sword"){
+            clips = iceSwordAnimations; 
+        }
+        else {
+            clips = purpleSwordAnimations; 
+        }
 
+        for (int i = 0; i < animationNames.Length; i++){
+            animatorOverrideController[animationNames[i]] = clips[i];
+        }
+        playerSwordHitbox.knockbackForce = weapon.knockback; 
+        playerSwordHitbox.swordDamage = weapon.damage; 
     }
 }

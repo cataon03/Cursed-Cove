@@ -10,7 +10,9 @@ public class InventoryManager : MonoBehaviour
     public int maxStackedItems = 4;
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
-    public static event Action<string> OnItemEquipped; 
+    public static event Action<Weapon> OnWeaponEquipped; 
+    public static event Action<Powerup> OnPowerupEquipped;
+
     int selectedSlot = -1;
 
     private void Awake()
@@ -47,18 +49,30 @@ public class InventoryManager : MonoBehaviour
         if (selectedSlot >= 0) {
             inventorySlots[selectedSlot].Deselect();
         }
-        //inventorySlots[newValue].Select();
 
         InventoryItem itemInSlot = inventorySlots[newValue].GetComponentInChildren<InventoryItem>();
         
         if (itemInSlot){
             // If the player clicked on a weapon notify listeners 
-            if (itemInSlot.item.type == ItemType.Weapon){
-                Debug.Log("Selecting a weapon in the inventory"); 
-                OnItemEquipped?.Invoke(itemInSlot.item.name); 
+            if (itemInSlot.item is Weapon){
+                OnWeaponEquipped?.Invoke((Weapon)itemInSlot.item); 
+            }
+            else if (itemInSlot.item is Powerup){
+                removeExactItem(newValue); 
+                Debug.Log(itemInSlot.item.GetType().ToString());
+                OnPowerupEquipped?.Invoke((Powerup) itemInSlot.item);  
             }
         }
         selectedSlot = newValue;
+    }
+
+    public void removeExactItem(int itemIndex){
+            InventorySlot slot = inventorySlots[itemIndex];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+            
+            if (itemInSlot != null) {
+                Destroy(itemInSlot.gameObject);
+            }
     }
 
     public void RemoveItem(Item item) {
