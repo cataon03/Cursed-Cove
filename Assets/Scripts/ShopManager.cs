@@ -27,7 +27,7 @@ public class ShopManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -36,6 +36,7 @@ public class ShopManager : MonoBehaviour
     }
 
     public void ShowShop(Item[] items){
+        successFailMessage.text = "";
         itemsInShop = items;
         for (int i = 0; i < items.Length; i++){
             InventoryItem itm = inventorySlots[i].GetComponentInChildren<InventoryItem>();
@@ -65,7 +66,6 @@ public class ShopManager : MonoBehaviour
     }   
 
     public void BuyItem(int slotIdx){
-        successFailMessage.text = "";
         if (CoinCounter.Instance.currentCoins >= itemsInShop[slotIdx].price){
             successFailMessage.text = "Item purchased!"; 
             successFailMessage.color = Color.green;

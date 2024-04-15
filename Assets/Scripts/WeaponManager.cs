@@ -1,11 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
-using System; 
 using UnityEngine;
-using UnityEditor.Animations;
-using Unity.VisualScripting.FullSerializer;
-using UnityEditor;
 
 public class WeaponManager : MonoBehaviour
 {
@@ -21,7 +14,7 @@ public class WeaponManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
