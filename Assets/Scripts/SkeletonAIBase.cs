@@ -1,13 +1,9 @@
-using System.Collections;
 using Pathfinding;
 using UnityEngine;
 
 public abstract class SkeletonAIBase : SkeletonBase, ICharacter
 {
-    public float hitDelay; 
     public float minDistanceToPlayer = 1.2f; 
-    public bool playerInRange; 
-    public float speed; 
     private bool canAttack;
     private AIDestinationSetter destinationSetter;
     public AILerp aiLerp; 
@@ -16,6 +12,7 @@ public abstract class SkeletonAIBase : SkeletonBase, ICharacter
     new public void Start(){
         base.Start();
         aiLerp = gameObject.GetComponent<AILerp>();
+        aiLerp.speed = moveSpeed; 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform; 
         destinationSetter = GetComponent<AIDestinationSetter>();
         setTarget(GameObject.FindGameObjectWithTag("Player").transform);
@@ -27,7 +24,7 @@ public abstract class SkeletonAIBase : SkeletonBase, ICharacter
         if (destinationSetter){
             bool shouldFaceRight = destinationSetter.target.position.x > transform.position.x;
             spriteRenderer.flipX = !shouldFaceRight; 
-            //gameObject.BroadcastMessage("IsFacingRight", shouldFaceRight);
+            gameObject.BroadcastMessage("IsFacingRight", shouldFaceRight);
         }
         
         if (aiLerp && aiLerp.enabled && aiLerp.velocity.magnitude > 0.1f){
@@ -93,7 +90,7 @@ public abstract class SkeletonAIBase : SkeletonBase, ICharacter
         adjustGraphics();
     }
 
-    public void changeAISpeed(float amount){
-        aiLerp.speed += amount; 
+    public void changeAISpeed(float newSpeed){
+        aiLerp.speed = newSpeed; 
     }
 }

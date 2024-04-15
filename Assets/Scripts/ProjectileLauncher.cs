@@ -91,7 +91,7 @@ public class ProjectileLauncher : SkeletonAIBase
 
     // Multiple projectile launches moving outwards in a ring 
     public void LaunchBloom(){
-        int numberOfProjectiles = 5; 
+        int numberOfProjectiles = 8; 
         float angleStep = 360f / numberOfProjectiles;
         float angle = 0f;
         GameObject prefab = pickProjectilePrefab(); 
