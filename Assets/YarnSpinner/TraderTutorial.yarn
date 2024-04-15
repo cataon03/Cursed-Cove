@@ -1,5 +1,13 @@
 ﻿title: TraderTutorial
 tags:
 ---
+Trader: Hello traverler, I am a trader and I can sell you items.
 
+Trader: Unfortunately, I am out of stock right now, but you will see me again soon with helpful items.
+
+Trader: Would you still like to see the layout of my shop?
+-> Yes
+    <<open_shop Trader>>
+-> No
+    <<stop>>
 ===

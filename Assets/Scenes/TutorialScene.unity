@@ -15231,7 +15231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbbe6b001016b4948894e58122a64fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeName: AskToTrade
+  nodeName: TraderTutorial
   disableAfterFirstCollision: 0
 --- !u!114 &1496334871
 MonoBehaviour:
