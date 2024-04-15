@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Yarn.Unity; 
 using Cinemachine; 
 using UnityEngine;
 
@@ -8,8 +9,12 @@ public class CameraManager : MonoBehaviour
     public static CameraManager instance;
     public float cinematicDuration = 5f; // Adjust this value based on the desired cinematic duration
     private CinemachineBrain cinemachineBrain; 
+
+    public CinemachineVirtualCamera[] cameras;
+    
     private CinemachineVirtualCamera currentCam;
     private CinemachineVirtualCamera lastCam; 
+    
     private bool checkAndReset = false;  
 
 
@@ -39,4 +44,10 @@ public class CameraManager : MonoBehaviour
         currentCam = secondaryCamera; 
         lastCam = secondaryCamera; 
     }
+
+    [YarnCommand("switch_cam")]
+    public void switchToCamera(int cameraIndex){
+        SwitchToCamera(cameras[cameraIndex]);
+    }
+    
 }

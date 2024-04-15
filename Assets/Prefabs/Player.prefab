@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6795248844175262162}
   - component: {fileID: 1239721392876592406}
   - component: {fileID: 772791554084965408}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.15, y: 1.15, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7621074199987538006}
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ba22eedaa25ea4ba84547ed344c60c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1500
+  moveSpeed: 6500
   moveDrag: 15
   stopDrag: 25
   canAttack: 1
@@ -148,7 +148,7 @@ Animator:
   m_GameObject: {fileID: 3254649542244090524}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1d25d5c6ead953d47a0e38e777db23ce, type: 2}
+  m_Controller: {fileID: 22100000, guid: bbfa3773ccbbf4743859c5dda4824e7c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -172,7 +172,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.5
+  m_LinearDrag: 15
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -182,9 +182,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &1239721392876592406
 CircleCollider2D:
@@ -195,7 +195,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 3254649542244090524}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c9fcbcfb12cd1574f9634f19e6b2ffdc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -218,9 +218,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.1, y: -0.3}
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.20043944
 --- !u!114 &772791554084965408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,13 +233,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8543d9be9331e7e4bbf73af6a16ffc62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasItemDrops: 0
+  itemDrops: {fileID: 0}
   healthText: {fileID: 4446440190103696447, guid: e61196338ebbccc43a9ab2bd4211308d, type: 3}
   disableSimulation: 1
   canTurnInvincible: 1
   invincibilityTime: 0.3
-  _health: 3
+  animator: {fileID: 0}
+  maxHealth: 0
+  _health: 5
   _targetable: 1
   _invincible: 0
+  _projectile_invincible: 0
 --- !u!1 &5709596483516594655
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +256,7 @@ GameObject:
   - component: {fileID: 7621074199987538006}
   - component: {fileID: 3392672859812085364}
   - component: {fileID: 3640878768011569267}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SwordHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +273,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 0.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4564958647830472143}
@@ -331,7 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordDamage: 1
-  knockbackForce: 15
+  knockbackForce: 20
   swordCollider: {fileID: 3392672859812085364}
   faceRight: {x: 1, y: 0.15, z: 0}
   faceLeft: {x: -1, y: 0.15, z: 0}

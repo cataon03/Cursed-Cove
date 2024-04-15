@@ -24,12 +24,6 @@ public class HealthPickup : MonoBehaviour
             }
 
         }
-
-       // if(healthBar.health < healthBar.maxHealth)
-       // {
-        //    Destroy(gameObject);
-        //    healthBar.health = healthBar.health + healthBonus;
-       // }
     }
 }
 

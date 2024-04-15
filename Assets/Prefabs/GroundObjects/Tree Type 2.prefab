@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 392113208951517483}
   - component: {fileID: 7052031455988368601}
   - component: {fileID: 65971658736216887}
-  m_Layer: 20
+  m_Layer: 10
   m_Name: Tree Type 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.04, y: 5.21, z: 0}
-  m_LocalScale: {x: 4.1791463, y: 3.5894294, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

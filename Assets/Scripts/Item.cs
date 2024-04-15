@@ -6,18 +6,8 @@ public class Item : ScriptableObject {
     [Header("Only gameplay")]
     //public TileBase tile;
     public ItemType type;
-    public Vector2Int range = new Vector2Int(5, 4);
-
-    [Header("Only UI")]
     public bool stackable = true;
-
-    [Header("Both")]
     public Sprite image;
-
-    [Header("Powerups")]
-    public PowerupType powerupType;
-    public float powerupValue; 
-    public float timeForPowerup; 
 
     [Header("Shop Item Price")]
     public int price; 
@@ -30,10 +20,4 @@ public enum ItemType {
     Weapon, 
     Powerup, 
     ShopItem
-}
-
-public enum PowerupType {
-    Speed, 
-    Invisibility, 
-    Invincibility
 }

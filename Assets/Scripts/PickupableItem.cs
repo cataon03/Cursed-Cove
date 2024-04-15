@@ -15,5 +15,4 @@ public class PickupableItem : MonoBehaviour
             Destroy(gameObject); 
         }
     }
-
 }

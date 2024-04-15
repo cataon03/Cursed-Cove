@@ -43,7 +43,7 @@ public class PowerupManager : MonoBehaviour
 
    // Handle equipping weapons here. Probably good to start out with a prompt to ask if 
    // the player actually wants to change weapons. 
-   void HandleOnPowerupEquipped(Item powerup){
+   void HandleOnPowerupEquipped(Powerup powerup){
     
         if (powerup.powerupType == PowerupType.Speed){
             StartCoroutine(SpeedPowerup(powerup.timeForPowerup, powerup.powerupValue)); 
@@ -51,8 +51,7 @@ public class PowerupManager : MonoBehaviour
         if (powerup.powerupType == PowerupType.Invincibility){
             StartCoroutine(ProjectileImmunityPowerup(powerup.timeForPowerup)); 
         }
-        if (powerup.powerupType == PowerupType.Invisibility){
-            Debug.Log("go invis"); 
+        if (powerup.powerupType == PowerupType.Invisibility){ 
             StartCoroutine(InvisibilityPowerup(powerup.timeForPowerup)); 
         }
         //InventoryManager.instance.RemoveItem(powerup); 

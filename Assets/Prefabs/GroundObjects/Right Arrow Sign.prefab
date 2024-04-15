@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2540958267035199976}
   - component: {fileID: 7669155253678134000}
   - component: {fileID: 5772543772746125048}
-  m_Layer: 20
+  m_Layer: 10
   m_Name: Right Arrow Sign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,9 +26,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1650132331310646167}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.8897886, y: -8.659671, z: 9.601029}
-  m_LocalScale: {x: 2.2009237, y: 1.7352391, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

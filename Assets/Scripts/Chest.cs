@@ -48,8 +48,6 @@ public class Chest : MonoBehaviour
         ChestManager.instance.LoadItemIntoChest(item); 
         ChestManager.instance.ShowInsideChest(); 
         spriteRenderer.sprite = chest_open; 
-        //insideChest.SetActive(true); 
-
         GetComponent<Collider2D>().enabled = false;
     }
 }

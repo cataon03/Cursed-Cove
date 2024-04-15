@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5614282094564366492}
   - component: {fileID: 6336446340106418731}
   - component: {fileID: 3217302897070668390}
-  m_Layer: 20
+  m_Layer: 10
   m_Name: Stump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.03, y: 25.83, z: 0}
-  m_LocalScale: {x: 1.3685772, y: 1.2818382, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

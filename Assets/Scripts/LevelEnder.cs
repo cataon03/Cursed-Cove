@@ -37,8 +37,7 @@ public class LevelEnder : MonoBehaviour {
         animator.SetTrigger("open");
         StartCoroutine(WaitForNextLevel()); 
     }
-
-
+    
     private IEnumerator WaitForLevelRestart(){; 
         yield return new WaitForSeconds(5f);
         animator.SetTrigger("close"); 

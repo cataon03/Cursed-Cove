@@ -61,7 +61,6 @@ public class AutonomousLaunch : MonoBehaviour
         }
     }
     
-
     // Basic single-projectile launch in the direction of the player
     public void LaunchDirectional(){
         GameObject newProjectile = Instantiate(projectile, transform.position, spawnRotation);

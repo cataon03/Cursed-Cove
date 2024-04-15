@@ -11,7 +11,7 @@ public class InventoryManager : MonoBehaviour
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
     public static event Action<string> OnItemEquipped; 
-    public static event Action<Item> OnPowerupEquipped;
+    public static event Action<Powerup> OnPowerupEquipped;
 
     int selectedSlot = -1;
 
@@ -49,20 +49,20 @@ public class InventoryManager : MonoBehaviour
         if (selectedSlot >= 0) {
             inventorySlots[selectedSlot].Deselect();
         }
-        //inventorySlots[newValue].Select();
 
         InventoryItem itemInSlot = inventorySlots[newValue].GetComponentInChildren<InventoryItem>();
         
         if (itemInSlot){
             // If the player clicked on a weapon notify listeners 
-            if (itemInSlot.item.type == ItemType.Weapon){
+            if (itemInSlot.item is Weapon){
                 Debug.Log("Selecting a weapon in the inventory"); 
                 OnItemEquipped?.Invoke(itemInSlot.item.name); 
             }
-            if (itemInSlot.item.type == ItemType.Powerup){
+            else if (itemInSlot.item is Powerup){
                 Debug.Log("powerup selected"); 
                 removeExactItem(newValue); 
-                OnPowerupEquipped?.Invoke(itemInSlot.item);  
+                Debug.Log(itemInSlot.item.GetType().ToString());
+                OnPowerupEquipped?.Invoke(((Powerup) itemInSlot.item));  
             }
         }
         selectedSlot = newValue;

@@ -52,6 +52,9 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     public float maxHealth; 
     
     virtual public void OnCharacterDeath(){
+        if (hasItemDrops){
+            Instantiate(itemDrops, transform.position, Quaternion.identity);
+        }
         if (gameObject.tag == "Player"){
             OnPlayerDeath?.Invoke(); 
         }
@@ -99,9 +102,6 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     public bool _projectile_invincible = false;
     private void OnDestroy()
     {
-        if (hasItemDrops){
-            Instantiate(itemDrops, transform.position, Quaternion.identity);
-        }
     }
     public void Start(){
         maxHealth = Health; 
@@ -140,7 +140,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
             }
         }
         if (gameObject.tag == "Boss"){
-            gameObject.GetComponent<BossSkeleton>().updateHealthBar(damage); 
+            gameObject.GetComponent<SkeletonAIBoss>().updateHealthBar(damage); 
         }
         if (gameObject.tag == "Player"){
             OnPlayerHit?.Invoke(Health); 

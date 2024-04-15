@@ -2,7 +2,7 @@ using System.Collections;
 using Pathfinding;
 using UnityEngine;
 
-public abstract class SkeletonAIBase : Skeleton, ICharacter
+public abstract class SkeletonAIBase : SkeletonBase, ICharacter
 {
     public float hitDelay; 
     public float minDistanceToPlayer = 1.2f; 

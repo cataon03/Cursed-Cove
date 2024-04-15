@@ -25,3 +25,33 @@ Sign:Read sign?
 -> No 
     <<stop>>
 ===
+
+title: Sign3
+position: -79,-67
+---
+
+Sign:Read sign?
+-> Yes
+    Sign:What’s a skeleton’s favorite instrument?
+    Sign:A tromBone.
+    Pirate:These signs aren't all that helpful.
+    <<stop>>
+-> No 
+    <<stop>>
+===
+
+title: Sign4
+position: -79,-67
+---
+
+Sign:Read sign?
+-> Yes
+    Sign:What does a skeleton order at a restaurant?
+    Sign:Spare ribs!
+    Sign: AHAHAHAHAHAHAHAH!!!! 
+    Pirate:...
+    Pirate: unnerving. 
+    <<stop>>
+-> No 
+    <<stop>>
+===

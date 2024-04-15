@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -42,12 +43,23 @@ public class PlayerController : MonoBehaviour, ICharacter
     bool canMove;
 
     void Start(){
+        DialogueManager.OnPlayerFreeze += HandleOnPlayerFreeze; 
         canMove = true; 
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator.SetBool("canAttack", canAttack);
-        
+    }
+
+    void HandleOnPlayerFreeze(bool isFrozen){
+        if (isFrozen){
+            LockMovement(); 
+            canAttack = false; 
+        }
+        else {
+            UnlockMovement(); 
+            canAttack = true; 
+        }
     }
 
     void FixedUpdate() {
