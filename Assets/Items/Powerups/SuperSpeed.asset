@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3497cb22be742a4d96ff560ec137fd1, type: 3}
   m_Name: SuperSpeed
   m_EditorClassIdentifier: 
-  type: 0
-  range: {x: 5, y: 4}
   stackable: 0
   image: {fileID: 21300000, guid: e4d578eaa6721b94496910664060cd92, type: 3}
-  price: 0
+  price: 2
+  itemName: Speed Potion
   powerupType: 0
   powerupValue: 3
   timeForPowerup: 5

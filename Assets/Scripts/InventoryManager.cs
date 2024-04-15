@@ -10,7 +10,7 @@ public class InventoryManager : MonoBehaviour
     public int maxStackedItems = 4;
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
-    public static event Action<string> OnItemEquipped; 
+    public static event Action<Weapon> OnWeaponEquipped; 
     public static event Action<Powerup> OnPowerupEquipped;
 
     int selectedSlot = -1;
@@ -55,14 +55,12 @@ public class InventoryManager : MonoBehaviour
         if (itemInSlot){
             // If the player clicked on a weapon notify listeners 
             if (itemInSlot.item is Weapon){
-                Debug.Log("Selecting a weapon in the inventory"); 
-                OnItemEquipped?.Invoke(itemInSlot.item.name); 
+                OnWeaponEquipped?.Invoke((Weapon)itemInSlot.item); 
             }
             else if (itemInSlot.item is Powerup){
-                Debug.Log("powerup selected"); 
                 removeExactItem(newValue); 
                 Debug.Log(itemInSlot.item.GetType().ToString());
-                OnPowerupEquipped?.Invoke(((Powerup) itemInSlot.item));  
+                OnPowerupEquipped?.Invoke((Powerup) itemInSlot.item);  
             }
         }
         selectedSlot = newValue;

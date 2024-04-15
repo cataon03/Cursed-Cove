@@ -15,7 +15,8 @@ public class ShopManager : MonoBehaviour
     public bool[] isBought; 
     public InventorySlot[] inventorySlots;
     public TextMeshProUGUI[] priceTexts; 
-      public TextMeshProUGUI successFailMessage; 
+    public TextMeshProUGUI[] itemNames; 
+    public TextMeshProUGUI successFailMessage; 
     public Button[] buyButtons; 
 
     public GameObject shopUI; 
@@ -41,6 +42,7 @@ public class ShopManager : MonoBehaviour
             if (itm == null && items[i] != null){
                 SpawnNewItem(items[i], inventorySlots[i]); 
                 priceTexts[i].text = "Price: " + (items[i].price).ToString(); 
+                itemNames[i].text = items[i].itemName.ToString(); 
             }
         }
         shopUI.SetActive(true); 
@@ -54,6 +56,7 @@ public class ShopManager : MonoBehaviour
     public void UnstockItem(int slotIdx){
         buyButtons[slotIdx].gameObject.SetActive(false); // Disable the button's GameObject
         priceTexts[slotIdx].gameObject.SetActive(false); // Disable the price text's GameObject
+        itemNames[slotIdx].gameObject.SetActive(false); // Disable the item name text's GameObject
         InventoryItem itm = inventorySlots[slotIdx].GetComponentInChildren<InventoryItem>();
         if (itm != null){
             itm.gameObject.SetActive(false); // Disable the inventory item's GameObject

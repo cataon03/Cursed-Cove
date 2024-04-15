@@ -10,12 +10,11 @@ using UnityEditor;
 public class WeaponManager : MonoBehaviour
 {
     public static WeaponManager instance;
-
     public AnimationClip[] fireSwordAnimations; 
     public AnimationClip[] iceSwordAnimations; 
     public AnimationClip[] purpleSwordAnimations; 
-
     public AnimatorOverrideController animatorOverrideController;
+    public SwordHitbox playerSwordHitbox; 
     
     private void Awake()
     {
@@ -31,18 +30,19 @@ public class WeaponManager : MonoBehaviour
     }
 
     private void Start() {
-        InventoryManager.OnItemEquipped += HandleOnItemEquipped;
+        InventoryManager.OnWeaponEquipped += HandleOnWeaponEquipped;
+        playerSwordHitbox = GameObject.FindGameObjectWithTag("Player").GetComponent<SwordHitbox>(); 
     }
 
    // Handle equipping weapons
-   void HandleOnItemEquipped(string weaponName){
-        Debug.Log(weaponName); 
+   void HandleOnWeaponEquipped(Weapon weapon){
         AnimationClip[]  clips; 
         string[] animationNames = { "player_attack", "waiting", "walking" };
-        if (weaponName == "FireSword"){
+        
+        if (weapon.name == "Fire Sword"){
             clips = fireSwordAnimations; 
         }
-        else if (weaponName == "IceSword"){
+        else if (weapon.name == "Ice Sword"){
             clips = iceSwordAnimations; 
         }
         else {
@@ -50,9 +50,9 @@ public class WeaponManager : MonoBehaviour
         }
 
         for (int i = 0; i < animationNames.Length; i++){
-            print(animationNames[i]);
             animatorOverrideController[animationNames[i]] = clips[i];
         }
-           
+        playerSwordHitbox.knockbackForce = weapon.knockback; 
+        playerSwordHitbox.swordDamage = weapon.damage; 
     }
 }

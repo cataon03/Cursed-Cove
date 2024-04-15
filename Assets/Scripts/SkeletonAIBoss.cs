@@ -34,8 +34,6 @@ public class SkeletonAIBoss : SkeletonAIBase, ICharacter
 
     new public void Start(){
         base.Start(); 
-       
-
         detectionZone = gameObject.GetComponentInChildren<DetectionZone>(); 
         enemy = gameObject.GetComponent<Enemy>();
         playerBehaviorMonitor = gameObject.GetComponent<PlayerBehaviorMonitor>(); 
