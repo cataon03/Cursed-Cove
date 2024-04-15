@@ -4,32 +4,32 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.Rendering.Universal;
 
-public class ProjectileLauncher : SkeletonAIBase
+public class ProjectileLauncher : MonoBehaviour
 {
     [SerializeField] public List<GameObject> projectiles = new List<GameObject>();
     System.Random rand = new System.Random();
     public Quaternion spawnRotation;
     public float launchFrequency = 0.5f;
     private float timeSinceLastLaunch = 0f;
-    public string launchAnimName;
     bool launchEnabled = false; 
     public enum LaunchType {
         Directional, 
         Bloom, 
         Mixed
     }
-    LaunchType currentLaunchType = LaunchType.Directional;
+    private LaunchType currentLaunchType = LaunchType.Directional;
+    private SkeletonAIBase skeletonAIBase; 
     
 
-    new public void Start(){
-        base.Start(); 
+    public void Start(){
+        skeletonAIBase = gameObject.GetComponent<SkeletonAIBase>(); 
         currentLaunchType = LaunchType.Mixed; 
     }
 
-    new void FixedUpdate(){
+    void FixedUpdate(){
         if (timeSinceLastLaunch >= launchFrequency){
-            if (getCanAttack() && launchEnabled){  
-                animator.SetTrigger(launchAnimName); 
+            if (skeletonAIBase.getCanAttack() && launchEnabled){  
+                skeletonAIBase.launchProjectiles(); 
                 timeSinceLastLaunch = 0f;  
             }
         }
@@ -85,7 +85,7 @@ public class ProjectileLauncher : SkeletonAIBase
     // Basic single-projectile launch in the direction of the player
     public void LaunchDirectional(){
         GameObject newProjectile = Instantiate(pickProjectilePrefab(), transform.position, spawnRotation);
-        Vector2 direction = (getTarget().position - transform.position).normalized;
+        Vector2 direction = (skeletonAIBase.getTarget().position - transform.position).normalized;
         newProjectile.GetComponent<Projectile>().Launch(direction);
     }
 

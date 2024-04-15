@@ -14,7 +14,7 @@ public class SkeletonAIBoss : SkeletonAIBase, ICharacter
 
     /* For health regeneration */ 
     public Transform[] healthRegenZones; 
-    DetectionZone detectionZone; 
+    public DetectionZone detectionZone; 
     public float regenRate; 
     public float timeBetweenRegens; 
     int zoneIdx = 0; 
@@ -34,13 +34,12 @@ public class SkeletonAIBoss : SkeletonAIBase, ICharacter
 
     new public void Start(){
         base.Start(); 
-        detectionZone = gameObject.GetComponentInChildren<DetectionZone>(); 
+        //detectionZone = gameObject.GetComponentInChildren<DetectionZone>(); 
         enemy = gameObject.GetComponent<Enemy>();
         playerBehaviorMonitor = gameObject.GetComponent<PlayerBehaviorMonitor>(); 
         projectileLauncher = gameObject.GetComponent<ProjectileLauncher>();  
         projectileLauncher.setLaunchEnabled(true); 
-        autonomousAttack = gameObject.GetComponent<AutonomousAttack>(); 
-        autonomousAttack.setAttackEnabled(true); 
+        autonomousAttack = gameObject.GetComponentInChildren<AutonomousAttack>(); 
         healthBar = gameObject.GetComponentInChildren<SkeletonBossHealthbar>(); 
         healthBar.MaxValue = (int) enemy.Health; 
         healthBar.Value = (int) enemy.Health; 
@@ -115,9 +114,8 @@ public class SkeletonAIBoss : SkeletonAIBase, ICharacter
                 projectileLauncher.setLaunchEnabled(true); 
                 projectileLauncher.setLaunchType(ProjectileLauncher.LaunchType.Directional); 
                 projectileLauncher.setLaunchFrequency(5f); 
-                changeAISpeed(2); // Speed up 
                 break; 
-            case (BossState.Retreating): 
+            case BossState.Retreating: 
                 changeAISpeed(fastMoveSpeed); 
                 projectileLauncher.setLaunchEnabled(false); 
                 zoneIdx += 1; 
@@ -125,7 +123,7 @@ public class SkeletonAIBoss : SkeletonAIBase, ICharacter
                 setTarget(healthRegenZones[zoneIdx]); 
                 Debug.Log("moving to zone " + zoneIdx); 
                 break; 
-            case (BossState.Regenerating): 
+            case BossState.Regenerating: 
                 projectileLauncher.setLaunchEnabled(false);
                 LockMovement(); 
                 break; 
@@ -147,7 +145,7 @@ public class SkeletonAIBoss : SkeletonAIBase, ICharacter
     }
 
     void moveRetreating(){
-        float distanceToRegenZone = Vector3.Distance(transform.position, healthRegenZones[zoneIdx].position);
+        float distanceToRegenZone = Vector3.Distance(transform.position, getTarget().position);
        
         // Check if the enemy is farther away from the player than the threshold distance
         if (distanceToRegenZone < 1){
@@ -169,6 +167,7 @@ public class SkeletonAIBoss : SkeletonAIBase, ICharacter
             }
             // Run to the other health regeneration zone 
             else {
+                UnlockMovement(); 
                 ChangeState(BossState.Retreating);
             } 
         }
@@ -185,8 +184,4 @@ public class SkeletonAIBoss : SkeletonAIBase, ICharacter
         }
     }
 
-    public void BossCharge(){
-        animator.SetTrigger("chargeUp");
-    }
-   
 }

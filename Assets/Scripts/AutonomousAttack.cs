@@ -1,26 +1,25 @@
 using UnityEngine;
 using System;
+using Pathfinding;
 
 
-public class AutonomousAttack : SkeletonAIBase
+public class AutonomousAttack : MonoBehaviour
 {
-    public string attackAnimName; 
     public float attackFrequency; 
-    public float timeSinceLastAttack; 
+    public DetectionZone detectionZone; 
+    private float timeSinceLastAttack; 
+    private bool attackEnabled = true;
+    private SkeletonAIBase skeletonAIBase;  
 
-    private DetectionZone detectionZone; 
-    private bool attackEnabled = false; 
-
-    new public void Start(){
-        base.Start(); 
-        detectionZone = gameObject.GetComponentInChildren<DetectionZone>(); 
+    public void Start(){
+        skeletonAIBase = gameObject.GetComponentInParent<SkeletonAIBase>(); 
     }
 
-    new void FixedUpdate(){
+    void FixedUpdate(){
         if (timeSinceLastAttack >= attackFrequency){
-            if (getCanAttack()){
+            if (skeletonAIBase.getCanAttack()){
                 if (attackEnabled && detectionZone.detectedObjs.Count > 0){
-                    animator.SetTrigger(attackAnimName); 
+                    skeletonAIBase.attack(); 
                     timeSinceLastAttack = 0f;  
                 }
             }

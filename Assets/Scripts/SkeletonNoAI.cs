@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SkeletonNoAI : SkeletonBase
 {
-    public DetectionZone detectionZone;
+    private DetectionZone detectionZone;
     Vector3 lastPosition; 
 
     new public void Start(){

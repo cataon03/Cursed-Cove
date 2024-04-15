@@ -4,11 +4,10 @@ using UnityEngine;
 public class SkeletonAIPatrol : SkeletonAIBase, ICharacter
 {
     public Transform[] patrolPoints; 
-    public bool isAgro; 
-    public int targetPoint; 
-    public float nextWaypointDistance = 3f; 
+    private bool isAgro; 
+    private int targetPoint; 
     private bool blindToPlayer = false; 
-    public DetectionZone detectionZone;
+    private DetectionZone detectionZone;
 
     new public void Start(){
         PowerupManager.OnPlayerInvisible += HandleOnPlayerInvisible;

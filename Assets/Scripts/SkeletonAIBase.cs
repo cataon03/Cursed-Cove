@@ -4,10 +4,10 @@ using UnityEngine;
 public abstract class SkeletonAIBase : SkeletonBase, ICharacter
 {
     public float minDistanceToPlayer = 1.2f; 
+    protected Transform playerTransform; 
     private bool canAttack;
     private AIDestinationSetter destinationSetter;
-    public AILerp aiLerp; 
-    public Transform playerTransform; 
+    private AILerp aiLerp; 
 
     new public void Start(){
         base.Start();
@@ -40,12 +40,10 @@ public abstract class SkeletonAIBase : SkeletonBase, ICharacter
     }
 
     public void lockAttack(){
-        Debug.Log("unlock attack"); 
         canAttack = false; 
     }
 
-    public void unlockAttack(){
-        Debug.Log("unlock attack"); 
+    public void unlockAttack(){ 
         canAttack = true; 
     }
 
@@ -88,6 +86,14 @@ public abstract class SkeletonAIBase : SkeletonBase, ICharacter
 
         move(); 
         adjustGraphics();
+    }
+
+    public void attack(){
+        animator.SetTrigger("attack"); 
+    }
+    
+    public void launchProjectiles(){
+        animator.SetTrigger("chargeUp");
     }
 
     public void changeAISpeed(float newSpeed){

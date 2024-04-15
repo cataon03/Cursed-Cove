@@ -11,15 +11,15 @@ public abstract class SkeletonBase : MonoBehaviour, ICharacter
             
         }
     }
-    public bool canMove; 
-    public Animator animator;
-    public SpriteRenderer spriteRenderer;
+    protected bool canMove; 
+    protected Animator animator;
+    protected SpriteRenderer spriteRenderer;
     public float damage = 1;
     public float knockbackForce = 20f;
     public float moveSpeed = 500f;
-    public Rigidbody2D rb;
-    DamageableCharacter damagableCharacter;
-    bool isMoving = false;
+    protected Rigidbody2D rb;
+    private DamageableCharacter damagableCharacter;
+    private bool isMoving = false;
 
 
     public void Start(){

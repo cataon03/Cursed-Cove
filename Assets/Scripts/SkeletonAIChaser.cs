@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SkeletonAIChaser : SkeletonAIBase, ICharacter
 {
-    public DetectionZone detectionZone; 
+    private DetectionZone detectionZone; 
     private bool isAgro = false; 
 
     new public void Start(){
