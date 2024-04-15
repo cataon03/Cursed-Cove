@@ -7,11 +7,13 @@ public abstract class SkeletonAIBase : SkeletonBase, ICharacter
     protected Transform playerTransform; 
     private bool canAttack;
     private AIDestinationSetter destinationSetter;
+    private SwordHitbox swordHitbox;
     private AILerp aiLerp; 
 
     new public void Start(){
         base.Start();
         aiLerp = gameObject.GetComponent<AILerp>();
+        swordHitbox = gameObject.GetComponentInChildren<SwordHitbox>(); 
         aiLerp.speed = moveSpeed; 
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform; 
         destinationSetter = GetComponent<AIDestinationSetter>();
@@ -24,7 +26,10 @@ public abstract class SkeletonAIBase : SkeletonBase, ICharacter
         if (destinationSetter){
             bool shouldFaceRight = destinationSetter.target.position.x > transform.position.x;
             spriteRenderer.flipX = !shouldFaceRight; 
-            gameObject.BroadcastMessage("IsFacingRight", shouldFaceRight);
+            if (swordHitbox){
+                gameObject.BroadcastMessage("IsFacingRight", shouldFaceRight);
+            }
+           
         }
         
         if (aiLerp && aiLerp.enabled && aiLerp.velocity.magnitude > 0.1f){

@@ -14,8 +14,8 @@ tags:
 ---
 
 <<freeze_player  DialogueManager>>
-Pirate: I made it to the fire island! 
-Pirate: I must defeat the skeletons here, maybe they're holding my parrot captive...
+Pirate: Brr, it's cold here for a tropical island!
+Pirate: I wonder where the boss of Frostbite Bay is hiding...  
 <<unfreeze_player DialogueManager>>
 
 ===
