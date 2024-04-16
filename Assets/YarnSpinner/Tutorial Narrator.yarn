@@ -1,0 +1,88 @@
+﻿title: TutorialBegin
+
+position: -204,-234
+---
+Narrator: Ahoy there, matey! Welcome aboard this tutorial.
+
+Narrator: Today's voyage ain't like any other. Ye see, our beloved parrot, Captain Squawkers, has been bird-napped by a ghastly crew of walking skeletons.
+-> Oh no! What can I do?
+    <<jump BasicMovement>>
+-> What?! How dare they!
+    <<jump BasicMovement>>
+===
+
+title: BasicMovement
+
+position: -379,-34
+---
+Narrator: Fear not, for I'll be teachin' ye how to navigate this treacherous land, fight off the bone-rattling scallywags, and bring our feathery friend back to the nest.
+
+Narrator: First things first, let's get ye familiar with moving around. 
+
+Narrator: Use W/A/S/D to start walkin'. Walk to those coins like ye've got a purpose, matey. A pirate’s gotta be quick on their feet, especially to collect that booty!
+
+===
+
+title: BasicFighting
+
+position: -151,-37
+---
+Narrator: How do you feel, matey?
+-> Am I doing this right?
+-> I think I broke my leg.
+
+Narrator: Narrator: Arrr! You seem okay to me! Ye be movin' like a true sea dog. 
+
+Narrator: Now, let's get to where the action is. Travel North West, and keep yer eyes peeled. Skeletons aren't known for their hospitality.
+
+Narrator: When ye see one of those scallywags, click to swing yer sword... and don't stop swingin' until they're down for the count!
+
+===
+
+title: TraderSystem
+
+position: 66,-32
+---
+Narrator: Ahoy there, matey! How do ye feel about fightin' those skeletons?
+-> Die, skeleton scum!
+-> It almost feels like I'm the bad guy.
+
+Narrator: ...
+
+Narrator: Let's not get too philosophical about it, matey. We've got a parrot to save!
+
+Narrator: Travel East to find a trader. They'll be able to help ye with supplies and upgrades.
+
+Narrator: Remember, a pirate's gotta be resourceful. Keep yer pockets full and yer sword sharp!
+===
+
+title: ChestSystem
+
+position: 283,-31
+---
+Narrator: Was the trader helpful, matey?
+-> I'm ready to save Captain Squawkers!
+-> I got this. Let's go!
+
+Narrator: That's the spirit! But hold on ye horses, matey. 
+
+Narrator: Ye're almost ready to take on the world, me hearty.
+
+Narrator: Now, onwards to the treasure chest! Travel south and open it up to find a gift that'll help ye on yer journey.
+===
+
+title: TutorialEnd
+
+position: 30,-230
+--- 
+Narrator: Ahoy! Is that beer I see in yer hands?
+-> I have the booty! What's next?
+-> A pirate has to stay hydrated, right? What is next?
+
+Narrator: Well I see you have the spirit of a true pirate in ye!
+
+Narrator: Remember all I’ve taught ye: stay nimble on yer feet, sharp with yer sword, and smart with yer choices. 
+
+Narrator: Captain Squawkers is out there, countin’ on us to bring him home. Let's set sail for adventure, and may the winds be ever in our favor. Arrr!
+
+===

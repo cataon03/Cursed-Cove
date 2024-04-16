@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
      public void PlayGame(){
           if (gameManager.getIsGameStart()){
                gameManager.setIsGameStart(false); 
-               gameManager.SetGameState(GameState.FireIsland); // Set default start at fire island 
+               gameManager.SetGameState(GameState.Tutorial); // Set default start at fire island 
           }
           else {
                gameManager.SetGameState(gameManager.getPrevGameState()); // Otherwise, set to last scene played

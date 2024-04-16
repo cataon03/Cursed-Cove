@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using Yarn.Unity; 
 
 public enum GameState
 {
     MainMenu,
+    Tutorial, 
     WinMenu, 
     FireIsland,
     IceIsland,
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviour
     public delegate void OnGameStateChange(GameState newState);
     public static event OnGameStateChange gameStateChange;
     private int levelIdx = 0; 
-    private static GameState[] LEVELS = {GameState.FireIsland, GameState.IceIsland}; 
+    private static GameState[] LEVELS = {GameState.Tutorial, GameState.FireIsland, GameState.IceIsland}; 
 
     private GameState currentGameState;
     public GameState previousGameState; 
@@ -103,6 +104,9 @@ public class GameManager : MonoBehaviour
         previousGameState = currentGameState; 
         switch (newState)
         {
+            case GameState.Tutorial:
+                SceneManager.LoadScene("Tutorial"); 
+                break;
             case GameState.MainMenu:
                 SceneManager.LoadScene("MainMenu"); 
                 break;
@@ -120,5 +124,11 @@ public class GameManager : MonoBehaviour
                 break; 
         }
         currentGameState = newState; 
+    }
+
+    
+    [YarnCommand("start_game")]
+    public void StartGame(){
+        nextLevel(); 
     }
 }

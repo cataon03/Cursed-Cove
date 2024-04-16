@@ -38,10 +38,10 @@ public class DialogueTriggerWithCollider : MonoBehaviour
             else {
                 DialogueManager.instance.StartDialogue(nodeName);
                 
-                /*
+                
                 if (disableAfterFirstCollision){
-                    gameObject.GetComponent<Collider2D>().enabled = false; 
-                } */ 
+                    //gameObject.GetComponent<Collider2D>().enabled = false; 
+                } 
             }
         }
     }

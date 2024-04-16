@@ -13,6 +13,7 @@ public class Chest : MonoBehaviour
     public Item item; 
     public string openChestDialogueNodeName; // Dialogue to ask player if they want to open the chest
     public string needKeyChestDialogueNodeName; // Dialogue to state that the chest needs a key to be opened 
+    private bool isOpened = false; 
 
     void Start(){
         spriteRenderer = GetComponent<SpriteRenderer>(); 
@@ -27,7 +28,7 @@ public class Chest : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (detectionZone.detectedObjs.Count == 0) { // Make sure no enemies detected
+        if (!isOpened && detectionZone.detectedObjs.Count == 0) { // Make sure no enemies detected
             // Check if the collider belongs to the player
             if (other.CompareTag("Player"))
             {
@@ -48,6 +49,6 @@ public class Chest : MonoBehaviour
         ChestManager.instance.LoadItemIntoChest(item); 
         ChestManager.instance.ShowInsideChest(); 
         spriteRenderer.sprite = chest_open; 
-        GetComponent<Collider2D>().enabled = false;
+        isOpened = true; 
     }
 }
