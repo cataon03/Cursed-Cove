@@ -8,6 +8,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
 {
     public static event Action<float> OnPlayerHit; 
     public static event Action OnPlayerDeath; 
+    
     public bool hasItemDrops; 
     public GameObject itemDrops;
     public GameObject healthText;

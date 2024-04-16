@@ -4,9 +4,13 @@ using UnityEngine.Tilemaps;
 
 public class UnlockableArea : MonoBehaviour
 {
-    public GameObject unlockableArea; 
+    public GameObject oldArea; 
+    public GameObject newArea; 
+
     [YarnCommand("unlock_area")]
     public void UnlockArea(){
-        unlockableArea.SetActive(true);  
+
+        newArea.SetActive(true);  
+        oldArea.SetActive(false); 
     }   
 }
