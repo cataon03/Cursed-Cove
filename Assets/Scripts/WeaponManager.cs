@@ -1,3 +1,4 @@
+using System.Diagnostics.Tracing;
 using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
@@ -14,7 +15,7 @@ public class WeaponManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            //DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -25,6 +26,14 @@ public class WeaponManager : MonoBehaviour
     private void Start() {
         InventoryManager.OnWeaponEquipped += HandleOnWeaponEquipped;
         playerSwordHitbox = GameObject.FindGameObjectWithTag("Player").GetComponent<SwordHitbox>(); 
+        refreshAnimationOverrides(); 
+    }
+
+    public void refreshAnimationOverrides(){
+        string[] animationNames = { "player_attack", "waiting", "walking" };
+        foreach (string clip in animationNames) {
+            animatorOverrideController[clip] = null; 
+        }
     }
 
    // Handle equipping weapons
