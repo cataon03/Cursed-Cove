@@ -7,14 +7,14 @@ public class SkeletonAIPatrol : SkeletonAIBase, ICharacter
     private bool isAgro; 
     private int targetPoint; 
     private bool blindToPlayer = false; 
-    private DetectionZone detectionZone;
+    public DetectionZone detectionZone;
 
     new public void Start(){
         PowerupManager.OnPlayerInvisible += HandleOnPlayerInvisible;
         base.Start(); 
         targetPoint = 0; 
         setTarget(patrolPoints[targetPoint].transform); // Start patrol by default 
-        detectionZone = GetComponentInChildren<DetectionZone>(); 
+        //detectionZone = GetComponentInChildren<DetectionZone>(); 
         isAgro = false; 
     }
      

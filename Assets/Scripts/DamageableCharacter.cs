@@ -8,7 +8,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
 {
     public static event Action<float> OnPlayerHit; 
     public static event Action OnPlayerDeath; 
-    
+    public float maxVelocity = 5f; 
     public bool hasItemDrops; 
     public GameObject itemDrops;
     public GameObject healthText;
@@ -32,10 +32,14 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
                 
                 // Spawn damage text right above the character
                 HealthText healthTextInstance = Instantiate(healthText).GetComponent<HealthText>();
+                if (healthTextInstance == null){
+                    Debug.Log("Warning: health text not initialized properly"); 
+                }
+                Debug.Log("recttransform: " + healthTextInstance.transform.position); 
                 RectTransform textTransform = healthTextInstance.GetComponent<RectTransform>();
                 textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
-
                 textTransform.SetParent(sceneCanvas.transform);
+                Debug.Log(textTransform.position);
                 healthTextInstance.textMesh.text = (_health - value).ToString();
                 
             }
@@ -119,7 +123,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
             Debug.LogWarning("Health text prefab is not set on " + gameObject.name);
         }
         
-        sceneCanvas = GameObject.FindObjectOfType<Canvas>();
+        sceneCanvas = GameObject.FindGameObjectWithTag("Main Canvas").GetComponent<Canvas>();
 
         if(sceneCanvas == null) {
             Debug.LogWarning("No canvas object found in scene by " + gameObject.name);
@@ -135,7 +139,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
             // Impulse for instantaneous forces
             rb.AddForce(knockback, ForceMode2D.Impulse);
         
-            if(canTurnInvincible) {
+            if (canTurnInvincible) {
                 // Activate invincibility and timer 
                 Invincible = true;
             }
@@ -175,7 +179,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         if(Invincible) {
             invincibleTimeElapsed += Time.deltaTime;
 
-            if(invincibleTimeElapsed > invincibilityTime) {
+            if (invincibleTimeElapsed > invincibilityTime) {
                 Invincible = false;
             }
         }

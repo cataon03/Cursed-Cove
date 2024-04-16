@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4048042126982385617}
   - component: {fileID: 330332921040649396}
   - component: {fileID: 8395170462300360392}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -218,9 +218,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1, y: -0.3}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.20043944
+  m_Radius: 0.42686003
 --- !u!114 &8395170462300360392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8543d9be9331e7e4bbf73af6a16ffc62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxVelocity: 5
   hasItemDrops: 0
   itemDrops: {fileID: 0}
   healthText: {fileID: 4446440190103696447, guid: e61196338ebbccc43a9ab2bd4211308d, type: 3}
@@ -241,9 +242,9 @@ MonoBehaviour:
   invincibilityTime: 0.3
   animator: {fileID: 0}
   maxHealth: 0
-  _health: 5
+  _health: 100
   _targetable: 1
-  _invincible: 0
+  _invincible: 1
   _projectile_invincible: 0
 --- !u!1 &8853572529522011581
 GameObject:
@@ -256,7 +257,7 @@ GameObject:
   - component: {fileID: 6246688991534977818}
   - component: {fileID: 1276261732827995078}
   - component: {fileID: 7698000426802038041}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: SwordHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

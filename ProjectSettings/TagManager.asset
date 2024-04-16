@@ -9,17 +9,18 @@ TagManager:
   - Skeleton
   - Projectile
   - AI
+  - Main Canvas
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - GroundCollision
+  - Player
   - Water
   - UI
   - Enemy
   - SwordHitbox
   - ' Dialogue Trigger Collider'
-  - 
+  - Ground Collision
   - 
   - 
   - 

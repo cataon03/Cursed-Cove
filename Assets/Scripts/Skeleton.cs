@@ -16,7 +16,7 @@ public class Skeleton : MonoBehaviour, ICharacter
     SpriteRenderer spriteRenderer;
     public float damage = 1;
     public float knockbackForce = 20f;
-    public float moveSpeed = 500f;
+    public float moveSpeed = 5f;
     Vector3 currentPosition; 
     Vector3 lastPosition; 
 
