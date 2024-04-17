@@ -165,7 +165,7 @@ MonoBehaviour:
   currentDirection: {x: 0, y: 0}
   moveSpeed: 10
   timeToLive: 1.5
-  knockbackForce: 75
+  knockbackForce: 30
   damage: 1
   spriteRenderer: {fileID: 0}
 --- !u!95 &8078872473683040882
