@@ -38,9 +38,10 @@ public class SkeletonAIPatrol : SkeletonAIBase, ICharacter
 
     override public void move() {
         // Switch to agro state if player detected
-        if (!blindToPlayer && detectionZone.detectedObjs.Count > 0){
+        if (!blindToPlayer && detectionZone.detectedObjs.Count > 0 && !isAgro){
             isAgro = true; 
-            setTarget(GameObject.FindGameObjectWithTag("Player").transform); 
+            //setTarget(GameObject.FindGameObjectWithTag("Player").transform); 
+            setTargetToPlayer(); 
         }
         
         // Patrol if player not detected

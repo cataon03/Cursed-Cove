@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562c9cc74207943898ebf4e2c7edaa28, type: 3}
   m_Name: Boards
   m_EditorClassIdentifier: 
-  tile: {fileID: 0}
-  type: 0
-  actionType: 0
-  range: {x: 5, y: 4}
-  stackable: 1
+  stackable: 0
   image: {fileID: 21300000, guid: c7c332bd5831f9e44bbe8ce498dc25cc, type: 3}
+  price: 0
+  itemName: 

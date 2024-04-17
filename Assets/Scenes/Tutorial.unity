@@ -34820,6 +34820,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5997019787822979925, guid: 499670c2086f58147a5c5e023ff59ec1, type: 3}
+      propertyPath: objectToFollowPrefab
+      value: 
+      objectReference: {fileID: 8320154480522260736, guid: 073763fe55166e24c81e72bf6c1b5b8f, type: 3}
     - target: {fileID: 6086107765650035395, guid: 499670c2086f58147a5c5e023ff59ec1, type: 3}
       propertyPath: m_Name
       value: Basic
@@ -37041,9 +37045,17 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 913993598723147720}
+    - target: {fileID: 5842895431215197283, guid: 359410a5aaf690849b5bd4931e1e06ab, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 8.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6899498296386308180, guid: 359410a5aaf690849b5bd4931e1e06ab, type: 3}
       propertyPath: m_Name
       value: Cameras
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142717692669488679, guid: 359410a5aaf690849b5bd4931e1e06ab, type: 3}
+      propertyPath: orthographic size
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 7142717692669488856, guid: 359410a5aaf690849b5bd4931e1e06ab, type: 3}
       propertyPath: m_LocalPosition.x

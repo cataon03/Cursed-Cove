@@ -1,4 +1,5 @@
 using Pathfinding;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public abstract class SkeletonAIBase : SkeletonBase, ICharacter
@@ -9,6 +10,8 @@ public abstract class SkeletonAIBase : SkeletonBase, ICharacter
     private AIDestinationSetter destinationSetter;
     private SwordHitbox swordHitbox;
     private AILerp aiLerp; 
+    public GameObject objectToFollowPrefab;
+    private GameObject currentAttackerTracker = null; 
 
     new public void Start(){
         base.Start();
@@ -18,7 +21,24 @@ public abstract class SkeletonAIBase : SkeletonBase, ICharacter
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform; 
         destinationSetter = GetComponent<AIDestinationSetter>();
         setTarget(GameObject.FindGameObjectWithTag("Player").transform);
+        setTargetToPlayer(); 
         canAttack = true; 
+    }
+
+
+    public void setTargetToPlayer(){
+        float surroundRadius = 1f; 
+        float angle = Random.Range(0, 360) * Mathf.Deg2Rad; // Convert degrees to radians
+        Vector3 offset = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * surroundRadius;
+        GameObject follower = Instantiate(objectToFollowPrefab);
+        follower.transform.SetParent(playerTransform); 
+        destinationSetter.target = follower.transform; 
+        destinationSetter.target.position = playerTransform.position + offset;
+        if (currentAttackerTracker){
+            Destroy(currentAttackerTracker); 
+            currentAttackerTracker = null; 
+        }
+        currentAttackerTracker = follower; 
     }
 
 
@@ -54,6 +74,11 @@ public abstract class SkeletonAIBase : SkeletonBase, ICharacter
 
     public void setTarget(Transform newTarget){
         destinationSetter.target = newTarget; 
+        
+        if (currentAttackerTracker){
+            Destroy(currentAttackerTracker); 
+            currentAttackerTracker = null;
+        }
     }
 
     public Transform getTarget(){

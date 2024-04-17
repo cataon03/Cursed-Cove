@@ -10,7 +10,7 @@ public class SkeletonAIChaser : SkeletonAIBase, ICharacter
     new public void Start(){
         PowerupManager.OnPlayerInvisible += HandleOnPlayerInvisible;
         base.Start(); 
-        setTarget(GameObject.FindGameObjectWithTag("Player").transform);        
+        //setTarget(GameObject.FindGameObjectWithTag("Player").transform);        
         detectionZone = gameObject.GetComponentInChildren<DetectionZone>(); 
         LockMovement(); 
     }

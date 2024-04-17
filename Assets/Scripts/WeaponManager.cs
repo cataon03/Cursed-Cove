@@ -23,9 +23,9 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    private void Start() {
+    public void Start() {
+        playerSwordHitbox = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<SwordHitbox>(); 
         InventoryManager.OnWeaponEquipped += HandleOnWeaponEquipped;
-        playerSwordHitbox = GameObject.FindGameObjectWithTag("Player").GetComponent<SwordHitbox>(); 
         refreshAnimationOverrides(); 
     }
 
@@ -41,10 +41,10 @@ public class WeaponManager : MonoBehaviour
         AnimationClip[]  clips; 
         string[] animationNames = { "player_attack", "waiting", "walking" };
         
-        if (weapon.name == "Fire Sword"){
+        if (weapon.itemName == "Fire Sword"){
             clips = fireSwordAnimations; 
         }
-        else if (weapon.name == "Ice Sword"){
+        else if (weapon.itemName == "Ice Sword"){
             clips = iceSwordAnimations; 
         }
         else {
