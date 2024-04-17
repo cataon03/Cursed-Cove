@@ -37008,6 +37008,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7698000426802038041, guid: 2ae7716c96b22dc4f99b26faae8db706, type: 3}
+      propertyPath: knockbackForce
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8395170462300360392, guid: 2ae7716c96b22dc4f99b26faae8db706, type: 3}
       propertyPath: _health
       value: 100

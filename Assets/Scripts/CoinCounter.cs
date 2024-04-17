@@ -22,4 +22,8 @@ public class CoinCounter : MonoBehaviour
         currentCoins += 1; 
         cointText.text = "COINS: " + currentCoins.ToString(); 
     } 
+
+    public void updateText(){
+        cointText.text = "COINS: " + currentCoins.ToString(); 
+    } 
 }

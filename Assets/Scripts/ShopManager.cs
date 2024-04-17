@@ -67,6 +67,8 @@ public class ShopManager : MonoBehaviour
 
     public void BuyItem(int slotIdx){
         if (CoinCounter.Instance.currentCoins >= itemsInShop[slotIdx].price){
+            CoinCounter.Instance.currentCoins -= itemsInShop[slotIdx].price; 
+            CoinCounter.Instance.updateText(); 
             successFailMessage.text = "Item purchased!"; 
             successFailMessage.color = Color.green;
             InventoryManager.instance.AddItem(itemsInShop[slotIdx]); 
