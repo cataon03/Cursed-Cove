@@ -7,6 +7,7 @@ using UnityEngine;
 public class DamageableCharacter : MonoBehaviour, IDamageable
 {
     public static event Action<float> OnPlayerHit; 
+    public static event Action<float> OnBossHit; 
     public static event Action OnPlayerDeath; 
     public float maxVelocity = 5f; 
     public bool hasItemDrops; 
@@ -28,20 +29,17 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         set {
             // When health is dropped (new value less than old value), play hit animation and show damage taken as text
             if(value < _health) {
+                OnHitActions(_health - value);
                 animator.SetTrigger("hit");
-                
                 // Spawn damage text right above the character
                 HealthText healthTextInstance = Instantiate(healthText).GetComponent<HealthText>();
                 if (healthTextInstance == null){
                     Debug.Log("Warning: health text not initialized properly"); 
                 }
-                Debug.Log("recttransform: " + healthTextInstance.transform.position); 
                 RectTransform textTransform = healthTextInstance.GetComponent<RectTransform>();
                 textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
                 textTransform.SetParent(sceneCanvas.transform);
-                Debug.Log(textTransform.position);
                 healthTextInstance.textMesh.text = (_health - value).ToString();
-                
             }
 
             _health = value;
@@ -65,6 +63,10 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         }
         animator.SetBool("isAlive", false);
         Targetable = false; 
+    }
+
+    virtual public void OnHitActions(float damage){
+
     }
 
     public bool Targetable { get { return _targetable; }
@@ -105,9 +107,11 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
 
     public bool _invincible = false;
     public bool _projectile_invincible = false;
+
     private void OnDestroy()
     {
     }
+    
     public void Start(){
         maxHealth = Health; 
 
@@ -131,7 +135,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     }
 
     // Take damage with knockback
-    public void OnHit(float damage, Vector2 knockback)
+    virtual public void OnHit(float damage, Vector2 knockback)
     {
         if(!Invincible) {
             Health -= damage;
@@ -144,9 +148,8 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
                 Invincible = true;
             }
         }
-        if (gameObject.tag == "Boss"){
-            gameObject.GetComponent<SkeletonAIBoss>().updateHealthBar(damage); 
-        }
+        Debug.Log(gameObject.tag); 
+       
         if (gameObject.tag == "Player"){
             OnPlayerHit?.Invoke(Health); 
         }

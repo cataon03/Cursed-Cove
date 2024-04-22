@@ -1,40 +1,48 @@
 using Pathfinding;
 using UnityEngine;
 using System;
-using Yarn.Unity;
-using UnityEditor.Rendering;
-using UnityEngine.Rendering.Universal;
-using UnityEngine.AI;
-using Unity.VisualScripting;
+using System.Collections.Generic;
+using JetBrains.Annotations;
+using System.Data.Common;
 
 
 public class SkeletonAIBoss : SkeletonAIBase, ICharacter
 {
-    public static event Action<float> OnBossHit;     
 
     /* For health regeneration */ 
     public Transform[] healthRegenZones; 
+
+    /* For player avoidance */ 
+    public float thresholdDistance = 10f; 
+
+    /* For boss avoidant state */ 
+    public float hitCheckFreq = 10f; 
+    private float timeSinceLastHitCheck = 0f; 
+    private int hitsInInterval = 0; 
+    public int hitThreshold = 2; 
     public DetectionZone detectionZone; 
     public float regenRate; 
-    public float timeBetweenRegens; 
     int zoneIdx = 0; 
     float timeSinceLastRegen = 0f; 
     public float fastMoveSpeed; 
     ProjectileLauncher projectileLauncher;
     AutonomousAttack autonomousAttack; 
-    PlayerBehaviorMonitor playerBehaviorMonitor;  
+    PlayerBehaviorMonitor playerBehaviorMonitor; 
 
     private Enemy enemy;  
 
     /* Boss state regulation */ 
-    public enum BossState { Aggressive, Chasing, Retreating, Regenerating } 
-    public enum Health { Critical, Medium, Okay, Full }
+    public enum BossState { Aggressive, Chasing, Avoiding, Retreating, Regenerating } 
+
+    public enum Health { Critical, Low, Medium, High }
     public BossState currentState; 
     public SkeletonBossHealthbar healthBar; 
+    float timeSinceLastCalc = 0f; 
+    float timeThreshold = 1f; 
 
     new public void Start(){
         base.Start(); 
-        //detectionZone = gameObject.GetComponentInChildren<DetectionZone>(); 
+
         enemy = gameObject.GetComponent<Enemy>();
         playerBehaviorMonitor = gameObject.GetComponent<PlayerBehaviorMonitor>(); 
         projectileLauncher = gameObject.GetComponent<ProjectileLauncher>();  
@@ -43,7 +51,7 @@ public class SkeletonAIBoss : SkeletonAIBase, ICharacter
         healthBar = gameObject.GetComponentInChildren<SkeletonBossHealthbar>(); 
         healthBar.MaxValue = (int) enemy.Health; 
         healthBar.Value = (int) enemy.Health; 
-        setTarget(GameObject.FindGameObjectWithTag("Player").transform);
+        //setTarget(GameObject.FindGameObjectWithTag("Player").transform);
         currentState = BossState.Aggressive;
         ChangeState(currentState); 
         LockMovement(); 
@@ -56,6 +64,13 @@ public class SkeletonAIBoss : SkeletonAIBase, ICharacter
         SkeletonBossTrigger.OnReleaseBoss -= HandleOnReleaseBoss; 
     }
 
+    
+    public void IncreaseBossHits(){
+        Debug.Log("hit again"); 
+        hitsInInterval += 1; 
+    }
+
+
     void HandleOnReleaseBoss(){
         projectileLauncher.enabled = true;
         autonomousAttack.enabled = true;
@@ -63,37 +78,47 @@ public class SkeletonAIBoss : SkeletonAIBase, ICharacter
     }
 
     public void updateHealthBar(float change){
-        healthBar.Change((int) change); //todo
+        healthBar.Change((int) change); 
     }
 
     public Health GetHealth(){
-        if (enemy._health <= enemy.maxHealth/3){
+        if (enemy._health < enemy.maxHealth/3){
             return Health.Critical; 
         }
-        else if (enemy._health <= enemy.maxHealth/2){
+        else if (enemy._health < enemy.maxHealth/2){
+            return Health.Low; 
+        }
+        else if (enemy._health < enemy.maxHealth/1.5){
             return Health.Medium; 
         }
-        else if (enemy._health == enemy.maxHealth){
-            return Health.Full; 
-        }
         else { 
-            return Health.Okay; 
+            return Health.High; 
         }
     }
 
+    void updateHitStats(){
+       if (timeSinceLastHitCheck >= hitCheckFreq){
+            timeSinceLastHitCheck = 0f;
+        }
+        else {
+            timeSinceLastHitCheck += Time.deltaTime; 
+        }      
+    }
+
     override public void move() {
+        updateHitStats(); 
         switch (currentState){
             case BossState.Aggressive: 
                 moveAggressive(); 
                 break; 
-            case BossState.Chasing: 
-                moveChasing(); 
-                break;
             case BossState.Retreating: 
                 moveRetreating(); 
                 break;
             case BossState.Regenerating: 
                 moveRegenerating(); 
+                break; 
+            case BossState.Avoiding: 
+                moveAvoiding(); 
                 break; 
         }
     }
@@ -103,17 +128,10 @@ public class SkeletonAIBoss : SkeletonAIBase, ICharacter
         switch (newState){
             case BossState.Aggressive:
                 changeAISpeed(moveSpeed); 
-                setTarget(playerTransform);  
+                autonomousAttack.setAttackEnabled(true);  
                 projectileLauncher.setLaunchEnabled(true); 
                 projectileLauncher.setLaunchFrequency(4.5f); // Need to make Low, Med, High enum 
                 projectileLauncher.setLaunchType(ProjectileLauncher.LaunchType.Mixed); 
-                break; 
-            case BossState.Chasing:
-                changeAISpeed(fastMoveSpeed); 
-                setTarget(playerTransform);  
-                projectileLauncher.setLaunchEnabled(true); 
-                projectileLauncher.setLaunchType(ProjectileLauncher.LaunchType.Directional); 
-                projectileLauncher.setLaunchFrequency(5f); 
                 break; 
             case BossState.Retreating: 
                 changeAISpeed(fastMoveSpeed); 
@@ -127,6 +145,10 @@ public class SkeletonAIBoss : SkeletonAIBase, ICharacter
                 projectileLauncher.setLaunchEnabled(false);
                 LockMovement(); 
                 break; 
+            case BossState.Avoiding: 
+                changeAISpeed(fastMoveSpeed); 
+                setDistanceTarget(thresholdDistance); 
+                break; 
         }
         currentState = newState; 
     }
@@ -135,15 +157,21 @@ public class SkeletonAIBoss : SkeletonAIBase, ICharacter
         if (GetHealth() == Health.Critical){
             ChangeState(BossState.Retreating); 
         }
-    }
-
-    void moveChasing(){
-        if (GetHealth() == Health.Critical){
-            ChangeState(BossState.Retreating); 
+        else if (hitsInInterval > hitThreshold){
+            ChangeState(BossState.Avoiding); 
         }
-
     }
 
+    void moveAvoiding(){
+        if (GetHealth() == Health.Critical){
+            ChangeState(BossState.Retreating);
+        }
+        if (!IsTargetPositionWalkable()){
+            setDistanceTarget(thresholdDistance); 
+        }
+      
+    }
+   
     void moveRetreating(){
         float distanceToRegenZone = Vector3.Distance(transform.position, getTarget().position);
        
@@ -155,15 +183,15 @@ public class SkeletonAIBoss : SkeletonAIBase, ICharacter
     }
 
     void moveRegenerating(){
-        if (GetHealth() == Health.Full){
+        if (GetHealth() == Health.High){
             ChangeState(BossState.Aggressive); 
             UnlockMovement(); 
         } 
         // Player entered the health regeneration zone 
         else if (detectionZone.detectedObjs.Count > 0){
             // If health is okay, stop regenerating and start fighting again
-            if (GetHealth() == Health.Okay){
-                ChangeState(BossState.Aggressive); 
+            if (GetHealth() == Health.Medium){
+                ChangeState(BossState.Avoiding); 
             }
             // Run to the other health regeneration zone 
             else {

@@ -7,6 +7,7 @@ using UnityEngine.Rendering.Universal;
 public class ProjectileLauncher : MonoBehaviour
 {
     [SerializeField] public List<GameObject> projectiles = new List<GameObject>();
+    Transform target; 
     System.Random rand = new System.Random();
     public Quaternion spawnRotation;
     public float launchFrequency = 0.5f;
@@ -22,6 +23,7 @@ public class ProjectileLauncher : MonoBehaviour
     
 
     public void Start(){
+        target = GameObject.FindGameObjectWithTag("Player").transform; 
         skeletonAIBase = gameObject.GetComponent<SkeletonAIBase>(); 
         currentLaunchType = LaunchType.Mixed; 
     }
@@ -85,7 +87,7 @@ public class ProjectileLauncher : MonoBehaviour
     // Basic single-projectile launch in the direction of the player
     public void LaunchDirectional(){
         GameObject newProjectile = Instantiate(pickProjectilePrefab(), transform.position, spawnRotation);
-        Vector2 direction = (skeletonAIBase.getTarget().position - transform.position).normalized;
+        Vector2 direction = (target.position - transform.position).normalized;
         newProjectile.GetComponent<Projectile>().Launch(direction);
     }
 

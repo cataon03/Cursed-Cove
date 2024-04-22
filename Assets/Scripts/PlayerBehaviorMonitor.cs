@@ -23,7 +23,7 @@ public class PlayerBehaviorMonitor : MonoBehaviour
     private GameObject player; 
 
     public void Start(){
-        SkeletonAIBoss.OnBossHit += HandleOnBossHit; 
+        
         player = GameObject.FindGameObjectWithTag("Player"); 
 
     }

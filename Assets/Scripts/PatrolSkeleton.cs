@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Pathfinding;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PatrolSkeleton : MonoBehaviour, ICharacter
 {
@@ -125,6 +126,7 @@ public class PatrolSkeleton : MonoBehaviour, ICharacter
         }
         
         bool shouldFaceRight = patrolPoints[targetPoint].position.x > transform.position.x;
+
         spriteRenderer.flipX = !shouldFaceRight;
         gameObject.BroadcastMessage("IsFacingRight", shouldFaceRight);
     }

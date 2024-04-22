@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 367281816181085578}
   - component: {fileID: 4831827659064716092}
   - component: {fileID: 2407272544307141501}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: SwordHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordDamage: 2
-  knockbackForce: 100
+  knockbackForce: 30
   swordCollider: {fileID: 367281816181085578}
   faceRight: {x: 1, y: 0, z: 0}
   faceLeft: {x: -0.15, y: 0, z: 0}
@@ -108,8 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b21cfb5e9905dc4698ff81341ea535e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackFrequency: 1
+  attackFrequency: 1.5
   detectionZone: {fileID: 2896723760464950573}
+  attacksWithAnimation: 1
 --- !u!1 &811189927776684371
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +122,7 @@ GameObject:
   - component: {fileID: 4249188249656983022}
   - component: {fileID: 2896723760464950573}
   - component: {fileID: 6431165550186561077}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Attack Detection Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,6 +299,7 @@ GameObject:
   - component: {fileID: 220431842641969276}
   - component: {fileID: 2882490506662796689}
   - component: {fileID: 318586095448749900}
+  - component: {fileID: 5898640115768468060}
   m_Layer: 6
   m_Name: Boss Skeleton
   m_TagString: Boss
@@ -313,7 +315,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004363464110990122}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 98.32696, y: 30.892889, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 0}
   m_ConstrainProportionsScale: 0
@@ -483,7 +485,7 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 4294967295
     useGraphRaycasting: 0
-  traversableTags: -1
+  traversableTags: -5
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
@@ -499,6 +501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b12143489704147887c475f751948b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxVelocity: 5
   hasItemDrops: 0
   itemDrops: {fileID: 0}
   healthText: {fileID: 4446440190103696447, guid: e61196338ebbccc43a9ab2bd4211308d, type: 3}
@@ -506,11 +509,12 @@ MonoBehaviour:
   canTurnInvincible: 0
   invincibilityTime: 0.25
   animator: {fileID: 0}
-  maxHealth: 0
-  _health: 5
+  maxHealth: 9
+  _health: 9
   _targetable: 1
   _invincible: 0
   _projectile_invincible: 0
+  healthbar: {fileID: 0}
 --- !u!114 &3039336720687571863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,7 +532,7 @@ MonoBehaviour:
     mode: 2
     interval: 0.5
     sensitivity: 10
-    maximumInterval: 2
+    maximumInterval: 0.5
     visualizeSensitivity: 0
   canMove: 1
   speed: 2
@@ -566,6 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8543d9be9331e7e4bbf73af6a16ffc62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxVelocity: 5
   hasItemDrops: 0
   itemDrops: {fileID: 0}
   healthText: {fileID: 4446440190103696447, guid: e61196338ebbccc43a9ab2bd4211308d, type: 3}
@@ -573,8 +578,8 @@ MonoBehaviour:
   canTurnInvincible: 0
   invincibilityTime: 0.25
   animator: {fileID: 0}
-  maxHealth: 0
-  _health: 2
+  maxHealth: 5
+  _health: 5
   _targetable: 1
   _invincible: 0
   _projectile_invincible: 0
@@ -592,15 +597,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   knockbackForce: 20
-  moveSpeed: 7
-  minDistanceToPlayer: 0.1
+  moveSpeed: 8
+  minDistanceToPlayer: 0
+  aiLerp: {fileID: 0}
+  objectToFollowPrefab: {fileID: 8320154480522260736, guid: 073763fe55166e24c81e72bf6c1b5b8f, type: 3}
   healthRegenZones:
   - {fileID: 0}
   - {fileID: 0}
+  thresholdDistance: 15
+  hitCheckFreq: 5
+  hitThreshold: 1
   detectionZone: {fileID: 15515065354959665}
   regenRate: 2
-  timeBetweenRegens: 0
-  fastMoveSpeed: 10
+  fastMoveSpeed: 11
   currentState: 0
   healthBar: {fileID: 4218296505265719855}
 --- !u!114 &2882490506662796689
@@ -646,6 +655,21 @@ MonoBehaviour:
   - {fileID: 8204312091790791052, guid: d8679113440e54b43b63027042201d3b, type: 3}
   spawnRotation: {x: 0, y: 0, z: 0, w: 0}
   launchFrequency: 2
+--- !u!114 &5898640115768468060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004363464110990122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f586f285b3847808d79083bd19ef1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  unwrap: 1
+  splitAtEveryPortal: 0
 --- !u!1 &1439824861113852380
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,7 +783,7 @@ GameObject:
   - component: {fileID: 8047594167153279866}
   - component: {fileID: 6561437535130748279}
   - component: {fileID: 15515065354959665}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Detection Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

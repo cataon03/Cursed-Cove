@@ -1,11 +1,16 @@
-
 using System; 
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
 
 public class Enemy : DamageableCharacter {
     public static event Action OnBossDeath;
+    public SkeletonBossHealthbar healthbar; 
 
     new public void Start(){
         base.Start(); 
+        healthbar = gameObject.GetComponentInChildren<SkeletonBossHealthbar>();
         DialogueManager.OnEnemyFreeze += HandleOnEnemyFreeze; 
     }
 
@@ -20,6 +25,13 @@ public class Enemy : DamageableCharacter {
         }
         Targetable = false; 
         animator.SetBool("isAlive", false);
+    }
+
+    public override void OnHitActions(float damage)
+    {
+        if (gameObject.tag == "Boss"){
+            healthbar.Change((int) damage); 
+        }
     }
 
     void HandleOnEnemyFreeze(bool isFrozen){
