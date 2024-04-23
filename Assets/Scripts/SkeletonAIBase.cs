@@ -1,14 +1,15 @@
 using System.Data.Common;
 using Pathfinding;
+using Pathfinding.Util;
 using Unity.Profiling;
 using UnityEditor.Rendering;
 using UnityEngine;
 
 public abstract class SkeletonAIBase : SkeletonBase, ICharacter
-{
-    public float minDistanceToPlayer = 1.2f; 
+{ 
     private float timer = 0f; 
     private float updateRate = 0.2f; 
+    public float stoppingDistance = 1.2f; 
     protected Transform playerTransform; 
     private bool canAttack;
     private AIDestinationSetter destinationSetter;
@@ -31,15 +32,25 @@ public abstract class SkeletonAIBase : SkeletonBase, ICharacter
         canAttack = true; 
     }
 
+    Vector3 GetRandomPointAround(Vector3 center)
+    {
+        // Generate a random angle between 0 and 360 degrees (in radians)
+        float angle = Random.Range(0, 2 * Mathf.PI);
+
+        // Convert polar coordinates to Cartesian coordinates
+        float x = center.x + stoppingDistance * Mathf.Cos(angle);
+        float y = center.y + stoppingDistance * Mathf.Sin(angle);
+
+        // Return the calculated position
+        return new Vector3(x, y, 0); // Assuming a 2D game, keep z the same
+    }
 
     public void setTargetToPlayer(){
-        float surroundRadius = 1f; 
-        float angle = Random.Range(0, 360) * Mathf.Deg2Rad; // Convert degrees to radians
-        Vector3 offset = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * surroundRadius;
         GameObject follower = Instantiate(objectToFollowPrefab);
+        follower.transform.position = GetRandomPointAround(playerTransform.position);
         follower.transform.SetParent(playerTransform); 
+
         destinationSetter.target = follower.transform; 
-        destinationSetter.target.position = playerTransform.position + offset;
         if (currentAttackerTracker){
             Destroy(currentAttackerTracker); 
             currentAttackerTracker = null; 
@@ -50,28 +61,31 @@ public abstract class SkeletonAIBase : SkeletonBase, ICharacter
 
     public void setDistanceTarget(float thresholdDistance){
         Vector3 point; 
-
+        Debug.Log("starting"); 
         while (true){
-            float angle = Random.Range(0, 360) * Mathf.Deg2Rad; // Convert degrees to radians
-            Vector3 offset = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * thresholdDistance;
-            point = playerTransform.position + offset; 
-            
+            LockMovement(); 
+            float angle = Random.Range(0, 2 * Mathf.PI);
+
+            float x = playerTransform.position.x + thresholdDistance * Mathf.Cos(angle);
+            float y = playerTransform.position.y + thresholdDistance * Mathf.Sin(angle);
+
+            point = new Vector3(x, y, 0); 
             GraphNode nearestNode = AstarPath.active.GetNearest(point, NNConstraint.Default).node;
-            if (nearestNode != null && nearestNode.Walkable) {
+            if (nearestNode != null && nearestNode.Walkable && Vector3.Distance(point, transform.position) >= thresholdDistance) {
                 break; 
             }
         }
-        
         GameObject follower = Instantiate(objectToFollowPrefab);
-        follower.transform.position = point; // Set position before parenting
+        follower.transform.position = point;
         follower.transform.SetParent(playerTransform); 
-        destinationSetter.target = follower.transform;
-
+        destinationSetter.target = follower.transform; 
         if (currentAttackerTracker){
             Destroy(currentAttackerTracker); 
             currentAttackerTracker = null; 
         }
-        currentAttackerTracker = follower; 
+        currentAttackerTracker = follower;
+        UnlockMovement(); 
+        Debug.Log("done"); 
     }
 
     public bool IsTargetPositionWalkable() {
@@ -160,41 +174,15 @@ public abstract class SkeletonAIBase : SkeletonBase, ICharacter
         return destinationSetter.target; 
     }
 
-    public void SetAIDestination(Vector3 destination){
-        aiLerp.destination = destination; 
-    }
-
     new public void LockMovement() {
-        Debug.Log("locking"); 
         aiLerp.enabled = false; 
     }
 
     new public void UnlockMovement() {
-        Debug.Log("unlocking"); 
         aiLerp.enabled = true; 
     }
 
-    public bool isTooClose(){
-        float dist = Vector2.Distance(transform.position, playerTransform.position);
-        if (dist <= minDistanceToPlayer){
-            return true; 
-        }
-        return false; 
-    }
-
     public void Update() {
-        if (isTooClose()){
-            if (aiLerp){
-                aiLerp.isStopped = true; 
-            }
-            
-        }
-        else {
-            if (aiLerp){
-                aiLerp.isStopped = false; 
-            }
-        }
-
         move(); 
         adjustGraphics();
     }

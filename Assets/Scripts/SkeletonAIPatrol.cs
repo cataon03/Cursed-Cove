@@ -14,7 +14,6 @@ public class SkeletonAIPatrol : SkeletonAIBase, ICharacter
         base.Start(); 
         targetPoint = 0; 
         setTarget(patrolPoints[targetPoint].transform); // Start patrol by default 
-        //detectionZone = GetComponentInChildren<DetectionZone>(); 
         isAgro = false; 
     }
      
@@ -40,7 +39,6 @@ public class SkeletonAIPatrol : SkeletonAIBase, ICharacter
         // Switch to agro state if player detected
         if (!blindToPlayer && detectionZone.detectedObjs.Count > 0 && !isAgro){
             isAgro = true; 
-            //setTarget(GameObject.FindGameObjectWithTag("Player").transform); 
             setTargetToPlayer(); 
         }
         

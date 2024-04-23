@@ -16,7 +16,6 @@ public class DialogueTriggerWithCollider : MonoBehaviour
     void OnTriggerExit2D(Collider2D other){
         if (other.CompareTag("Player"))
         {
-            Debug.Log("trigger exit"); 
             DialogueManager.instance.StopDialogue(); 
             if (disableAfterFirstCollision){
                 gameObject.GetComponent<Collider2D>().enabled = false; 

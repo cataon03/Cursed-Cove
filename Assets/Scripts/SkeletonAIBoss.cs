@@ -27,7 +27,6 @@ public class SkeletonAIBoss : SkeletonAIBase, ICharacter
     public float fastMoveSpeed; 
     ProjectileLauncher projectileLauncher;
     AutonomousAttack autonomousAttack; 
-    PlayerBehaviorMonitor playerBehaviorMonitor; 
 
     private Enemy enemy;  
 
@@ -37,21 +36,17 @@ public class SkeletonAIBoss : SkeletonAIBase, ICharacter
     public enum Health { Critical, Low, Medium, High }
     public BossState currentState; 
     public SkeletonBossHealthbar healthBar; 
-    float timeSinceLastCalc = 0f; 
-    float timeThreshold = 1f; 
 
     new public void Start(){
         base.Start(); 
 
         enemy = gameObject.GetComponent<Enemy>();
-        playerBehaviorMonitor = gameObject.GetComponent<PlayerBehaviorMonitor>(); 
         projectileLauncher = gameObject.GetComponent<ProjectileLauncher>();  
         projectileLauncher.setLaunchEnabled(true); 
         autonomousAttack = gameObject.GetComponentInChildren<AutonomousAttack>(); 
         healthBar = gameObject.GetComponentInChildren<SkeletonBossHealthbar>(); 
         healthBar.MaxValue = (int) enemy.Health; 
         healthBar.Value = (int) enemy.Health; 
-        //setTarget(GameObject.FindGameObjectWithTag("Player").transform);
         currentState = BossState.Aggressive;
         ChangeState(currentState); 
         LockMovement(); 

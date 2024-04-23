@@ -148,7 +148,6 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
                 Invincible = true;
             }
         }
-        Debug.Log(gameObject.tag); 
        
         if (gameObject.tag == "Player"){
             OnPlayerHit?.Invoke(Health); 

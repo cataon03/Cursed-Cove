@@ -59,7 +59,6 @@ public class InventoryManager : MonoBehaviour
             }
             else if (itemInSlot.item is Powerup){
                 removeExactItem(newValue); 
-                Debug.Log(itemInSlot.item.GetType().ToString());
                 OnPowerupEquipped?.Invoke((Powerup) itemInSlot.item);  
             }
         }
