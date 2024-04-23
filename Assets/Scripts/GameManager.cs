@@ -63,6 +63,12 @@ public class GameManager : MonoBehaviour
         return currentGameState; 
     }
 
+    public void resumeLevel(){
+        // Increment the current level 
+        Debug.Log("going to: " + levelIdx); 
+        HandleOnGameStateChanged(LEVELS[levelIdx]); // Load the previous level 
+    }
+
     public void nextLevel(){
         // Increment the current level 
         levelIdx += 1; 
@@ -90,13 +96,9 @@ public class GameManager : MonoBehaviour
 
     public void SetGameState(GameState newState)
     {
+        previousGameState = currentGameState; 
         currentGameState = newState;
-        this. HandleOnGameStateChanged(newState); 
-    }
-
-    public GameState GetGameState()
-    {
-        return currentGameState;
+        HandleOnGameStateChanged(newState); 
     }
 
     private void HandleOnGameStateChanged(GameState newState)

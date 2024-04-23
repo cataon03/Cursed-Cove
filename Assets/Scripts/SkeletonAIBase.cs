@@ -34,15 +34,10 @@ public abstract class SkeletonAIBase : SkeletonBase, ICharacter
 
     Vector3 GetRandomPointAround(Vector3 center)
     {
-        // Generate a random angle between 0 and 360 degrees (in radians)
         float angle = Random.Range(0, 2 * Mathf.PI);
-
-        // Convert polar coordinates to Cartesian coordinates
         float x = center.x + stoppingDistance * Mathf.Cos(angle);
         float y = center.y + stoppingDistance * Mathf.Sin(angle);
-
-        // Return the calculated position
-        return new Vector3(x, y, 0); // Assuming a 2D game, keep z the same
+        return new Vector3(x, y, 0); 
     }
 
     public void setTargetToPlayer(){
@@ -60,10 +55,10 @@ public abstract class SkeletonAIBase : SkeletonBase, ICharacter
 
 
     public void setDistanceTarget(float thresholdDistance){
-        Vector3 point; 
-        Debug.Log("starting"); 
+        Vector3 point;
+        // Lock movement while finding suitable point to track 
+        LockMovement(); 
         while (true){
-            LockMovement(); 
             float angle = Random.Range(0, 2 * Mathf.PI);
 
             float x = playerTransform.position.x + thresholdDistance * Mathf.Cos(angle);
@@ -85,7 +80,6 @@ public abstract class SkeletonAIBase : SkeletonBase, ICharacter
         }
         currentAttackerTracker = follower;
         UnlockMovement(); 
-        Debug.Log("done"); 
     }
 
     public bool IsTargetPositionWalkable() {

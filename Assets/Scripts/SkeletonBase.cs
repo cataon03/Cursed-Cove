@@ -14,7 +14,7 @@ public abstract class SkeletonBase : MonoBehaviour, ICharacter
     protected bool canMove; 
     protected Animator animator;
     protected SpriteRenderer spriteRenderer;
-    public float damage = 1;
+    public float damage = 1f;
     public float knockbackForce = 20f;
     public float moveSpeed = 500f;
     protected Rigidbody2D rb;

@@ -61,7 +61,6 @@ public class SkeletonAIBoss : SkeletonAIBase, ICharacter
 
     
     public void IncreaseBossHits(){
-        Debug.Log("hit again"); 
         hitsInInterval += 1; 
     }
 

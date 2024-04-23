@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e7ab6ebb760614787c7ac43e19fb03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordDamage: 2
+  swordDamage: 1
   knockbackForce: 30
   swordCollider: {fileID: 367281816181085578}
   faceRight: {x: 1, y: 0, z: 0}
@@ -297,7 +297,6 @@ GameObject:
   - component: {fileID: 3206722364049493174}
   - component: {fileID: 5707540231028190579}
   - component: {fileID: 220431842641969276}
-  - component: {fileID: 2882490506662796689}
   - component: {fileID: 318586095448749900}
   - component: {fileID: 5898640115768468060}
   m_Layer: 6
@@ -598,44 +597,20 @@ MonoBehaviour:
   damage: 1
   knockbackForce: 20
   moveSpeed: 8
-  minDistanceToPlayer: 0
+  stoppingDistance: 1
   aiLerp: {fileID: 0}
   objectToFollowPrefab: {fileID: 8320154480522260736, guid: 073763fe55166e24c81e72bf6c1b5b8f, type: 3}
   healthRegenZones:
   - {fileID: 0}
   - {fileID: 0}
-  thresholdDistance: 15
+  thresholdDistance: 8
   hitCheckFreq: 5
   hitThreshold: 1
   detectionZone: {fileID: 15515065354959665}
   regenRate: 2
-  fastMoveSpeed: 11
+  fastMoveSpeed: 8
   currentState: 0
   healthBar: {fileID: 4218296505265719855}
---- !u!114 &2882490506662796689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004363464110990122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb806b81bde8e594b81a358cf562c08a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceThreshold:
-  - 7
-  - 20
-  - 25
-  hitThreshold:
-  - 1
-  - 2
-  - 3
-  healthThreshold:
-  - 0
-  - 0
-  analysisInterval: 7
 --- !u!114 &318586095448749900
 MonoBehaviour:
   m_ObjectHideFlags: 0
