@@ -17,4 +17,4 @@ MonoBehaviour:
   price: 4
   itemName: Fire Sword
   damage: 1
-  knockback: 15
+  knockback: 8

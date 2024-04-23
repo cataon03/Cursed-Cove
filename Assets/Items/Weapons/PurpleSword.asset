@@ -17,4 +17,4 @@ MonoBehaviour:
   price: 5
   itemName: Purple Sword
   damage: 1
-  knockback: 30
+  knockback: 8

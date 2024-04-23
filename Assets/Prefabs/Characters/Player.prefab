@@ -238,13 +238,13 @@ MonoBehaviour:
   itemDrops: {fileID: 0}
   healthText: {fileID: 4446440190103696447, guid: e61196338ebbccc43a9ab2bd4211308d, type: 3}
   disableSimulation: 1
-  canTurnInvincible: 1
+  canTurnInvincible: 0
   invincibilityTime: 0.3
   animator: {fileID: 0}
   maxHealth: 0
-  _health: 100
+  _health: 5
   _targetable: 1
-  _invincible: 1
+  _invincible: 0
   _projectile_invincible: 0
 --- !u!1 &8853572529522011581
 GameObject:
@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordDamage: 1
-  knockbackForce: 20
+  knockbackForce: 5
   swordCollider: {fileID: 1276261732827995078}
   faceRight: {x: 1, y: 0.15, z: 0}
   faceLeft: {x: -1, y: 0.15, z: 0}

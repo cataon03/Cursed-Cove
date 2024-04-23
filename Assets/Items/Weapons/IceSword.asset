@@ -17,4 +17,4 @@ MonoBehaviour:
   price: 4
   itemName: Ice Sword
   damage: 1
-  knockback: 20
+  knockback: 8
