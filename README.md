@@ -1,10 +1,10 @@
 # Cursed Cove
 
 ## Premise of the Game 
-* Oh no! Skeletons have stolen your precious parrot: Captain Squawkers! You must defeat the skeletons on Blazebeard's Isle and Frostbite Bay to rescue your feathery friend. 
+Oh no! Skeletons have stolen your precious parrot: Captain Squawkers! You must defeat the skeletons on Blazebeard's Isle and Frostbite Bay to rescue your feathery friend. 
   
 ## How to Play 
-* click to attack, WASD for movement 
+Click to attack, WASD for movement 
 
 ## Assets and Licensing Info  
 * https://isavii.itch.io/ice-cave-tileset-32x32:  
