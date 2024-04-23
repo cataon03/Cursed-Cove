@@ -15,6 +15,9 @@ public class Enemy : DamageableCharacter {
     }
 
     override public void OnCharacterDeath(){
+        if (hasItemDrops){
+            Instantiate(itemDrops, transform.position, Quaternion.identity);
+        }
         // Check what type of skeleton that the enemy is
         if (gameObject.tag == "Boss"){
             SkeletonAIBase aISkeletonBase = gameObject.GetComponent<SkeletonAIBase>();

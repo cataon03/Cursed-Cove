@@ -39,13 +39,13 @@ public class LevelEnder : MonoBehaviour {
     }
     
     private IEnumerator WaitForLevelRestart(){; 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         animator.SetTrigger("close"); 
         gameManager.restartLevel(); 
     }
 
     private IEnumerator WaitForNextLevel(){
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         animator.SetTrigger("close"); 
         gameManager.nextLevel();
     }

@@ -55,9 +55,6 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     public float maxHealth; 
     
     virtual public void OnCharacterDeath(){
-        if (hasItemDrops){
-            Instantiate(itemDrops, transform.position, Quaternion.identity);
-        }
         if (gameObject.tag == "Player"){
             OnPlayerDeath?.Invoke(); 
         }
@@ -147,10 +144,9 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
                 // Activate invincibility and timer 
                 Invincible = true;
             }
-        }
-       
-        if (gameObject.tag == "Player"){
-            OnPlayerHit?.Invoke(Health); 
+            if (gameObject.tag == "Player"){
+                OnPlayerHit?.Invoke(Health); 
+            }
         }
     }
 
@@ -164,9 +160,9 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
                 // Activate invincibility and timer 
                 Invincible = true;
             }
-        }
-        if (gameObject.tag == "Player"){
-            OnPlayerHit?.Invoke(Health); 
+            if (gameObject.tag == "Player"){
+                OnPlayerHit?.Invoke(Health); 
+            }
         }
     }
 

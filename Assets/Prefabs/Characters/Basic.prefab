@@ -67,7 +67,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5.75113
+  m_Radius: 2.826641
 --- !u!114 &1506733072802357334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +162,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.009625912, y: -0.07478067}
+  m_Offset: {x: 0.050107017, y: -0.09212896}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -173,7 +173,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4467897, y: 0.7575175}
+  m_Size: {x: 0.8684988, y: 0.95413464}
   m_EdgeRadius: 0
 --- !u!114 &4838706253143290701
 MonoBehaviour:
@@ -207,12 +207,11 @@ GameObject:
   - component: {fileID: 3764126502850219478}
   - component: {fileID: 864946499448481346}
   - component: {fileID: 7196410566698291992}
-  - component: {fileID: 3936970844512236735}
   - component: {fileID: 5997019787822979925}
   - component: {fileID: 1575866077286517393}
   m_Layer: 6
   m_Name: Basic
-  m_TagString: AI
+  m_TagString: Skeleton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -418,10 +417,11 @@ MonoBehaviour:
   invincibilityTime: 0.25
   animator: {fileID: 0}
   maxHealth: 0
-  _health: 5
+  _health: 3
   _targetable: 1
   _invincible: 0
   _projectile_invincible: 0
+  healthbar: {fileID: 0}
 --- !u!114 &864946499448481346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,31 +465,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
---- !u!114 &3936970844512236735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6086107765650035395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8543d9be9331e7e4bbf73af6a16ffc62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxVelocity: 5
-  hasItemDrops: 0
-  itemDrops: {fileID: 0}
-  healthText: {fileID: 4446440190103696447, guid: e61196338ebbccc43a9ab2bd4211308d, type: 3}
-  disableSimulation: 0
-  canTurnInvincible: 0
-  invincibilityTime: 0.25
-  animator: {fileID: 0}
-  maxHealth: 0
-  _health: 25
-  _targetable: 1
-  _invincible: 0
-  _projectile_invincible: 0
 --- !u!114 &5997019787822979925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,10 +477,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e72c26e0a23c1b4b818b0b7f59f2771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 0.5
   knockbackForce: 30
-  moveSpeed: 5
-  minDistanceToPlayer: 1
+  moveSpeed: 3
+  stoppingDistance: 0.5
+  aiLerp: {fileID: 0}
+  objectToFollowPrefab: {fileID: 8320154480522260736, guid: 073763fe55166e24c81e72bf6c1b5b8f, type: 3}
   isNearSighted: 0
   detectionZone: {fileID: 1506733072802357334}
 --- !u!114 &1575866077286517393

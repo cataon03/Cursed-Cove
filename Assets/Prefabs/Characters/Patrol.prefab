@@ -99,7 +99,6 @@ GameObject:
   - component: {fileID: 8672570186305183658}
   - component: {fileID: 4437723699018881823}
   - component: {fileID: 1361630728343881303}
-  - component: {fileID: 8360863293310828514}
   - component: {fileID: 3235779895431717982}
   - component: {fileID: 8853410493508160669}
   m_Layer: 6
@@ -302,8 +301,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxVelocity: 5
-  hasItemDrops: 0
-  itemDrops: {fileID: 0}
+  hasItemDrops: 1
+  itemDrops: {fileID: 6151140039003379905, guid: 98c72579c51514ee282e6e26c37db1cb, type: 3}
   healthText: {fileID: 4446440190103696447, guid: e61196338ebbccc43a9ab2bd4211308d, type: 3}
   disableSimulation: 0
   canTurnInvincible: 0
@@ -314,6 +313,7 @@ MonoBehaviour:
   _targetable: 1
   _invincible: 0
   _projectile_invincible: 0
+  healthbar: {fileID: 0}
 --- !u!114 &4437723699018881823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,31 +357,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
---- !u!114 &8360863293310828514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2840878447728939971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8543d9be9331e7e4bbf73af6a16ffc62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxVelocity: 5
-  hasItemDrops: 0
-  itemDrops: {fileID: 0}
-  healthText: {fileID: 4446440190103696447, guid: e61196338ebbccc43a9ab2bd4211308d, type: 3}
-  disableSimulation: 0
-  canTurnInvincible: 0
-  invincibilityTime: 0.25
-  animator: {fileID: 0}
-  maxHealth: 0
-  _health: 5
-  _targetable: 1
-  _invincible: 0
-  _projectile_invincible: 0
 --- !u!114 &3235779895431717982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,10 +369,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67304e872cf50b45a762c905c8172a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 0.5
   knockbackForce: 25
-  moveSpeed: 5
-  minDistanceToPlayer: 1.2
+  moveSpeed: 4
+  stoppingDistance: 0.6
+  aiLerp: {fileID: 0}
+  objectToFollowPrefab: {fileID: 0}
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -499,7 +476,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0096259415, y: -0.07361877}
+  m_Offset: {x: 0.00051513314, y: -0.071902275}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -510,7 +487,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4467897, y: 0.8428407}
+  m_Size: {x: 1.1487, y: 1.0040529}
   m_EdgeRadius: 0
 --- !u!114 &8229207212555305770
 MonoBehaviour:

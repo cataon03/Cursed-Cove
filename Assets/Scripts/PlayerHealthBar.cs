@@ -11,9 +11,6 @@ public class PlayerHealthBar : MonoBehaviour
 
     public static PlayerHealthBar Instance; 
 
-    public float health = 5; 
-    private int numOfHearts; 
-
     public Image[] hearts; 
     public Sprite fullHeart; 
     public Sprite emptyHeart; 
@@ -21,29 +18,30 @@ public class PlayerHealthBar : MonoBehaviour
 
     void Awake(){
         Instance = this; 
-        DamageableCharacter.OnPlayerHit += handleOnPlayerHit;
+        DamageableCharacter.OnPlayerHit += UpdateHealthBar;
     }
 
     void Start(){
-        numOfHearts = hearts.Length - 1;  
         for (int i = 0; i < hearts.Length; i++){
             hearts[i].sprite = fullHeart; 
         }
     }
     
-    void onDestory(){
-        DamageableCharacter.OnPlayerHit -= handleOnPlayerHit;
+    void OnDestroy(){
+        DamageableCharacter.OnPlayerHit -= UpdateHealthBar;
     }
-    private void handleOnPlayerHit(float health) {
+    public void UpdateHealthBar(float health) {
         int fullHearts = (int)health; // Number of full hearts is the integer part of health
         bool hasHalfHeart = (health % 1) >= 0.5; // Check if there is a half heart
 
         for (int i = 0; i < hearts.Length; i++) {
             if (i < fullHearts) {
                 hearts[i].sprite = fullHeart; // Set full heart
-            } else if (i == fullHearts && hasHalfHeart) {
+            }
+            else if (i == fullHearts && hasHalfHeart) {
                 hearts[i].sprite = halfHeart; // Set half heart if applicable
-            } else {
+            }
+            else {
                 hearts[i].sprite = emptyHeart; // Set empty heart
             }
         }
