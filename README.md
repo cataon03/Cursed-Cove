@@ -19,7 +19,6 @@ Assets and licensing info:
 * https://karnificial.itch.io/western-or-pirate-tileset:
   Permissions:
   "You can use (and edit) the art provided by this asset pack for personal and commercial use."
-  We turned the water orange to look like lava in this pack!
 
 * https://assetstore.unity.com/packages/2d/characters/monsters-and-pirates-pixel-art-pack-27080
   License agreement: Standard Unity Asset Store EULA
