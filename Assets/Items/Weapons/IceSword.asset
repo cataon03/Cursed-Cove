@@ -16,5 +16,5 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 9e2ba5e405ac66247b405fc85c0200d6, type: 3}
   price: 4
   itemName: Ice Sword
-  damage: 2
+  damage: 1
   knockback: 20
