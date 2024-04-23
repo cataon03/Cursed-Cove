@@ -1,6 +1,4 @@
-* How to play:
-  Click to attack
-  WASD for movement 
+* How to play: click to attack, WASD for movement 
 
 Assets and licensing info: 
 
