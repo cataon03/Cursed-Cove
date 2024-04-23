@@ -1,7 +1,9 @@
-How to play: click to attack, WASD for movement 
+# Cursed Cove
 
-Assets and licensing info: 
+## How to play:
+* click to attack, WASD for movement 
 
+## Assets and Licensing Info  
 * https://isavii.itch.io/ice-cave-tileset-32x32:  
   "Personal or commercial use in any of your games, projects and so on.
   You can modify the assets as you like but for your end product only.
@@ -22,11 +24,11 @@ Assets and licensing info:
 * https://ragnapixel.itch.io/particle-fx-gun-shooting-kit: 
   LICENCE: Creative Commons Attribution v4.0 International This asset pack can be used in free and commercial projects. You must credit me as Raphael Hatencia when using this asset pack.
 
-3rd Party Libraries: 
-* Yarn-Spinner: https://github.com/YarnSpinnerTool/YarnSpinner-Unity
+## 3rd-Party Libraries 
+* YarnSpinner: https://github.com/YarnSpinnerTool/YarnSpinner-Unity
 * A* Pathfinding project (free version): https://arongranberg.com/astar/download
   
-Additional Sources / Learning Resources: 
+## Additional Sources  
 * Inventory system: https://www.youtube.com/watch?v=oJAE6CbsQQA
 * Game manager: https://www.youtube.com/watch?v=4I0vonyqMi8
 * Basic idea of using A* for enemies: https://www.youtube.com/watch?v=jvtFUfJ6CP8 
