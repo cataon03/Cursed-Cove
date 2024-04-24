@@ -27,6 +27,17 @@ Click to attack, WASD for movement
 * https://ragnapixel.itch.io/particle-fx-gun-shooting-kit: 
   LICENCE: Creative Commons Attribution v4.0 International This asset pack can be used in free and commercial projects. You must credit me as Raphael Hatencia when using this asset pack.
 
+* https://alkakrab.itch.io/free-pirate-game-music-pack
+  Permission: "(100% Copyright Free)"
+
+* https://foozlecc.itch.io/scallywag-water-islands
+  Scallywag - Water and Islands (1.0)
+  Commissioned from: Pixel Carvel (https://pixel-carvel.itch.io/)
+  Distributed by Foozle (www.foozle.io)
+  License: (Creative Commons Zero, CC0)
+  http://creativecommons.org/publicdomain/zero/1.0/
+  This content is free to use and modify for all projects, including commercial projects.
+
 ## 3rd-Party Libraries 
 * YarnSpinner: https://github.com/YarnSpinnerTool/YarnSpinner-Unity
 * A* Pathfinding project (free version): https://arongranberg.com/astar/download
