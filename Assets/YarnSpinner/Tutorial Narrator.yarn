@@ -2,6 +2,7 @@
 
 position: -204,-234
 ---
+<<freeze_player DialogueManager>>
 Narrator: Ahoy there, matey! Welcome aboard this tutorial.
 
 Narrator: Today's voyage ain't like any other. Ye see, our beloved parrot, Captain Squawkers, has been bird-napped by a ghastly crew of walking skeletons.
@@ -25,7 +26,7 @@ Narrator: Battle the bone-rattlin' skeletons, parley with the trader, and pry op
 Narrator: A pirate has to collect all the booty, after all!
 
 Narrator: When ye be ready, make yer way to the sign to set sail on yer grand adventure.
-
+<<unfreeze_player DialogueManager>>
 ===
 
 title: BasicFighting

@@ -11,7 +11,7 @@ public class HealthText : MonoBehaviour
     public TextMeshProUGUI textMesh;
 
     RectTransform rTransform;
-    Color startingColor;
+    public Color startingColor;
 
     float timeElapsed = 0.0f;
 

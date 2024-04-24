@@ -36,6 +36,9 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
                 if (healthTextInstance == null){
                     Debug.Log("Warning: health text not initialized properly"); 
                 }
+                if (gameObject.GetComponent<Enemy>() != null){
+                    healthTextInstance.GetComponent<HealthText>().textMesh.color = Color.red; 
+                }
                 RectTransform textTransform = healthTextInstance.GetComponent<RectTransform>();
                 textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
                 textTransform.SetParent(sceneCanvas.transform);
