@@ -46,4 +46,5 @@ Click to attack, WASD for movement
 * Inventory system: https://www.youtube.com/watch?v=oJAE6CbsQQA
 * Game manager: https://www.youtube.com/watch?v=4I0vonyqMi8
 * Basic idea of using A* for enemies: https://www.youtube.com/watch?v=jvtFUfJ6CP8 
-* Basic idea for combat system: https://www.youtube.com/watch?v=8rTK68omQow 
+* Basic idea for combat system: https://www.youtube.com/watch?v=8rTK68omQow
+* Using YarnSpinner: https://www.youtube.com/watch?v=hFfxpLMVJhE
