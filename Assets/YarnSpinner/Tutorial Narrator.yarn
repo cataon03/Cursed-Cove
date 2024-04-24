@@ -6,20 +6,25 @@ Narrator: Ahoy there, matey! Welcome aboard this tutorial.
 
 Narrator: Today's voyage ain't like any other. Ye see, our beloved parrot, Captain Squawkers, has been bird-napped by a ghastly crew of walking skeletons.
 -> Oh no! What can I do?
-    <<jump BasicMovement>>
+    <<jump Explore>>
 -> What?! How dare they!
-    <<jump BasicMovement>>
+    <<jump Explore>>
 ===
 
-title: BasicMovement
+title: Explore
 
 position: -379,-34
 ---
-Narrator: Fear not, for I'll be teachin' ye how to navigate this treacherous land, fight off the bone-rattling scallywags, and bring our feathery friend back to the nest.
 
-Narrator: First things first, let's get ye familiar with moving around. 
+Narrator: Fear not, for this be where ye'll be explorin' the island.
 
-Narrator: Use W/A/S/D to start walkin'. Walk to those coins like ye've got a purpose, matey. A pirate’s gotta be quick on their feet, especially to collect that booty!
+Narrator: First off, ye best get to knowin' the lay o' the land. Use yer arrow keys to roam about and scour the island.
+
+Narrator: Battle the bone-rattlin' skeletons, parley with the trader, and pry open the treasure chest.
+
+Narrator: A pirate has to collect all the booty, after all!
+
+Narrator: When ye be ready, make yer way to the sign to set sail on yer grand adventure.
 
 ===
 
@@ -32,10 +37,6 @@ Narrator: How do you feel, matey?
 -> I think I broke my leg.
 
 Narrator: Narrator: Arrr! You seem okay to me! Ye be movin' like a true sea dog. 
-
-Narrator: Now, let's get to where the action is. Travel North West, and keep yer eyes peeled. Skeletons aren't known for their hospitality.
-
-Narrator: When ye see one of those scallywags, click to swing yer sword... and don't stop swingin' until they're down for the count!
 
 ===
 
