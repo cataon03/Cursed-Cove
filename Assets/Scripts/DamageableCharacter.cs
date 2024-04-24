@@ -66,6 +66,17 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
 
     }
 
+    void OnHealthFoodEaten(float healthBonus){
+        if (Health + healthBonus <= maxHealth){
+            Health += healthBonus; 
+        }
+        else {
+            Health = maxHealth; 
+        }
+        GameObject.FindObjectOfType<PlayerHealthBar>().UpdateHealthBar(Health); 
+    }
+    
+
     public bool Targetable { get { return _targetable; }
     set {
         _targetable = value;

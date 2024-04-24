@@ -12,6 +12,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject inventoryItemPrefab;
     public static event Action<Weapon> OnWeaponEquipped; 
     public static event Action<Powerup> OnPowerupEquipped;
+    public static event Action<HealthFood> OnHealthFoodEaten;
 
     int selectedSlot = -1;
 
@@ -60,6 +61,11 @@ public class InventoryManager : MonoBehaviour
             else if (itemInSlot.item is Powerup){
                 removeExactItem(newValue); 
                 OnPowerupEquipped?.Invoke((Powerup) itemInSlot.item);  
+            }
+            else if (itemInSlot.item is HealthFood){
+                removeExactItem(newValue); 
+                GameObject player = GameObject.FindGameObjectWithTag("Player"); 
+                player.BroadcastMessage("OnHealthFoodEaten", ((HealthFood) itemInSlot.item).healthBonus);
             }
         }
         selectedSlot = newValue;

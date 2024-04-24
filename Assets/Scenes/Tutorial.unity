@@ -29178,7 +29178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   traderItems:
   - {fileID: 11400000, guid: 4df9c9e2ba3e00c43b8769b9076b8e1d, type: 2}
-  - {fileID: 11400000, guid: 7791c362a74df82409f109bdf357e8e5, type: 2}
+  - {fileID: 11400000, guid: 2001414d068394648980de88a6a78d4a, type: 2}
   - {fileID: 11400000, guid: ea44e00fb32950b4f82c2a837c3ba624, type: 2}
 --- !u!114 &162283704
 MonoBehaviour:
@@ -38340,7 +38340,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d4a29aac0539d540a2f58d9c7406fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
   hearts:
   - {fileID: 7990770686423778302}
   - {fileID: 2047225428416530812}

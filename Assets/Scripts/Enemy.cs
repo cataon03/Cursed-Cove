@@ -30,6 +30,7 @@ public class Enemy : DamageableCharacter {
         animator.SetBool("isAlive", false);
     }
 
+
     public override void OnHitActions(float damage)
     {
         if (gameObject.tag == "Boss"){
