@@ -28943,34 +28943,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6049721299100282085, guid: c1a7e9d1aba837f4abafab3a67fe5e7b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6049721299100282085, guid: c1a7e9d1aba837f4abafab3a67fe5e7b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 29516688}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1a7e9d1aba837f4abafab3a67fe5e7b, type: 3}
---- !u!1 &29516680 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6049721299100282085, guid: c1a7e9d1aba837f4abafab3a67fe5e7b, type: 3}
-  m_PrefabInstance: {fileID: 29516679}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &29516688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29516680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d63b53c08d8176b45a3f3de7d2a58ca6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeName: BasicFighting
-  disableAfterFirstCollision: 0
-  hasCameraMovement: 0
 --- !u!1 &49078138
 GameObject:
   m_ObjectHideFlags: 0
@@ -28982,7 +28963,7 @@ GameObject:
   - component: {fileID: 49078141}
   - component: {fileID: 49078140}
   - component: {fileID: 49078139}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Scene Opener Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34297,6 +34278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de96070108100ca49a1cd31a54002be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  optionsListView: {fileID: 0}
 --- !u!1001 &1508610239
 PrefabInstance:
   m_ObjectHideFlags: 0

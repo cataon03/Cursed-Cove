@@ -33,12 +33,14 @@ title: BasicFighting
 
 position: -151,-37
 ---
+
+<<freeze_player DialogueManager>>
 Narrator: How do you feel, matey?
 -> Am I doing this right?
 -> I think I broke my leg.
 
 Narrator: Narrator: Arrr! You seem okay to me! Ye be movin' like a true sea dog. 
-
+<<unfreeze_player DialogueManager>>
 ===
 
 title: TraderSystem
